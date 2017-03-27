@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import SVProgressHUD
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         setupKeyboardManager()
+        setupSVProgressHUD()
         selectControllerToShow()
         
         return true
@@ -47,16 +49,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Private Methods
-    func selectControllerToShow() {
+    private func selectControllerToShow() {
         if FacebookHandler.shared.isUserLoggedWithFacebook() {
             ViewControllersHandler().changeRootViewController(withName: "Home", window: window)
         }
     }
     
-    func setupKeyboardManager() {
+    private func setupKeyboardManager() {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().toolbarTintColor = UIColor.red
-        
+    }
+    
+    private func setupSVProgressHUD() {
+        SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
     }
 }
 

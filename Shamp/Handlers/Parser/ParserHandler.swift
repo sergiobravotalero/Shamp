@@ -18,17 +18,21 @@ class ParserHandler {
         
         var stamps = [Stamp]()
         for element in data {
-            guard let elementDictionary = element as? NSDictionary else { return }
-            guard let id = elementDictionary.object(forKey: "id") as? Int else { return }
-            guard let name = elementDictionary.object(forKey: "name") as? String else { return }
-            guard let categoryName = elementDictionary.value(forKeyPath: "category.name") as? String else { return }
-            guard let stampImageString = elementDictionary.object(forKey: "stampLargeImagePath") as? String else { return }
-            guard let stampLongDescription = elementDictionary.object(forKey: "stampLongDescription") as? String else { return }
-            guard let stampShortDescription = elementDictionary.object(forKey: "stampShortDescription") as? String else { return }
-            guard let stampName = elementDictionary.object(forKey: "stampName") as? String else { return }
-            guard let stampPrice = elementDictionary.object(forKey: "stampPrice") as? String else { return }
-            guard let artistName = elementDictionary.value(forKeyPath: "user.name") as? String else { return }
-            guard let artistEmail = elementDictionary.value(forKeyPath: "user.email") as? String else { return }
+            guard let elementDictionary = element as? NSDictionary else { continue }
+            
+            guard let status = elementDictionary.object(forKey: "active") as? Bool else { continue }
+            if !status { continue }
+            
+            guard let id = elementDictionary.object(forKey: "id") as? Int else { continue }
+            guard let name = elementDictionary.object(forKey: "name") as? String else { continue }
+            guard let categoryName = elementDictionary.value(forKeyPath: "category.name") as? String else { continue }
+            guard let stampImageString = elementDictionary.object(forKey: "stampLargeImagePath") as? String else { continue }
+            guard let stampLongDescription = elementDictionary.object(forKey: "stampLongDescription") as? String else { continue }
+            guard let stampShortDescription = elementDictionary.object(forKey: "stampShortDescription") as? String else { continue }
+            guard let stampName = elementDictionary.object(forKey: "stampName") as? String else { continue }
+            guard let stampPrice = elementDictionary.object(forKey: "stampPrice") as? String else { continue }
+            guard let artistName = elementDictionary.value(forKeyPath: "user.name") as? String else { continue }
+            guard let artistEmail = elementDictionary.value(forKeyPath: "user.email") as? String else { continue }
             
             let stampImage = URL(string: stampImageString)
             

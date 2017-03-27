@@ -24,6 +24,9 @@
 		05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */; };
 		05C763791E89B875000C064A /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763781E89B875000C064A /* Stamp.swift */; };
 		05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637B1E89C06F000C064A /* SessionHandler.swift */; };
+		05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637F1E89C95F000C064A /* UIColorExtension.swift */; };
+		05C763831E89CBBD000C064A /* StampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763811E89CBBD000C064A /* StampTableViewCell.swift */; };
+		05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C763821E89CBBD000C064A /* StampTableViewCell.xib */; };
 		72D25F33054FC285CF4F50AD /* Pods_Shamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8896DB92077D409591728F5 /* Pods_Shamp.framework */; };
 		8A1D2F6237A6F0B9A9187F09 /* Pods_ShampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4611EE337C2EA73795D58ACD /* Pods_ShampUITests.framework */; };
 		ED6690BDC17248DBD2ABDFBE /* Pods_ShampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */; };
@@ -70,6 +73,9 @@
 		05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersHandler.swift; sourceTree = "<group>"; };
 		05C763781E89B875000C064A /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		05C7637B1E89C06F000C064A /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
+		05C7637F1E89C95F000C064A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		05C763811E89CBBD000C064A /* StampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampTableViewCell.swift; sourceTree = "<group>"; };
+		05C763821E89CBBD000C064A /* StampTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StampTableViewCell.xib; sourceTree = "<group>"; };
 		18DE30D3DC5EA47CD52D154B /* Pods-ShampUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32723F5EF5B31617AA6257B6 /* Pods-ShampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				05B4A61F1E843A39003F4AA4 /* Base */,
 				05B4A6211E843A39003F4AA4 /* Config */,
+				05C7637D1E89C954000C064A /* Extensions */,
 				05B4A6451E8464C0003F4AA4 /* Handlers */,
 				05C763751E89B834000C064A /* Objects */,
 				05B4A6231E843A39003F4AA4 /* Resources */,
@@ -259,6 +266,8 @@
 		05B4A63C1E845AFD003F4AA4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				05C763821E89CBBD000C064A /* StampTableViewCell.xib */,
+				05C763811E89CBBD000C064A /* StampTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 		05B4A63E1E845AFD003F4AA4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				05C763851E89CBD1000C064A /* UITableView */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +346,29 @@
 				05C7637B1E89C06F000C064A /* SessionHandler.swift */,
 			);
 			path = SessionHandler;
+			sourceTree = "<group>";
+		};
+		05C7637D1E89C954000C064A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05C7637E1E89C954000C064A /* UIColor */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05C7637E1E89C954000C064A /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				05C7637F1E89C95F000C064A /* UIColorExtension.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		05C763851E89CBD1000C064A /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		3AB1B847123C09823177B09F /* Frameworks */ = {
@@ -481,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B4A62E1E843A39003F4AA4 /* Assets.xcassets in Resources */,
+				05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */,
 				05B4A6401E846143003F4AA4 /* Home.storyboard in Resources */,
 				05B4A62D1E843A39003F4AA4 /* Info.plist in Resources */,
 				05B4A63A1E843B02003F4AA4 /* LaunchScreen.storyboard in Resources */,
@@ -650,11 +684,13 @@
 				05B4A6481E8464D0003F4AA4 /* FacebookHandler.swift in Sources */,
 				05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
+				05C763831E89CBBD000C064A /* StampTableViewCell.swift in Sources */,
 				05A0B3201E89B58200FB8B9F /* ParserHandler.swift in Sources */,
 				05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */,
 				05B4A62C1E843A39003F4AA4 /* AppDelegate.swift in Sources */,
 				05B4A6421E84615F003F4AA4 /* HomeViewController.swift in Sources */,
 				05A0B3221E89B58C00FB8B9F /* RequesterHandler.swift in Sources */,
+				05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */,
 				05C763791E89B875000C064A /* Stamp.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 			);

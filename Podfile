@@ -12,6 +12,8 @@ target 'Shamp' do
     pod 'SwiftyJSON'
     pod 'Alamofire', '~> 4.4'
     pod 'IQKeyboardManagerSwift'
+    pod 'SVProgressHUD'
+    pod 'Kingfisher', '~> 3.0'
   target 'ShampTests' do
     inherit! :search_paths
     # Pods for testing

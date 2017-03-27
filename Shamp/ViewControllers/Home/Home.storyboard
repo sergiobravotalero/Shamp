@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SsP-07-sy5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7wr-4d-hnP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Stamps-->
         <scene sceneID="KzG-hK-l8s">
             <objects>
                 <viewController id="SsP-07-sy5" customClass="HomeViewController" customModule="Shamp" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,12 +20,54 @@
                     <view key="view" contentMode="scaleToFill" id="Plk-J1-Src">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-rJ-qgx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y1o-B3-gkr" firstAttribute="top" secondItem="fpG-rJ-qgx" secondAttribute="bottom" id="E43-XV-vww"/>
+                            <constraint firstAttribute="trailing" secondItem="fpG-rJ-qgx" secondAttribute="trailing" id="QKJ-Fy-9W7"/>
+                            <constraint firstItem="fpG-rJ-qgx" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="Sh1-Lz-8ng"/>
+                            <constraint firstItem="fpG-rJ-qgx" firstAttribute="top" secondItem="O3h-se-YNa" secondAttribute="bottom" id="i6t-Vg-HOO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Stamps" id="qVk-eA-toP">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="g8Y-UH-lv8">
+                            <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Search" id="dPa-AC-R6Q">
+                            <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1l-ZN-MDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="132"/>
+            <point key="canvasLocation" x="1096.8" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hrk-L0-FcL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wr-4d-hnP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ndl-jk-76R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SsP-07-sy5" kind="relationship" relationship="rootViewController" id="odJ-XS-FHh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meW-eE-Son" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu" width="18" height="12"/>
+        <image name="Search" width="20" height="20"/>
+    </resources>
 </document>

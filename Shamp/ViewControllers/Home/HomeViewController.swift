@@ -7,31 +7,28 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
-            print(suceeded)
-        })
-        // Do any additional setup after loading the view.
+        setupNavigationBar()
+        updateStamps()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Method
+    private func updateStamps() {
+        SVProgressHUD.show()
+        RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
+            SVProgressHUD.dismiss()
+        })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupNavigationBar() {
+        let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 17)!, NSForegroundColorAttributeName: UIColor.signatureGray()]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
-    */
-
 }
