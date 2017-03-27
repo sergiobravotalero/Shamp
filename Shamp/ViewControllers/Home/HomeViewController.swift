@@ -12,7 +12,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
+            print(suceeded)
+        })
         // Do any additional setup after loading the view.
     }
 

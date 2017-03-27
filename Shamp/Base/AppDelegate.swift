@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        setupKeyboardManager()
         selectControllerToShow()
         
         return true
@@ -49,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if FacebookHandler.shared.isUserLoggedWithFacebook() {
             ViewControllersHandler().changeRootViewController(withName: "Home", window: window)
         }
+    }
+    
+    func setupKeyboardManager() {
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().toolbarTintColor = UIColor.red
         
     }
 }

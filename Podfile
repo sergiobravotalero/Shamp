@@ -9,6 +9,9 @@ target 'Shamp' do
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
+    pod 'SwiftyJSON'
+    pod 'Alamofire', '~> 4.4'
+    pod 'IQKeyboardManagerSwift'
   target 'ShampTests' do
     inherit! :search_paths
     # Pods for testing
