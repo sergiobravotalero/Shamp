@@ -87,10 +87,11 @@ class ParserHandler {
             guard let color = elementDictionary.object(forKey: "shirtColor") as? String else { continue }
             guard let gender = elementDictionary.object(forKey: "shirtSex") as? String else { continue }
             guard let imageUrlString = elementDictionary.object(forKey: "shirtSmallImagePath") as? String else { continue }
+            guard let price = elementDictionary.object(forKey: "shirtPrice") as? String else { continue }
             
             let url = URL(string: imageUrlString)
             
-            guard let shirt = Shirt(id: id, status: status, name: name, color: color, gender: gender, imageUrl: url) else { continue }
+            guard let shirt = Shirt(id: id, status: status, name: name, color: color, gender: gender, imageUrl: url, price: price) else { continue }
             shirts.append(shirt)
         }
         

@@ -15,13 +15,15 @@ class Shirt {
     let color: String
     let gender: String
     let imageUrl: URL?
+    let price: String
     
-    init?(id: Int, status: Bool, name: String, color: String, gender: String, imageUrl: URL?) {
+    init?(id: Int, status: Bool, name: String, color: String, gender: String, imageUrl: URL?, price: String) {
         self.id = id
         self.status = status
         self.name = name
         self.color = color
         self.gender = gender
         self.imageUrl = imageUrl
+        self.price = price
     }
 }

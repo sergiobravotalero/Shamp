@@ -22,4 +22,11 @@ class Product {
         self.size = size
         self.location = location
     }
+    
+    // MARK: - Methods
+    func getProductPrice() -> Int {
+        guard let shirt = SessionHandler.shared.shirtsCollection.first(where: { $0.id == self.shirtID }), let stamp  = SessionHandler.shared.stampsCollection.first(where: { $0.id == self.stampID }) else { return 0 }
+        guard let shirtPrice = Int(shirt.price), let stampPrice = Int(stamp.stampPrice) else { return 0 }
+        return (stampPrice * self.quantity) + (shirtPrice * self.quantity)
+    }
 }
