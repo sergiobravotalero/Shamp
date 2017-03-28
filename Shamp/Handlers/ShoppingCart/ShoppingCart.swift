@@ -19,7 +19,7 @@ class ShoppingCart {
         products.append(product)
     }
     
-    func placeOrder(deliveryAddress: String, contactPhone: String, city: String, country: String) {
+    func placeOrderWithCompletion(deliveryAddress: String, contactPhone: String, city: String, country: String, completion: @escaping(_ succeeded: Bool) -> ()) {
         let userID = FacebookHandler.shared.getFacebookCurrentAccessToken()
         
         var productsArray = [NSMutableDictionary]()
@@ -47,6 +47,8 @@ class ShoppingCart {
             "oder": order
         ] as [String : Any]
         
-        print(orderInJson)
+        RequesterHandler().addOrderToServerWithCompletion(order: orderInJson, completion: { (succeeded) in
+            completion(succeeded)
+        })
     }
 }

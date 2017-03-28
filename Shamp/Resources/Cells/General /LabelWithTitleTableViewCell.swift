@@ -29,6 +29,8 @@ class LabelWithTitleTableViewCell: UITableViewCell {
         
         titleLabel.text = title
         textField.placeholder = placeholder
+        
+        textField.keyboardType = title == "Contact Phone" ? .numberPad : .default
     }
     
 }

@@ -53,6 +53,10 @@ class ShoppingCartViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "showPlaceOrder", sender: nil)
+        if !ShoppingCart.shared.products.isEmpty {
+            performSegue(withIdentifier: "showPlaceOrder", sender: nil)
+        } else {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to have added products first before proceeding")
+        }
     }
 }

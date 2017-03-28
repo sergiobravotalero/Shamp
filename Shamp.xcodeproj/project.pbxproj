@@ -794,7 +794,7 @@
 				TargetAttributes = {
 					05B4A5ED1E843994003F4AA4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SHCLPJTU4V;
+						DevelopmentTeam = C562468P4Q;
 						ProvisioningStyle = Automatic;
 					};
 					05B4A6011E843994003F4AA4 = {
@@ -1177,7 +1177,7 @@
 			baseConfigurationReference = 02EF6F06D058F8888D7F1D2B /* Pods-Shamp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SHCLPJTU4V;
+				DEVELOPMENT_TEAM = C562468P4Q;
 				INFOPLIST_FILE = Shamp/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.Shamp;
@@ -1191,7 +1191,7 @@
 			baseConfigurationReference = F963F70EB9AF0D0156582A8B /* Pods-Shamp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SHCLPJTU4V;
+				DEVELOPMENT_TEAM = C562468P4Q;
 				INFOPLIST_FILE = Shamp/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.Shamp;
