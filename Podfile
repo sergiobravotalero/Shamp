@@ -15,6 +15,8 @@ target 'Shamp' do
     pod 'SVProgressHUD'
     pod 'Kingfisher', '~> 3.0'
     pod 'Toucan'
+    pod 'DZNEmptyDataSet'
+    
   target 'ShampTests' do
     inherit! :search_paths
     # Pods for testing

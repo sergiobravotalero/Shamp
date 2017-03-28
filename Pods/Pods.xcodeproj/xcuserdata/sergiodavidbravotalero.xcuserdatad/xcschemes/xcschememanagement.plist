@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,7 +92,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09B066E571180D7011036FBF6D7A8F17</key>
+		<key>0099DD12F04A8D7E10538A80C234C737</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28760FA687B81CAB76E19AF4B85936E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>331B0D36ED169AE2EC6E77B5F852CBA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,11 +132,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>547486AFC2A290FE3160B854DCE9987B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
@@ -137,6 +147,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8443CC321D9155014D628F4684C8E5C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
@@ -147,17 +162,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADAFF91065963BF153061849267CEB53</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B4504BEC5995D378BC46C1DD70F4EA8B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

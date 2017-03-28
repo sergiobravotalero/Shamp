@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054F18A61E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F18A51E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift */; };
 		05A0B3201E89B58200FB8B9F /* ParserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0B31F1E89B58200FB8B9F /* ParserHandler.swift */; };
 		05A0B3221E89B58C00FB8B9F /* RequesterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0B3211E89B58C00FB8B9F /* RequesterHandler.swift */; };
 		05B4A6071E843994003F4AA4 /* ShampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A6061E843994003F4AA4 /* ShampTests.swift */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		02EF6F06D058F8888D7F1D2B /* Pods-Shamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shamp/Pods-Shamp.debug.xcconfig"; sourceTree = "<group>"; };
+		054F18A51E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartEmptyDataState.swift; sourceTree = "<group>"; };
 		05A0B31F1E89B58200FB8B9F /* ParserHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHandler.swift; sourceTree = "<group>"; };
 		05A0B3211E89B58C00FB8B9F /* RequesterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequesterHandler.swift; sourceTree = "<group>"; };
 		05B4A5EE1E843994003F4AA4 /* Shamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054F18A41E8B24D7005CB8F6 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				054F18A51E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
 		05A0B31D1E89B57700FB8B9F /* Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +631,7 @@
 		05D6DC961E8AF35F0081EDB8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				054F18A41E8B24D7005CB8F6 /* EmptyState */,
 				05D6DC971E8AF35F0081EDB8 /* UITableView */,
 			);
 			path = Extensions;
@@ -1045,6 +1056,7 @@
 				05C763871E89D110000C064A /* HomeDataSource.swift in Sources */,
 				05C763CE1E8A11DD000C064A /* ShoppingCart.swift in Sources */,
 				05C763BE1E8A03F8000C064A /* ShirtListTableViewDelegate.swift in Sources */,
+				054F18A61E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

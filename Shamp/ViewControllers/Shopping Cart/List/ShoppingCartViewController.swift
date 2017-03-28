@@ -44,6 +44,10 @@ class ShoppingCartViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
         tableView.estimatedRowHeight = 238.5
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
         tableView.reloadData()
     }
 
