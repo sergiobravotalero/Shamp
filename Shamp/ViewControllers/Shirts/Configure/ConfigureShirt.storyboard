@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dLW-P2-V1u">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Configure Shirt View Controller-->
+        <scene sceneID="aSP-zU-4d6">
+            <objects>
+                <viewController id="dLW-P2-V1u" customClass="ConfigureShirtViewController" customModule="Shamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pfn-nd-iQs"/>
+                        <viewControllerLayoutGuide type="bottom" id="M8e-M1-NCu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i5a-eL-P9g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLC-QN-XGU">
+                                <rect key="frame" x="36" y="50" width="303" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f5-nI-Fcs">
+                                        <rect key="frame" x="8" y="8" width="287" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a shirt size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-ck-CMQ">
+                                        <rect key="frame" x="8" y="33" width="287" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="3V5-ga-lQc"/>
+                                    <constraint firstItem="eZe-ck-CMQ" firstAttribute="leading" secondItem="3f5-nI-Fcs" secondAttribute="leading" id="FuZ-NN-U1J"/>
+                                    <constraint firstItem="eZe-ck-CMQ" firstAttribute="trailing" secondItem="3f5-nI-Fcs" secondAttribute="trailing" id="VZY-jc-gQ2"/>
+                                    <constraint firstItem="3f5-nI-Fcs" firstAttribute="top" secondItem="KLC-QN-XGU" secondAttribute="top" constant="8" id="eit-i4-exQ"/>
+                                    <constraint firstItem="eZe-ck-CMQ" firstAttribute="top" secondItem="3f5-nI-Fcs" secondAttribute="bottom" constant="8" id="hvK-Qx-SbE"/>
+                                    <constraint firstItem="3f5-nI-Fcs" firstAttribute="leading" secondItem="KLC-QN-XGU" secondAttribute="leading" constant="8" id="tkZ-Al-y73"/>
+                                    <constraint firstAttribute="trailing" secondItem="3f5-nI-Fcs" secondAttribute="trailing" constant="8" id="uUP-3m-xQD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja8-d3-4cM">
+                                <rect key="frame" x="36" y="128" width="303" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many shirts do you want?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiB-so-gIa">
+                                        <rect key="frame" x="8" y="8" width="287" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the number of shirts you want" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-Ff-5DC">
+                                        <rect key="frame" x="8" y="33" width="287" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fiB-so-gIa" firstAttribute="top" secondItem="Ja8-d3-4cM" secondAttribute="top" constant="8" id="79e-jr-GKc"/>
+                                    <constraint firstAttribute="height" constant="58" id="EUq-57-fFL"/>
+                                    <constraint firstAttribute="trailing" secondItem="fiB-so-gIa" secondAttribute="trailing" constant="8" id="HDV-0g-HPe"/>
+                                    <constraint firstItem="FYp-Ff-5DC" firstAttribute="leading" secondItem="fiB-so-gIa" secondAttribute="leading" id="RvD-4w-QVa"/>
+                                    <constraint firstItem="fiB-so-gIa" firstAttribute="leading" secondItem="Ja8-d3-4cM" secondAttribute="leading" constant="8" id="Xa1-gR-MNW"/>
+                                    <constraint firstItem="FYp-Ff-5DC" firstAttribute="top" secondItem="fiB-so-gIa" secondAttribute="bottom" constant="8" id="Z79-xV-N3Z"/>
+                                    <constraint firstItem="FYp-Ff-5DC" firstAttribute="trailing" secondItem="fiB-so-gIa" secondAttribute="trailing" id="ukh-cn-Vsy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmO-Pc-3DI">
+                                <rect key="frame" x="36" y="206" width="303" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where do you want the stamps?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7M-pn-APW">
+                                        <rect key="frame" x="8" y="8" width="287" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select the stamp position" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbp-8Z-Gxx">
+                                        <rect key="frame" x="8" y="33" width="287" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="h7M-pn-APW" firstAttribute="leading" secondItem="rmO-Pc-3DI" secondAttribute="leading" constant="8" id="2TW-FU-hA9"/>
+                                    <constraint firstItem="zbp-8Z-Gxx" firstAttribute="top" secondItem="h7M-pn-APW" secondAttribute="bottom" constant="8" id="3dw-l8-wHz"/>
+                                    <constraint firstAttribute="trailing" secondItem="h7M-pn-APW" secondAttribute="trailing" constant="8" id="3y7-8h-mup"/>
+                                    <constraint firstItem="zbp-8Z-Gxx" firstAttribute="trailing" secondItem="h7M-pn-APW" secondAttribute="trailing" id="73M-GA-baD"/>
+                                    <constraint firstItem="zbp-8Z-Gxx" firstAttribute="leading" secondItem="h7M-pn-APW" secondAttribute="leading" id="8bx-mR-sUy"/>
+                                    <constraint firstItem="h7M-pn-APW" firstAttribute="top" secondItem="rmO-Pc-3DI" secondAttribute="top" constant="8" id="GLp-p6-cLa"/>
+                                    <constraint firstAttribute="height" constant="58" id="osV-0t-anO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-Nm-xTD">
+                                <rect key="frame" x="36" y="597" width="303" height="50"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RcF-5S-wB9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add To Cart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="placeOrderTapped:" destination="dLW-P2-V1u" eventType="touchUpInside" id="5pd-7k-8iI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M8e-M1-NCu" firstAttribute="top" secondItem="SxU-Nm-xTD" secondAttribute="bottom" constant="20" id="0d0-E9-Xda"/>
+                            <constraint firstItem="Ja8-d3-4cM" firstAttribute="leading" secondItem="KLC-QN-XGU" secondAttribute="leading" id="49A-Rd-22e"/>
+                            <constraint firstItem="rmO-Pc-3DI" firstAttribute="leading" secondItem="Ja8-d3-4cM" secondAttribute="leading" id="59O-ea-xl9"/>
+                            <constraint firstItem="rmO-Pc-3DI" firstAttribute="trailing" secondItem="Ja8-d3-4cM" secondAttribute="trailing" id="5JL-Zq-l2Y"/>
+                            <constraint firstItem="SxU-Nm-xTD" firstAttribute="leading" secondItem="i5a-eL-P9g" secondAttribute="leadingMargin" constant="20" id="8eU-aJ-f8Z"/>
+                            <constraint firstItem="Ja8-d3-4cM" firstAttribute="trailing" secondItem="KLC-QN-XGU" secondAttribute="trailing" id="FP0-FY-f49"/>
+                            <constraint firstItem="KLC-QN-XGU" firstAttribute="leading" secondItem="i5a-eL-P9g" secondAttribute="leadingMargin" constant="20" id="RLc-es-CyK"/>
+                            <constraint firstItem="Ja8-d3-4cM" firstAttribute="top" secondItem="KLC-QN-XGU" secondAttribute="bottom" constant="20" id="Zbi-nk-MiE"/>
+                            <constraint firstItem="rmO-Pc-3DI" firstAttribute="top" secondItem="Ja8-d3-4cM" secondAttribute="bottom" constant="20" id="fvI-7R-Egw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SxU-Nm-xTD" secondAttribute="trailing" constant="20" id="u9X-RL-bZv"/>
+                            <constraint firstItem="KLC-QN-XGU" firstAttribute="top" secondItem="Pfn-nd-iQs" secondAttribute="bottom" constant="30" id="uWQ-Es-GZr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KLC-QN-XGU" secondAttribute="trailing" constant="20" id="xPa-TT-rwP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="zbp-8Z-Gxx" id="uSm-1w-h48"/>
+                        <outlet property="quantityTextField" destination="FYp-Ff-5DC" id="4Hn-uO-AKG"/>
+                        <outlet property="sizeTextField" destination="eZe-ck-CMQ" id="Po3-Uf-a6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vt-h3-GnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269.60000000000002" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>

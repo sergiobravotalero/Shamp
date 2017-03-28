@@ -13,5 +13,6 @@ class SessionHandler {
     private init() {}
     
     var stampsCollection = [Stamp]()
+    var shirtsCollection = [Shirt]()
     var categoriesCollection = [Category]()
 }

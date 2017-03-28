@@ -31,4 +31,23 @@ class RequesterHandler {
             })
         })
     }
+    
+    // MARK: - Shirt
+    func getListOfShirtsWithCompletion(completion: @escaping(_ succeeded: Bool) -> ()) {
+        guard let requestUrl = URL(string: baseUrl + "shirt") else {
+            completion(false)
+            return
+        }
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            ParserHandler().getCollectionOfShirtsWithCompletion(dictionary: dictionary, completion: { () in
+                completion(true)
+            })
+        })
+    }
 }

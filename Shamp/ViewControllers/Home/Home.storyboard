@@ -59,6 +59,9 @@
                     <navigationItem key="navigationItem" title="Stamps" id="qVk-eA-toP">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="g8Y-UH-lv8">
                             <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="showSideMenu:" destination="SsP-07-sy5" id="LbD-fG-rF4"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Search" id="dPa-AC-R6Q">
                             <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

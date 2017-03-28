@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShirtsTableViewCell" rowHeight="211" id="KGk-i7-Jjw" customClass="ShirtsTableViewCell" customModule="Shamp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="211"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="474" height="211"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-IN-efk">
+                        <rect key="frame" x="20" y="10" width="434" height="183"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-A9-Ptq">
+                                <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XdI-A9-Ptq" secondAttribute="height" multiplier="1:1" id="453-JB-tc9"/>
+                                    <constraint firstAttribute="height" constant="70" id="u4S-vf-7pi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name of shirt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-m8-vjH">
+                                <rect key="frame" x="88" y="8" width="336" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rtN-W2-dJ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-PE-5Y0">
+                                <rect key="frame" x="88" y="34" width="336" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NkF-kf-9Lh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="o6j-bp-rU0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-x0-sJA">
+                                <rect key="frame" x="88" y="60" width="336" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="FYJ-EM-acz"/>
+                                    <constraint firstAttribute="height" constant="21" id="j5Z-ZF-CAG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC7-lR-6oz">
+                                <rect key="frame" x="88" y="89" width="336" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CMu-a9-e3b"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="thO-mJ-Chj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spc-hT-rHu">
+                                <rect key="frame" x="88" y="115" width="336" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="aXg-Rg-1Yu"/>
+                                    <constraint firstAttribute="height" constant="21" id="eAQ-no-Nfh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVr-Wn-Cwp">
+                                <rect key="frame" x="303" y="151" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select This Shirt">
+                                    <color key="titleColor" red="0.96356993909999999" green="0.1707394421" blue="0.19375279549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectThisShirtTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bht-ve-wP2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fPd-m8-vjH" secondAttribute="trailing" constant="10" id="3mJ-vN-Arg"/>
+                            <constraint firstItem="Kmd-x0-sJA" firstAttribute="trailing" secondItem="2Eb-PE-5Y0" secondAttribute="trailing" id="5nq-c3-hTw"/>
+                            <constraint firstItem="Kmd-x0-sJA" firstAttribute="top" secondItem="2Eb-PE-5Y0" secondAttribute="bottom" constant="5" id="CTE-0M-hFm"/>
+                            <constraint firstItem="spc-hT-rHu" firstAttribute="top" secondItem="UC7-lR-6oz" secondAttribute="bottom" constant="5" id="EeM-yQ-Fjs"/>
+                            <constraint firstItem="UC7-lR-6oz" firstAttribute="leading" secondItem="Kmd-x0-sJA" secondAttribute="leading" id="KoO-p7-ceZ"/>
+                            <constraint firstItem="LVr-Wn-Cwp" firstAttribute="top" secondItem="spc-hT-rHu" secondAttribute="bottom" constant="15" id="W1g-P0-IxB"/>
+                            <constraint firstItem="fPd-m8-vjH" firstAttribute="top" secondItem="XdI-A9-Ptq" secondAttribute="top" id="b6f-y0-dw8"/>
+                            <constraint firstItem="2Eb-PE-5Y0" firstAttribute="leading" secondItem="fPd-m8-vjH" secondAttribute="leading" id="eFp-6u-FJV"/>
+                            <constraint firstItem="spc-hT-rHu" firstAttribute="trailing" secondItem="UC7-lR-6oz" secondAttribute="trailing" id="ecH-y0-iIn"/>
+                            <constraint firstItem="UC7-lR-6oz" firstAttribute="top" secondItem="Kmd-x0-sJA" secondAttribute="bottom" constant="8" id="fC1-GB-RcJ"/>
+                            <constraint firstItem="spc-hT-rHu" firstAttribute="leading" secondItem="UC7-lR-6oz" secondAttribute="leading" id="fX7-p6-Br9"/>
+                            <constraint firstItem="fPd-m8-vjH" firstAttribute="leading" secondItem="XdI-A9-Ptq" secondAttribute="trailing" constant="10" id="hzd-gl-dLL"/>
+                            <constraint firstItem="XdI-A9-Ptq" firstAttribute="top" secondItem="K0g-IN-efk" secondAttribute="top" constant="8" id="jWM-7R-y9s"/>
+                            <constraint firstItem="UC7-lR-6oz" firstAttribute="trailing" secondItem="Kmd-x0-sJA" secondAttribute="trailing" id="kJZ-mO-3HJ"/>
+                            <constraint firstItem="XdI-A9-Ptq" firstAttribute="leading" secondItem="K0g-IN-efk" secondAttribute="leading" constant="8" id="kXY-y5-2vf"/>
+                            <constraint firstItem="2Eb-PE-5Y0" firstAttribute="trailing" secondItem="fPd-m8-vjH" secondAttribute="trailing" id="kb8-bf-NVV"/>
+                            <constraint firstItem="Kmd-x0-sJA" firstAttribute="leading" secondItem="2Eb-PE-5Y0" secondAttribute="leading" id="sVL-QA-Tlx"/>
+                            <constraint firstItem="LVr-Wn-Cwp" firstAttribute="trailing" secondItem="spc-hT-rHu" secondAttribute="trailing" id="ufd-nS-IWy"/>
+                            <constraint firstItem="2Eb-PE-5Y0" firstAttribute="top" secondItem="fPd-m8-vjH" secondAttribute="bottom" constant="5" id="zBy-xZ-E7H"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K0g-IN-efk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2Cm-oJ-ax7"/>
+                    <constraint firstItem="K0g-IN-efk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Mqm-g5-3xM"/>
+                    <constraint firstAttribute="trailing" secondItem="K0g-IN-efk" secondAttribute="trailing" constant="20" id="SgY-sn-Zai"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="K0g-IN-efk" secondAttribute="bottom" constant="10" id="gek-3f-YJn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="shirtColorLabel" destination="Kmd-x0-sJA" id="BL0-0X-4I2"/>
+                <outlet property="shirtGenderLabel" destination="spc-hT-rHu" id="7WG-2p-uwI"/>
+                <outlet property="shirtImage" destination="XdI-A9-Ptq" id="VOy-Zw-nBW"/>
+                <outlet property="shirtNameLabel" destination="fPd-m8-vjH" id="wXr-UO-GrY"/>
+            </connections>
+            <point key="canvasLocation" x="95" y="26.5"/>
+        </tableViewCell>
+    </objects>
+</document>

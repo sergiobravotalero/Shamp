@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         setupTable()
         setupNavigationBar()
         
-        updateStamps()
+        loadItems()
     }
     
     private func setupTable() {
@@ -58,6 +58,19 @@ class HomeViewController: UIViewController {
         })
     }
     
+    private func loadItems() {
+        SVProgressHUD.show()
+        RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
+            self.dataSource.stamps = SessionHandler.shared.stampsCollection
+            self.tableView.reloadData()
+            self.setupPickerView()
+            
+            RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
+                SVProgressHUD.dismiss()
+            })
+        })
+    }
+    
     // MARK: - IBAction
     @IBAction func searchButtonTapped(_ sender: Any) {
         pickerView.isHidden = !pickerView.isHidden
@@ -67,6 +80,13 @@ class HomeViewController: UIViewController {
     @IBAction func doneToolBarButtonTapped(_ sender: Any) {
         pickerView.isHidden = !pickerView.isHidden
         toolBar.isHidden = pickerView.isHidden
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
+        if let cartController = storyboard.instantiateInitialViewController() {
+            present(cartController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Navigation

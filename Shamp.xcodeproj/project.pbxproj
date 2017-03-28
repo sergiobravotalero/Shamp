@@ -31,8 +31,26 @@
 		05C7638B1E89D560000C064A /* StampCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7638A1E89D560000C064A /* StampCellDelegate.swift */; };
 		05C7638E1E89D616000C064A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7638D1E89D616000C064A /* Category.swift */; };
 		05C763911E89D91E000C064A /* HomePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763901E89D91E000C064A /* HomePickerView.swift */; };
-		05C763971E89E2BD000C064A /* Shirts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C763961E89E2BD000C064A /* Shirts.storyboard */; };
-		05C763991E89E2DB000C064A /* ShirtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763981E89E2DB000C064A /* ShirtsViewController.swift */; };
+		05C763A21E89F392000C064A /* Shirt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763A11E89F392000C064A /* Shirt.swift */; };
+		05C763BA1E8A03F8000C064A /* ShirtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763AE1E8A03F8000C064A /* ShirtsTableViewCell.swift */; };
+		05C763BB1E8A03F8000C064A /* ShirtsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C763AF1E8A03F8000C064A /* ShirtsTableViewCell.xib */; };
+		05C763BC1E8A03F8000C064A /* ShirtsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763B11E8A03F8000C064A /* ShirtsDataSource.swift */; };
+		05C763BD1E8A03F8000C064A /* ShirtCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763B41E8A03F8000C064A /* ShirtCellDelegate.swift */; };
+		05C763BE1E8A03F8000C064A /* ShirtListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763B61E8A03F8000C064A /* ShirtListTableViewDelegate.swift */; };
+		05C763BF1E8A03F8000C064A /* Shirts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C763B81E8A03F8000C064A /* Shirts.storyboard */; };
+		05C763C01E8A03F8000C064A /* ShirtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763B91E8A03F8000C064A /* ShirtsViewController.swift */; };
+		05C763C21E8A040A000C064A /* ConfigureShirt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C763C11E8A040A000C064A /* ConfigureShirt.storyboard */; };
+		05C763C41E8A041E000C064A /* ConfigureShirtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763C31E8A041E000C064A /* ConfigureShirtViewController.swift */; };
+		05C763C81E8A09DE000C064A /* ConfigureShirtPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763C71E8A09DE000C064A /* ConfigureShirtPickerView.swift */; };
+		05C763CB1E8A0A79000C064A /* ConfigureShirtTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763CA1E8A0A79000C064A /* ConfigureShirtTextField.swift */; };
+		05C763CE1E8A11DD000C064A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763CD1E8A11DD000C064A /* ShoppingCart.swift */; };
+		05C763D11E8A1451000C064A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763D01E8A1451000C064A /* Product.swift */; };
+		05C763DD1E8A1B16000C064A /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C763DC1E8A1B16000C064A /* ShoppingCart.storyboard */; };
+		05C763DF1E8A1B23000C064A /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763DE1E8A1B23000C064A /* ShoppingCartViewController.swift */; };
+		05C763E21E8A1D32000C064A /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763E01E8A1D32000C064A /* ProductTableViewCell.swift */; };
+		05C763E31E8A1D32000C064A /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C763E11E8A1D32000C064A /* ProductTableViewCell.xib */; };
+		05C763E51E8A23A7000C064A /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763E41E8A23A7000C064A /* ShoppingCartDataSource.swift */; };
+		05C763E71E8A25A3000C064A /* CartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763E61E8A25A3000C064A /* CartTableViewDelegate.swift */; };
 		72D25F33054FC285CF4F50AD /* Pods_Shamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8896DB92077D409591728F5 /* Pods_Shamp.framework */; };
 		8A1D2F6237A6F0B9A9187F09 /* Pods_ShampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4611EE337C2EA73795D58ACD /* Pods_ShampUITests.framework */; };
 		ED6690BDC17248DBD2ABDFBE /* Pods_ShampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */; };
@@ -86,8 +104,26 @@
 		05C7638A1E89D560000C064A /* StampCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampCellDelegate.swift; sourceTree = "<group>"; };
 		05C7638D1E89D616000C064A /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		05C763901E89D91E000C064A /* HomePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePickerView.swift; sourceTree = "<group>"; };
-		05C763961E89E2BD000C064A /* Shirts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shirts.storyboard; sourceTree = "<group>"; };
-		05C763981E89E2DB000C064A /* ShirtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtsViewController.swift; sourceTree = "<group>"; };
+		05C763A11E89F392000C064A /* Shirt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shirt.swift; sourceTree = "<group>"; };
+		05C763AE1E8A03F8000C064A /* ShirtsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtsTableViewCell.swift; sourceTree = "<group>"; };
+		05C763AF1E8A03F8000C064A /* ShirtsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShirtsTableViewCell.xib; sourceTree = "<group>"; };
+		05C763B11E8A03F8000C064A /* ShirtsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtsDataSource.swift; sourceTree = "<group>"; };
+		05C763B41E8A03F8000C064A /* ShirtCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtCellDelegate.swift; sourceTree = "<group>"; };
+		05C763B61E8A03F8000C064A /* ShirtListTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtListTableViewDelegate.swift; sourceTree = "<group>"; };
+		05C763B81E8A03F8000C064A /* Shirts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shirts.storyboard; sourceTree = "<group>"; };
+		05C763B91E8A03F8000C064A /* ShirtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtsViewController.swift; sourceTree = "<group>"; };
+		05C763C11E8A040A000C064A /* ConfigureShirt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConfigureShirt.storyboard; sourceTree = "<group>"; };
+		05C763C31E8A041E000C064A /* ConfigureShirtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureShirtViewController.swift; sourceTree = "<group>"; };
+		05C763C71E8A09DE000C064A /* ConfigureShirtPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureShirtPickerView.swift; sourceTree = "<group>"; };
+		05C763CA1E8A0A79000C064A /* ConfigureShirtTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureShirtTextField.swift; sourceTree = "<group>"; };
+		05C763CD1E8A11DD000C064A /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		05C763D01E8A1451000C064A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		05C763DC1E8A1B16000C064A /* ShoppingCart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
+		05C763DE1E8A1B23000C064A /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		05C763E01E8A1D32000C064A /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		05C763E11E8A1D32000C064A /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		05C763E41E8A23A7000C064A /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
+		05C763E61E8A25A3000C064A /* CartTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewDelegate.swift; sourceTree = "<group>"; };
 		18DE30D3DC5EA47CD52D154B /* Pods-ShampUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32723F5EF5B31617AA6257B6 /* Pods-ShampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +270,7 @@
 				05B4A6271E843A39003F4AA4 /* App */,
 				05B4A63B1E845AD3003F4AA4 /* Home */,
 				05C763921E89E2A0000C064A /* Shirts */,
+				05C763D71E8A1B08000C064A /* Shopping Cart */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +338,7 @@
 				05A0B31D1E89B57700FB8B9F /* Parser */,
 				05A0B31E1E89B57700FB8B9F /* Requester */,
 				05C7637A1E89C064000C064A /* SessionHandler */,
+				05C763CC1E8A11CB000C064A /* ShoppingCart */,
 				05B4A64C1E8478BD003F4AA4 /* ViewControllers */,
 			);
 			path = Handlers;
@@ -334,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				05C7638C1E89D60C000C064A /* Category */,
+				05C763CF1E8A1448000C064A /* Product */,
+				05C763A01E89F38A000C064A /* Shirt */,
 				05C763771E89B853000C064A /* Stamps */,
 			);
 			path = Objects;
@@ -407,34 +447,169 @@
 		05C763921E89E2A0000C064A /* Shirts */ = {
 			isa = PBXGroup;
 			children = (
-				05C763931E89E2A0000C064A /* Cell */,
-				05C763941E89E2A0000C064A /* DataSource */,
-				05C763951E89E2A0000C064A /* Extensions */,
-				05C763961E89E2BD000C064A /* Shirts.storyboard */,
-				05C763981E89E2DB000C064A /* ShirtsViewController.swift */,
+				05C763AB1E8A03F8000C064A /* Configure */,
+				05C763AC1E8A03F8000C064A /* List */,
 			);
 			path = Shirts;
 			sourceTree = "<group>";
 		};
-		05C763931E89E2A0000C064A /* Cell */ = {
+		05C763A01E89F38A000C064A /* Shirt */ = {
 			isa = PBXGroup;
 			children = (
+				05C763A11E89F392000C064A /* Shirt.swift */,
+			);
+			path = Shirt;
+			sourceTree = "<group>";
+		};
+		05C763AB1E8A03F8000C064A /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				05C763C51E8A093D000C064A /* Extensions */,
+				05C763C11E8A040A000C064A /* ConfigureShirt.storyboard */,
+				05C763C31E8A041E000C064A /* ConfigureShirtViewController.swift */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		05C763AC1E8A03F8000C064A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				05C763AD1E8A03F8000C064A /* Cell */,
+				05C763B01E8A03F8000C064A /* DataSource */,
+				05C763B21E8A03F8000C064A /* Extensions */,
+				05C763B81E8A03F8000C064A /* Shirts.storyboard */,
+				05C763B91E8A03F8000C064A /* ShirtsViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		05C763AD1E8A03F8000C064A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05C763AE1E8A03F8000C064A /* ShirtsTableViewCell.swift */,
+				05C763AF1E8A03F8000C064A /* ShirtsTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		05C763941E89E2A0000C064A /* DataSource */ = {
+		05C763B01E8A03F8000C064A /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				05C763B11E8A03F8000C064A /* ShirtsDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
 		};
-		05C763951E89E2A0000C064A /* Extensions */ = {
+		05C763B21E8A03F8000C064A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				05C763B31E8A03F8000C064A /* ShirtCellDelegate */,
+				05C763B51E8A03F8000C064A /* TableViewDelegate */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05C763B31E8A03F8000C064A /* ShirtCellDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				05C763B41E8A03F8000C064A /* ShirtCellDelegate.swift */,
+			);
+			path = ShirtCellDelegate;
+			sourceTree = "<group>";
+		};
+		05C763B51E8A03F8000C064A /* TableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				05C763B61E8A03F8000C064A /* ShirtListTableViewDelegate.swift */,
+			);
+			name = TableViewDelegate;
+			path = ShirtCellDelegate/TableViewDelegate;
+			sourceTree = "<group>";
+		};
+		05C763C51E8A093D000C064A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05C763C61E8A093D000C064A /* UIPickerView */,
+				05C763C91E8A0A68000C064A /* UITextField */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05C763C61E8A093D000C064A /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				05C763C71E8A09DE000C064A /* ConfigureShirtPickerView.swift */,
+			);
+			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		05C763C91E8A0A68000C064A /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				05C763CA1E8A0A79000C064A /* ConfigureShirtTextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		05C763CC1E8A11CB000C064A /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				05C763CD1E8A11DD000C064A /* ShoppingCart.swift */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		05C763CF1E8A1448000C064A /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				05C763D01E8A1451000C064A /* Product.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		05C763D71E8A1B08000C064A /* Shopping Cart */ = {
+			isa = PBXGroup;
+			children = (
+				05C763D81E8A1B08000C064A /* Cell */,
+				05C763D91E8A1B08000C064A /* DataSource */,
+				05C763DA1E8A1B08000C064A /* Extensions */,
+				05C763DC1E8A1B16000C064A /* ShoppingCart.storyboard */,
+				05C763DE1E8A1B23000C064A /* ShoppingCartViewController.swift */,
+			);
+			path = "Shopping Cart";
+			sourceTree = "<group>";
+		};
+		05C763D81E8A1B08000C064A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05C763E11E8A1D32000C064A /* ProductTableViewCell.xib */,
+				05C763E01E8A1D32000C064A /* ProductTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		05C763D91E8A1B08000C064A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				05C763E41E8A23A7000C064A /* ShoppingCartDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		05C763DA1E8A1B08000C064A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05C763DB1E8A1B08000C064A /* UITableView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05C763DB1E8A1B08000C064A /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				05C763E61E8A25A3000C064A /* CartTableViewDelegate.swift */,
+			);
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		3AB1B847123C09823177B09F /* Frameworks */ = {
@@ -579,13 +754,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C763E31E8A1D32000C064A /* ProductTableViewCell.xib in Resources */,
+				05C763DD1E8A1B16000C064A /* ShoppingCart.storyboard in Resources */,
 				05B4A62E1E843A39003F4AA4 /* Assets.xcassets in Resources */,
 				05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */,
+				05C763C21E8A040A000C064A /* ConfigureShirt.storyboard in Resources */,
 				05B4A6401E846143003F4AA4 /* Home.storyboard in Resources */,
 				05B4A62D1E843A39003F4AA4 /* Info.plist in Resources */,
+				05C763BB1E8A03F8000C064A /* ShirtsTableViewCell.xib in Resources */,
+				05C763BF1E8A03F8000C064A /* Shirts.storyboard in Resources */,
 				05B4A63A1E843B02003F4AA4 /* LaunchScreen.storyboard in Resources */,
 				05B4A6351E843A59003F4AA4 /* Login.storyboard in Resources */,
-				05C763971E89E2BD000C064A /* Shirts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,21 +928,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B4A6481E8464D0003F4AA4 /* FacebookHandler.swift in Sources */,
+				05C763E21E8A1D32000C064A /* ProductTableViewCell.swift in Sources */,
+				05C763C01E8A03F8000C064A /* ShirtsViewController.swift in Sources */,
+				05C763E71E8A25A3000C064A /* CartTableViewDelegate.swift in Sources */,
 				05C763911E89D91E000C064A /* HomePickerView.swift in Sources */,
 				05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */,
+				05C763BD1E8A03F8000C064A /* ShirtCellDelegate.swift in Sources */,
+				05C763BC1E8A03F8000C064A /* ShirtsDataSource.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
+				05C763E51E8A23A7000C064A /* ShoppingCartDataSource.swift in Sources */,
 				05C763831E89CBBD000C064A /* StampTableViewCell.swift in Sources */,
+				05C763DF1E8A1B23000C064A /* ShoppingCartViewController.swift in Sources */,
 				05A0B3201E89B58200FB8B9F /* ParserHandler.swift in Sources */,
 				05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */,
 				05C7638B1E89D560000C064A /* StampCellDelegate.swift in Sources */,
+				05C763BA1E8A03F8000C064A /* ShirtsTableViewCell.swift in Sources */,
+				05C763C41E8A041E000C064A /* ConfigureShirtViewController.swift in Sources */,
+				05C763CB1E8A0A79000C064A /* ConfigureShirtTextField.swift in Sources */,
+				05C763A21E89F392000C064A /* Shirt.swift in Sources */,
+				05C763C81E8A09DE000C064A /* ConfigureShirtPickerView.swift in Sources */,
 				05B4A62C1E843A39003F4AA4 /* AppDelegate.swift in Sources */,
 				05B4A6421E84615F003F4AA4 /* HomeViewController.swift in Sources */,
 				05A0B3221E89B58C00FB8B9F /* RequesterHandler.swift in Sources */,
-				05C763991E89E2DB000C064A /* ShirtsViewController.swift in Sources */,
 				05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */,
+				05C763D11E8A1451000C064A /* Product.swift in Sources */,
 				05C7638E1E89D616000C064A /* Category.swift in Sources */,
 				05C763791E89B875000C064A /* Stamp.swift in Sources */,
 				05C763871E89D110000C064A /* HomeDataSource.swift in Sources */,
+				05C763CE1E8A11DD000C064A /* ShoppingCart.swift in Sources */,
+				05C763BE1E8A03F8000C064A /* ShirtListTableViewDelegate.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

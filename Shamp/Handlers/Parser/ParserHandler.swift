@@ -67,4 +67,34 @@ class ParserHandler {
             SessionHandler.shared.categoriesCollection.append(category)
         }
     }
+    
+    // MARK: - Shirt
+    func getCollectionOfShirtsWithCompletion(dictionary: NSDictionary, completion: () -> ()) {
+        guard let data = dictionary.object(forKey: "data") as? NSArray else {
+            completion()
+            return
+        }
+        
+        var shirts = [Shirt]()
+        for element in data {
+            guard let elementDictionary = element as? NSDictionary else { continue }
+            
+            guard let status = elementDictionary.object(forKey: "active") as? Bool else { continue }
+            if !status { continue }
+            
+            guard let id = elementDictionary.object(forKey: "id") as? Int else { continue }
+            guard let name = elementDictionary.object(forKey: "name") as? String else { continue }
+            guard let color = elementDictionary.object(forKey: "shirtColor") as? String else { continue }
+            guard let gender = elementDictionary.object(forKey: "shirtSex") as? String else { continue }
+            guard let imageUrlString = elementDictionary.object(forKey: "shirtSmallImagePath") as? String else { continue }
+            
+            let url = URL(string: imageUrlString)
+            
+            guard let shirt = Shirt(id: id, status: status, name: name, color: color, gender: gender, imageUrl: url) else { continue }
+            shirts.append(shirt)
+        }
+        
+        SessionHandler.shared.shirtsCollection = shirts
+        completion()
+    }
 }

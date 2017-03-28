@@ -17,7 +17,7 @@ class AlertViewHandler {
         
         alertController.addAction(okAction)
         alertController.view.tintColor = UIColor.red
-        alertController.present(alertController, animated: true, completion: {
+        fromViewController.present(alertController, animated: true, completion: {
             alertController.view.tintColor = UIColor.red
         })
     }
