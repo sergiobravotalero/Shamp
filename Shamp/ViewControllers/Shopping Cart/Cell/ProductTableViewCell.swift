@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Toucan
 
 class ProductTableViewCell: UITableViewCell {
 
@@ -46,21 +47,25 @@ class ProductTableViewCell: UITableViewCell {
     private func setupImages(stampID: Int, shirtID: Int) {
         if let stamp = SessionHandler.shared.stampsCollection.first(where: { $0.id == stampID }) {
             if let url = stamp.stampImage {
-                stampImage.kf.setImage(with: url)
+                KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageUrl) in
+                    if let image = image {
+                        let editedImage = Toucan(image: image).maskWithEllipse(borderWidth: 10.0, borderColor: UIColor.black).image
+                        self.stampImage.image = editedImage
+                    }
+                })
             }
         }
         
         if let shirt = SessionHandler.shared.shirtsCollection.first(where: { $0.id == shirtID }) {
             if let url = shirt.imageUrl {
-                shirtImage.kf.setImage(with: url)
+                KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageUrl) in
+                    if let image = image {
+                        self.shirtImage.image = Toucan(image: image).maskWithEllipse(borderWidth: 10.0, borderColor: UIColor.black).image
+                    }
+                })
             }
         }
         
-        stampImage.layer.borderColor = UIColor.black.cgColor
-        stampImage.layer.borderWidth = 1.5
-        
-        shirtImage.layer.borderColor = UIColor.black.cgColor
-        shirtImage.layer.borderWidth = 1.5
     }
     
     // MARK: - IBAction
