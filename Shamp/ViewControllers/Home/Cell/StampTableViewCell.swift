@@ -9,8 +9,15 @@
 import UIKit
 import Kingfisher
 
-class StampTableViewCell: UITableViewCell {
+protocol StampCellDelegate {
+    func userDidSelectStamp(stamp: Stamp)
+}
 
+class StampTableViewCell: UITableViewCell {
+    
+    var stamp: Stamp!
+    var delegate: StampCellDelegate?
+    
     @IBOutlet weak var artistNameLabel: UILabel!
     
     @IBOutlet weak var stampImage: UIImageView!
@@ -29,6 +36,7 @@ class StampTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     func configureCell(stamp: Stamp) {
+        self.stamp = stamp
         selectionStyle = .none
         backgroundColor = UIColor.clear
         
@@ -44,5 +52,6 @@ class StampTableViewCell: UITableViewCell {
     
     // MARK: - IBActions
     @IBAction func addButtonTapped(_ sender: Any) {
+        delegate?.userDidSelectStamp(stamp: stamp)
     }
 }

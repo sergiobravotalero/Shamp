@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="252" id="KGk-i7-Jjw" customClass="StampTableViewCell" customModule="Shamp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="483" height="252"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StampTableViewCell" rowHeight="175" id="KGk-i7-Jjw" customClass="StampTableViewCell" customModule="Shamp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="175"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="483" height="251"/>
+                <rect key="frame" x="0.0" y="0.0" width="483" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AB-G3-n2C">
-                        <rect key="frame" x="20" y="10" width="443" height="231"/>
+                        <rect key="frame" x="20" y="10" width="443" height="155"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6N-c8-Lq5">
                                 <rect key="frame" x="20" y="8" width="403" height="21"/>
@@ -48,14 +48,14 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QD7-MW-zR3">
-                                <rect key="frame" x="20" y="75" width="80" height="80"/>
+                                <rect key="frame" x="20" y="75" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QD7-MW-zR3" secondAttribute="height" multiplier="1:1" id="y6O-I1-87T"/>
-                                    <constraint firstAttribute="height" constant="80" id="zkT-rC-wR4"/>
+                                    <constraint firstAttribute="height" constant="70" id="zkT-rC-wR4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generic Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpv-uY-vTt">
-                                <rect key="frame" x="108" y="75" width="315" height="21"/>
+                                <rect key="frame" x="98" y="75" width="325" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cyL-Vv-s6O"/>
                                 </constraints>
@@ -64,13 +64,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stamp Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-c7-0Vi">
-                                <rect key="frame" x="108" y="101" width="315" height="16"/>
+                                <rect key="frame" x="98" y="101" width="325" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$25.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-WY-xC6">
-                                <rect key="frame" x="108" y="122" width="71" height="21"/>
+                                <rect key="frame" x="98" y="122" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,6 +103,7 @@
                             <constraint firstItem="xG8-Cn-pRb" firstAttribute="top" secondItem="weT-0z-aHm" secondAttribute="bottom" constant="8" id="bEN-ja-g5q"/>
                             <constraint firstAttribute="trailing" secondItem="g6N-c8-Lq5" secondAttribute="trailing" constant="20" id="d4o-K2-xPw"/>
                             <constraint firstItem="g6N-c8-Lq5" firstAttribute="leading" secondItem="4AB-G3-n2C" secondAttribute="leading" constant="20" id="dgV-bE-JND"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="fRB-hK-sRu"/>
                             <constraint firstItem="hpv-uY-vTt" firstAttribute="leading" secondItem="QD7-MW-zR3" secondAttribute="trailing" constant="8" id="iHe-ji-yl9"/>
                             <constraint firstItem="weT-0z-aHm" firstAttribute="top" secondItem="g6N-c8-Lq5" secondAttribute="bottom" constant="8" id="lQU-xw-VQo"/>
                             <constraint firstItem="QNz-c7-0Vi" firstAttribute="top" secondItem="hpv-uY-vTt" secondAttribute="bottom" constant="5" id="mpS-Eh-a6q"/>
@@ -113,7 +114,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
@@ -133,7 +134,7 @@
                 <outlet property="stampNameLabel" destination="hpv-uY-vTt" id="eZx-xb-N1A"/>
                 <outlet property="stampPriceLabel" destination="Z0J-WY-xC6" id="pwO-2z-y30"/>
             </connections>
-            <point key="canvasLocation" x="40.5" y="91"/>
+            <point key="canvasLocation" x="40.5" y="52.5"/>
         </tableViewCell>
     </objects>
     <resources>

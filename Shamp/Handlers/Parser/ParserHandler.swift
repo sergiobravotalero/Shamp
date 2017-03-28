@@ -9,6 +9,7 @@
 import Foundation
 
 class ParserHandler {
+    
     // MARK: - Stamp
     func getCollectionOfStampsWithCompletion(dictionary: NSDictionary, completion: () -> ()) {
         guard let data = dictionary.object(forKey: "data") as? NSArray else {
@@ -19,6 +20,7 @@ class ParserHandler {
         var stamps = [Stamp]()
         for element in data {
             guard let elementDictionary = element as? NSDictionary else { continue }
+            getCategory(dictionary: elementDictionary.object(forKey: "category") as? NSDictionary)
             
             guard let status = elementDictionary.object(forKey: "active") as? Bool else { continue }
             if !status { continue }
@@ -53,5 +55,16 @@ class ParserHandler {
         
         SessionHandler.shared.stampsCollection = stamps
         completion()
+    }
+    
+    // MARK: - Category
+    func getCategory(dictionary: NSDictionary?) {
+        guard let name = dictionary?.object(forKey: "name") as? String else { return }
+        guard let status = dictionary?.object(forKey: "active") as? Bool else { return }
+        
+        guard let category = Category(name: name, status: status) else { return }
+        if !SessionHandler.shared.categoriesCollection.contains(where: { $0.name == category.name}) {
+            SessionHandler.shared.categoriesCollection.append(category)
+        }
     }
 }

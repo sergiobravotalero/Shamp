@@ -13,4 +13,5 @@ class SessionHandler {
     private init() {}
     
     var stampsCollection = [Stamp]()
+    var categoriesCollection = [Category]()
 }

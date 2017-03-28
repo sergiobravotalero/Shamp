@@ -27,6 +27,12 @@
 		05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637F1E89C95F000C064A /* UIColorExtension.swift */; };
 		05C763831E89CBBD000C064A /* StampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763811E89CBBD000C064A /* StampTableViewCell.swift */; };
 		05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C763821E89CBBD000C064A /* StampTableViewCell.xib */; };
+		05C763871E89D110000C064A /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763861E89D110000C064A /* HomeDataSource.swift */; };
+		05C7638B1E89D560000C064A /* StampCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7638A1E89D560000C064A /* StampCellDelegate.swift */; };
+		05C7638E1E89D616000C064A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7638D1E89D616000C064A /* Category.swift */; };
+		05C763911E89D91E000C064A /* HomePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763901E89D91E000C064A /* HomePickerView.swift */; };
+		05C763971E89E2BD000C064A /* Shirts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C763961E89E2BD000C064A /* Shirts.storyboard */; };
+		05C763991E89E2DB000C064A /* ShirtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763981E89E2DB000C064A /* ShirtsViewController.swift */; };
 		72D25F33054FC285CF4F50AD /* Pods_Shamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8896DB92077D409591728F5 /* Pods_Shamp.framework */; };
 		8A1D2F6237A6F0B9A9187F09 /* Pods_ShampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4611EE337C2EA73795D58ACD /* Pods_ShampUITests.framework */; };
 		ED6690BDC17248DBD2ABDFBE /* Pods_ShampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */; };
@@ -76,6 +82,12 @@
 		05C7637F1E89C95F000C064A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		05C763811E89CBBD000C064A /* StampTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampTableViewCell.swift; sourceTree = "<group>"; };
 		05C763821E89CBBD000C064A /* StampTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StampTableViewCell.xib; sourceTree = "<group>"; };
+		05C763861E89D110000C064A /* HomeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		05C7638A1E89D560000C064A /* StampCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampCellDelegate.swift; sourceTree = "<group>"; };
+		05C7638D1E89D616000C064A /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		05C763901E89D91E000C064A /* HomePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePickerView.swift; sourceTree = "<group>"; };
+		05C763961E89E2BD000C064A /* Shirts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shirts.storyboard; sourceTree = "<group>"; };
+		05C763981E89E2DB000C064A /* ShirtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShirtsViewController.swift; sourceTree = "<group>"; };
 		18DE30D3DC5EA47CD52D154B /* Pods-ShampUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		262CD9B1A4454BB3A0E39F25 /* Pods_ShampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32723F5EF5B31617AA6257B6 /* Pods-ShampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShampUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShampUITests/Pods-ShampUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +233,7 @@
 			children = (
 				05B4A6271E843A39003F4AA4 /* App */,
 				05B4A63B1E845AD3003F4AA4 /* Home */,
+				05C763921E89E2A0000C064A /* Shirts */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -256,7 +269,7 @@
 			children = (
 				05B4A63C1E845AFD003F4AA4 /* Cell */,
 				05B4A63D1E845AFD003F4AA4 /* DataSource */,
-				05B4A63E1E845AFD003F4AA4 /* Extensions */,
+				05C763881E89D544000C064A /* Extensions */,
 				05B4A63F1E846143003F4AA4 /* Home.storyboard */,
 				05B4A6411E84615F003F4AA4 /* HomeViewController.swift */,
 			);
@@ -275,16 +288,9 @@
 		05B4A63D1E845AFD003F4AA4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				05C763861E89D110000C064A /* HomeDataSource.swift */,
 			);
 			path = DataSource;
-			sourceTree = "<group>";
-		};
-		05B4A63E1E845AFD003F4AA4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				05C763851E89CBD1000C064A /* UITableView */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		05B4A6451E8464C0003F4AA4 /* Handlers */ = {
@@ -327,6 +333,7 @@
 		05C763751E89B834000C064A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				05C7638C1E89D60C000C064A /* Category */,
 				05C763771E89B853000C064A /* Stamps */,
 			);
 			path = Objects;
@@ -364,11 +371,70 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
-		05C763851E89CBD1000C064A /* UITableView */ = {
+		05C763881E89D544000C064A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05C763891E89D544000C064A /* StampCellDelegate */,
+				05C7638F1E89D911000C064A /* UIPickerView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05C763891E89D544000C064A /* StampCellDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				05C7638A1E89D560000C064A /* StampCellDelegate.swift */,
+			);
+			path = StampCellDelegate;
+			sourceTree = "<group>";
+		};
+		05C7638C1E89D60C000C064A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				05C7638D1E89D616000C064A /* Category.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		05C7638F1E89D911000C064A /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				05C763901E89D91E000C064A /* HomePickerView.swift */,
+			);
+			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		05C763921E89E2A0000C064A /* Shirts */ = {
+			isa = PBXGroup;
+			children = (
+				05C763931E89E2A0000C064A /* Cell */,
+				05C763941E89E2A0000C064A /* DataSource */,
+				05C763951E89E2A0000C064A /* Extensions */,
+				05C763961E89E2BD000C064A /* Shirts.storyboard */,
+				05C763981E89E2DB000C064A /* ShirtsViewController.swift */,
+			);
+			path = Shirts;
+			sourceTree = "<group>";
+		};
+		05C763931E89E2A0000C064A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = UITableView;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		05C763941E89E2A0000C064A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		05C763951E89E2A0000C064A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3AB1B847123C09823177B09F /* Frameworks */ = {
@@ -519,6 +585,7 @@
 				05B4A62D1E843A39003F4AA4 /* Info.plist in Resources */,
 				05B4A63A1E843B02003F4AA4 /* LaunchScreen.storyboard in Resources */,
 				05B4A6351E843A59003F4AA4 /* Login.storyboard in Resources */,
+				05C763971E89E2BD000C064A /* Shirts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,16 +749,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B4A6481E8464D0003F4AA4 /* FacebookHandler.swift in Sources */,
+				05C763911E89D91E000C064A /* HomePickerView.swift in Sources */,
 				05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
 				05C763831E89CBBD000C064A /* StampTableViewCell.swift in Sources */,
 				05A0B3201E89B58200FB8B9F /* ParserHandler.swift in Sources */,
 				05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */,
+				05C7638B1E89D560000C064A /* StampCellDelegate.swift in Sources */,
 				05B4A62C1E843A39003F4AA4 /* AppDelegate.swift in Sources */,
 				05B4A6421E84615F003F4AA4 /* HomeViewController.swift in Sources */,
 				05A0B3221E89B58C00FB8B9F /* RequesterHandler.swift in Sources */,
+				05C763991E89E2DB000C064A /* ShirtsViewController.swift in Sources */,
 				05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */,
+				05C7638E1E89D616000C064A /* Category.swift in Sources */,
 				05C763791E89B875000C064A /* Stamp.swift in Sources */,
+				05C763871E89D110000C064A /* HomeDataSource.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
