@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Cart" id="AX8-dc-5bf">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="lS9-rT-UdR">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="lS9-rT-UdR">
                             <color key="tintColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="closeButtonTapped:" destination="K7m-Ab-2rE" id="f5i-nI-8vR"/>
@@ -84,4 +84,7 @@
             <point key="canvasLocation" x="229.59999999999999" y="135.38230884557723"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu" width="18" height="12"/>
+    </resources>
 </document>

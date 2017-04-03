@@ -16,6 +16,7 @@ target 'Shamp' do
     pod 'Kingfisher', '~> 3.0'
     pod 'Toucan'
     pod 'DZNEmptyDataSet'
+    pod 'SlideMenuControllerSwift'
     
   target 'ShampTests' do
     inherit! :search_paths

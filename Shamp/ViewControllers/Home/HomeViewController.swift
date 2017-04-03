@@ -24,6 +24,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupController()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        slideMenuController()?.removeLeftGestures()
+        slideMenuController()?.addLeftGestures()
+    }
 
     // MARK: - Method
 
@@ -83,10 +90,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func showSideMenu(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
-        if let cartController = storyboard.instantiateInitialViewController() {
-            present(cartController, animated: true, completion: nil)
-        }
+        slideMenuController()?.openLeft()
     }
     
     // MARK: - Navigation

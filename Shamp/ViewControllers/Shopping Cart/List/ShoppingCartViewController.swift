@@ -24,6 +24,9 @@ class ShoppingCartViewController: UIViewController {
         super.viewWillAppear(animated)
         dataSource.products = ShoppingCart.shared.products
         tableView.reloadData()
+        
+        slideMenuController()?.removeLeftGestures()
+        slideMenuController()?.addLeftGestures()
     }
 
     // MARK: - Methods
@@ -53,7 +56,7 @@ class ShoppingCartViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func closeButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        slideMenuController()?.openLeft()
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {

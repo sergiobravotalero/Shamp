@@ -79,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SlideMenuControllerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,17 +97,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0099DD12F04A8D7E10538A80C234C737</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>28760FA687B81CAB76E19AF4B85936E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>331B0D36ED169AE2EC6E77B5F852CBA8</key>
+		<key>2D6009DAD9EC75B579A2DF3C7BF680A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +137,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>613E847A786C02D4A55F54B41AECE4B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8443CC321D9155014D628F4684C8E5C4</key>
+		<key>7DA161B08DA2CD829E0447450119A1DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B558B606027AC268FF70B80B9071D6F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFCDE3E0E962771365E8EC2D84150FF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
