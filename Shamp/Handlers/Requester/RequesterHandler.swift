@@ -123,13 +123,14 @@ class RequesterHandler {
             return
         }
         
-        Alamofire.request(requestUrl, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+        Alamofire.request(requestUrl, method: .post, parameters: order, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
             guard let dictionary = response.result.value as? NSDictionary else {
                 completion(false)
                 return
             }
             
-            print(dictionary)
+            ShoppingCart.shared.products.removeAll()
+            completion(true)
         })
     }
 }

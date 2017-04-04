@@ -26,7 +26,7 @@ class ShoppingCart {
     }
     
     func placeOrderWithCompletion(deliveryAddress: String, contactPhone: String, city: String, country: String, completion: @escaping(_ succeeded: Bool) -> ()) {
-        let userID = FacebookHandler.shared.getFacebookCurrentAccessToken()
+        let userID = SessionHandler.shared.loggedUser!.id
         
         var productsArray = [NSMutableDictionary]()
         for product in products {
