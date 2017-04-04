@@ -16,4 +16,11 @@ class SessionHandler {
     var stampsCollection = [Stamp]()
     var shirtsCollection = [Shirt]()
     var categoriesCollection = [Category]()
+    
+    func removeAll() {
+        loggedUser = nil
+        stampsCollection.removeAll()
+        shirtsCollection.removeAll()
+        categoriesCollection.removeAll()
+    }
 }

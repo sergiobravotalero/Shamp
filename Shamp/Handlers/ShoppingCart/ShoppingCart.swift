@@ -15,6 +15,11 @@ class ShoppingCart {
     var products = [Product]()
     
     // MARK: - Methods
+    
+    func removeAll() {
+        products.removeAll()
+    }
+    
     func addProductToShoppingCart(product: Product) {
         products.append(product)
     }

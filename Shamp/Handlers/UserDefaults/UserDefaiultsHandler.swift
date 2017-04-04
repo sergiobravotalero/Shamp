@@ -38,5 +38,11 @@ class UserDefaultsHandler {
             defaults.set(newVal!.username, forKey: "username")
             defaults.set(newVal!.password, forKey: "password")
         }
-    }    
+    }
+    
+    func removeAll() {
+        defaults.removeObject(forKey: "token")
+        defaults.removeObject(forKey: "username")
+        defaults.removeObject(forKey: "password")
+    }
 }

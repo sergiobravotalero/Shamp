@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 private enum MenuOptions: Int {
-    case Home,ShoppingCart
+    case Home,ShoppingCart, SignOut
     
     static let option = [
         Home: "Home",
-        ShoppingCart: "Shopping Cart"
+        ShoppingCart: "Shopping Cart",
+        SignOut: "Sign out"
     ]
     
     func getCellInformation() -> String {
@@ -31,13 +32,17 @@ class SlideMenuDataSource: NSObject, UITableViewDataSource {
     var slideMenuController: SlideMenuViewController?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellWithArrowTableViewCell", for: indexPath) as! CellWithArrowTableViewCell
         if let option = MenuOptions(rawValue: indexPath.row) {
             cell.configureCell(name: option.getCellInformation())
+            
+            if option.getCellInformation() == "Sign out" {
+                cell.nameLabel.textColor = UIColor.signatureRed()
+            }
         }
         return cell
     }

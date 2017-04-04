@@ -23,6 +23,8 @@ extension SlideMenuViewController: UITableViewDelegate {
             if let controller = UIStoryboard(name: "ShoppingCart", bundle: nil).instantiateInitialViewController() {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
+        } else if indexPath.row == 2 {
+            userTappedSignOut()
         }
     }
 }
