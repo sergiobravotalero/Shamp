@@ -12,6 +12,7 @@ class SessionHandler {
     static let shared = SessionHandler()
     private init() {}
     
+    var loggedUser: User?
     var stampsCollection = [Stamp]()
     var shirtsCollection = [Shirt]()
     var categoriesCollection = [Category]()

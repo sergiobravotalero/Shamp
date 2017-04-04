@@ -98,4 +98,37 @@ class ParserHandler {
         SessionHandler.shared.shirtsCollection = shirts
         completion()
     }
+    
+    // MARK: - User
+    
+    func getUserFrom(dictionary: NSDictionary, billing: NSDictionary, completion: @escaping (_ succeeded: Bool) -> ()) {
+        guard let id = billing.object(forKey: "id") as? Int,
+            let city = billing.object(forKey: "userCity") as? String,
+            let country = billing.object(forKey: "userCountry") as? String,
+            let cvv = billing.object(forKey: "cvv") as? String,
+            let expirationDate = billing.object(forKey: "expirationDate") as? String,
+            let phoneNumber = billing.object(forKey: "phoneNumber") as? String,
+            let userAddress = billing.object(forKey: "userAddress") as? String,
+            let userCreditCard = billing.object(forKey: "userCreditCard") as? String,
+            let nameCard = billing.object(forKey: "nameCard") as? String else {
+                completion(false)
+                return
+        }
+        
+        guard let email = dictionary.object(forKey: "email") as? String,
+            let surname = dictionary.object(forKey: "surname") as? String,
+            let username = dictionary.object(forKey: "username") as? String else {
+                completion(false)
+                return
+        }
+        
+        guard let user = User(id: id, city: city, country: country, cvv: cvv, email: email, expDate: expirationDate, phoneNumber: phoneNumber, surname: surname, userAddress: userAddress, userCreditCard: userCreditCard, username: username, nameCard: nameCard) else {
+            completion(false)
+            return
+        }
+        
+        SessionHandler.shared.loggedUser = user
+        completion(true)
+        
+    }
 }

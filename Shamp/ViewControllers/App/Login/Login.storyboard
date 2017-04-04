@@ -110,16 +110,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-Nl-I4j">
-                                <rect key="frame" x="166" y="573" width="42" height="32"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.96356993913650513" green="0.17073944211006165" blue="0.19375279545783997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="3X9-Sc-bUO" eventType="touchUpInside" id="pG6-2p-fN0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBD-HI-pEy">
+                                <rect key="frame" x="117.5" y="553" width="141" height="21"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-Nl-I4j">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.96356993913650513" green="0.17073944211006165" blue="0.19375279545783997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="3X9-Sc-bUO" eventType="touchUpInside" id="pG6-2p-fN0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhm-9X-qzs">
+                                        <rect key="frame" x="42" y="0.0" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="HDi-ef-Y5e"/>
+                                            <constraint firstAttribute="width" constant="42" id="oZw-lv-9kc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.66659259800000004" green="0.66670930390000005" blue="0.66658520700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0H-R5-sYF">
+                                        <rect key="frame" x="84" y="0.0" width="57" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" red="0.96356993909999999" green="0.1707394421" blue="0.19375279549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signupTapped:" destination="3X9-Sc-bUO" eventType="touchUpInside" id="TVq-3o-sFn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -143,15 +168,15 @@
                             <constraint firstItem="raN-it-Pz5" firstAttribute="top" secondItem="N0z-2D-RcK" secondAttribute="bottom" constant="50" id="dGt-ci-Gdg"/>
                             <constraint firstItem="7Ei-R6-vOh" firstAttribute="leading" secondItem="5fb-Pw-J6u" secondAttribute="leading" id="dzO-nT-ZGd"/>
                             <constraint firstItem="2Vp-fj-XhT" firstAttribute="leading" secondItem="5fb-Pw-J6u" secondAttribute="leading" id="fIG-v2-sgx"/>
+                            <constraint firstItem="LBD-HI-pEy" firstAttribute="centerX" secondItem="0Vt-8c-YL2" secondAttribute="centerX" id="i8G-mD-S0C"/>
                             <constraint firstItem="raN-it-Pz5" firstAttribute="centerX" secondItem="0Vt-8c-YL2" secondAttribute="centerX" id="iQZ-Ky-yWR"/>
                             <constraint firstItem="2Vp-fj-XhT" firstAttribute="leading" secondItem="5fb-Pw-J6u" secondAttribute="leading" id="in4-qu-C8V"/>
                             <constraint firstItem="aNl-bw-IBb" firstAttribute="trailing" secondItem="5fb-Pw-J6u" secondAttribute="trailing" id="kEy-He-13O"/>
-                            <constraint firstItem="7pW-Nl-I4j" firstAttribute="centerX" secondItem="0Vt-8c-YL2" secondAttribute="centerX" id="myY-VW-HBi"/>
-                            <constraint firstItem="7pW-Nl-I4j" firstAttribute="top" secondItem="aNl-bw-IBb" secondAttribute="bottom" constant="90" id="qbL-wd-5l3"/>
                             <constraint firstItem="k0M-37-2xL" firstAttribute="top" secondItem="7Ei-R6-vOh" secondAttribute="bottom" constant="30" id="qoS-J4-AOy"/>
                             <constraint firstItem="2Vp-fj-XhT" firstAttribute="trailing" secondItem="5fb-Pw-J6u" secondAttribute="trailing" id="rg5-MC-0hr"/>
                             <constraint firstItem="7Ei-R6-vOh" firstAttribute="trailing" secondItem="5fb-Pw-J6u" secondAttribute="trailing" id="sQ2-bn-eEu"/>
                             <constraint firstItem="XPn-QN-7As" firstAttribute="leading" secondItem="iD5-Ex-bpb" secondAttribute="trailing" constant="5" id="sRZ-vf-zuy"/>
+                            <constraint firstItem="LBD-HI-pEy" firstAttribute="top" secondItem="aNl-bw-IBb" secondAttribute="bottom" constant="70" id="spa-Lu-2NT"/>
                             <constraint firstItem="aNl-bw-IBb" firstAttribute="top" secondItem="k0M-37-2xL" secondAttribute="bottom" constant="5" id="va4-zS-f0o"/>
                         </constraints>
                     </view>

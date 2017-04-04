@@ -11,6 +11,11 @@ import SlideMenuControllerSwift
 import UIKit
 
 class ViewControllersHandler {
+    
+    func showLoginAsRoot(window: UIWindow?) {
+        let controller = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!
+        window?.rootViewController = controller
+    }
 
     func changeRootViewController(withName name: String, window: UIWindow?) {
         let storyboard = UIStoryboard(name: name, bundle: nil)

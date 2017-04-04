@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yfD-dS-HiU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="UYt-77-FU8">
+            <objects>
+                <viewController id="yfD-dS-HiU" customClass="SplashScreenViewController" customModule="Shamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fQG-ba-ZJK"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZuK-QS-RzL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qHw-g4-sUv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-8X-NU6">
+                                <rect key="frame" x="27" y="223" width="320" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="hTg-8S-9at"/>
+                                    <constraint firstAttribute="height" constant="220" id="iRO-iI-btv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tgJ-8X-NU6" firstAttribute="centerX" secondItem="qHw-g4-sUv" secondAttribute="centerX" id="XMZ-Xb-pMi"/>
+                            <constraint firstItem="tgJ-8X-NU6" firstAttribute="centerY" secondItem="qHw-g4-sUv" secondAttribute="centerY" id="ra3-PE-8IZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIN-Qy-JuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="172"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="320" height="220"/>
+    </resources>
+</document>

@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupKeyboardManager()
         setupSVProgressHUD()
-        selectControllerToShow()
         
         return true
     }
@@ -49,11 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Private Methods
-    private func selectControllerToShow() {
-        if FacebookHandler.shared.isUserLoggedWithFacebook() {
-            ViewControllersHandler().changeRootViewController(withName: "Home", window: window)
-        }
-    }
     
     private func setupKeyboardManager() {
         IQKeyboardManager.sharedManager().enable = true

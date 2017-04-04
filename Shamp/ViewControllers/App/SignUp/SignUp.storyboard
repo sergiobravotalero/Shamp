@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lyf-98-xKQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="dnN-64-3kP">
+            <objects>
+                <viewController id="lyf-98-xKQ" customClass="SignUpViewController" customModule="Shamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3YQ-r7-SHB"/>
+                        <viewControllerLayoutGuide type="bottom" id="5nc-yx-fmQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v4O-q6-c97">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-5f-Gea">
+                                <rect key="frame" x="16" y="28" width="43" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.96356993909999999" green="0.1707394421" blue="0.19375279549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="lyf-98-xKQ" eventType="touchUpInside" id="v5M-2d-mys"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFI-u7-Kfu">
+                                <rect key="frame" x="304" y="28" width="55" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="SignUp">
+                                    <color key="titleColor" red="0.51544731860000004" green="0.57433706520000005" blue="0.69479894639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="lyf-98-xKQ" eventType="touchUpInside" id="frg-Zl-aJy"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-3E-JVJ">
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="d4c-3E-JVJ" firstAttribute="top" secondItem="AUh-5f-Gea" secondAttribute="bottom" constant="8" id="0Iy-AE-dhC"/>
+                            <constraint firstItem="5nc-yx-fmQ" firstAttribute="top" secondItem="d4c-3E-JVJ" secondAttribute="bottom" id="5RA-ln-G4G"/>
+                            <constraint firstItem="AUh-5f-Gea" firstAttribute="top" secondItem="3YQ-r7-SHB" secondAttribute="bottom" constant="8" id="IB3-MS-ggw"/>
+                            <constraint firstItem="AUh-5f-Gea" firstAttribute="leading" secondItem="v4O-q6-c97" secondAttribute="leading" constant="16" id="Jwa-ML-0dL"/>
+                            <constraint firstItem="lFI-u7-Kfu" firstAttribute="top" secondItem="3YQ-r7-SHB" secondAttribute="bottom" constant="8" id="OKq-Z2-x3g"/>
+                            <constraint firstAttribute="trailing" secondItem="d4c-3E-JVJ" secondAttribute="trailing" id="Qh3-82-bc9"/>
+                            <constraint firstAttribute="trailing" secondItem="lFI-u7-Kfu" secondAttribute="trailing" constant="16" id="dIW-pP-exK"/>
+                            <constraint firstItem="d4c-3E-JVJ" firstAttribute="leading" secondItem="v4O-q6-c97" secondAttribute="leading" id="v96-Oa-oXR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="d4c-3E-JVJ" id="fx5-v0-koI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vv7-6Z-jaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="153"/>
+        </scene>
+    </scenes>
+</document>

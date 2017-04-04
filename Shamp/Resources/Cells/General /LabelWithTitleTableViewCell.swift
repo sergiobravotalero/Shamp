@@ -30,7 +30,19 @@ class LabelWithTitleTableViewCell: UITableViewCell {
         titleLabel.text = title
         textField.placeholder = placeholder
         
-        textField.keyboardType = title == "Contact Phone" ? .numberPad : .default
+        if title == "Contact Phone" || title == "Phone Number" || title == "Expiration Date" || title == "Card Number" || title == "CVV"{
+            textField.keyboardType = .numberPad
+        } else if title == "Email"{
+            textField.keyboardType = .emailAddress
+        } else {
+            textField.keyboardType = .default
+        }
+        
+        if title == "Password" || title == "Confirm Password" {
+            textField.isSecureTextEntry = true
+        } else {
+            textField.isSecureTextEntry = false
+        }
     }
     
 }
