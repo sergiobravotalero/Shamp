@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import LocalAuthentication
 
 class PlaceOrderViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class PlaceOrderViewController: UIViewController {
     var city: String?
     var country: String?
     
+    let authenticationContext = LAContext()
     let dataSource = PlaceOrderDataSource()
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,6 +50,71 @@ class PlaceOrderViewController: UIViewController {
     
     func backButtonTapped(sender:UIBarButtonItem) {
         let _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func proceedToPay(callback: @escaping(_ result: Bool) -> ()) {
+        authenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Allow to be charged to your credit card", reply: { (success, error) in
+            if success {
+                callback(true)
+                return
+            } else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Error", message: "Your authentication failed")
+                callback(false)
+            }
+        })
+    }
+    
+    func payWithoutFingerprint(result: @escaping(_ result: Bool) -> ()) {
+        let alertController = UIAlertController(title: "Place Order", message: "Confir your card cvv to proceed", preferredStyle: .alert)
+        
+        let payAction = UIAlertAction(title: "Pay", style: .destructive, handler: {
+            alert -> Void in
+            let firstTextField = alertController.textFields![0] as UITextField
+            
+            guard let cvvText = firstTextField.text else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Error", message: "Somwthing went wrong. Please try again.")
+                result(false)
+                return
+            }
+            
+            guard let cvv = SessionHandler.shared.loggedUser?.cvv else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Error", message: "Somwthing went wrong. Please try again.")
+                result(false)
+                return
+            }
+            
+            if cvvText == cvv {
+                result(true)
+                return
+            } else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "The security code does not match to the one of your card")
+                result(false)
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter your card cvv"
+            textField.keyboardType = .numberPad
+        }
+        
+        alertController.addAction(payAction)
+        alertController.addAction(cancelAction)
+        alertController.view.tintColor = UIColor.red
+        
+        self.present(alertController, animated: true, completion: {
+            alertController.view.tintColor = UIColor.red
+        })
+
+    }
+    
+    func placerOrder(deliveryAddress: String, contactPhone: String, city: String, country: String) {
+        SVProgressHUD.show()
+        ShoppingCart.shared.placeOrderWithCompletion(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country, completion: { (succeeded) in
+            SVProgressHUD.dismiss()
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     // MARK: - IBAction
@@ -83,11 +150,16 @@ class PlaceOrderViewController: UIViewController {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Oooops", message: "Something went wrong. Please try again.")
             return }
         
-        SVProgressHUD.show()
-        ShoppingCart.shared.placeOrderWithCompletion(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country, completion: { (succeeded) in
-            SVProgressHUD.dismiss()
-            self.dismiss(animated: true, completion: nil)
-        })
+        var error:NSError?
+        guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            payWithoutFingerprint(result: { (result) in
+                self.placerOrder(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country)
+            })
+            return
+        }
         
+        proceedToPay(callback: { (succeeded) in
+            self.placerOrder(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country)
+        })
     }
 }

@@ -10,8 +10,13 @@ import UIKit
 import Kingfisher
 import Toucan
 
+protocol ProductCellDelegate {
+    func productWasRemoved()
+}
+
 class ProductTableViewCell: UITableViewCell {
 
+    var delegate: ProductCellDelegate?
     var currentProduct: Product!
     
     @IBOutlet weak var stampImage: UIImageView!
@@ -70,6 +75,7 @@ class ProductTableViewCell: UITableViewCell {
     
     // MARK: - IBAction
     @IBAction func remoevPoructButtonTapped(_ sender: Any) {
-        print(currentProduct.location)
+        ShoppingCart.shared.removeProduct(product: currentProduct)
+        delegate?.productWasRemoved()
     }
 }

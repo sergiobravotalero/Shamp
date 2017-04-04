@@ -23,6 +23,7 @@ class ShoppingCartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSource.products = ShoppingCart.shared.products
+        dataSource.cartController = self
         tableView.reloadData()
         
         slideMenuController()?.removeLeftGestures()

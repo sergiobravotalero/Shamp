@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
-class ShoppingCartDataSource: NSObject, UITableViewDataSource {
+class ShoppingCartDataSource: NSObject, UITableViewDataSource, ProductCellDelegate {
     
     var cartController: ShoppingCartViewController!
     
     var products = [Product]()
+    
+    // MARK: - Method
+    func productWasRemoved() {
+        products = ShoppingCart.shared.products
+        cartController.tableView.reloadData()
+    }
     
     // MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,6 +30,7 @@ class ShoppingCartDataSource: NSObject, UITableViewDataSource {
         let product = products[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
         cell.configureCell(product: product)
+        cell.delegate = self
         return cell
     }
 }

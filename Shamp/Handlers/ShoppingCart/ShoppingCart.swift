@@ -19,6 +19,12 @@ class ShoppingCart {
         products.append(product)
     }
     
+    func removeProduct(product: Product) {
+        if let index = products.index(where: { $0.shirtID == product.shirtID && $0.stampID == product.stampID && $0.size == product.size && $0.quantity == product.quantity && $0.location == $0.location }) {
+            products.remove(at: index)
+        }
+    }
+    
     func placeOrderWithCompletion(deliveryAddress: String, contactPhone: String, city: String, country: String, completion: @escaping(_ succeeded: Bool) -> ()) {
         let userID = FacebookHandler.shared.getFacebookCurrentAccessToken()
         
@@ -44,7 +50,7 @@ class ShoppingCart {
         let orderInJson = [
             "user_id": userID,
             "products": productsArray,
-            "oder": order
+            "order": order
         ] as [String : Any]
         
         RequesterHandler().addOrderToServerWithCompletion(order: orderInJson, completion: { (succeeded) in

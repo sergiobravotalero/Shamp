@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 private enum MenuOptions: Int {
-    case Home,ShoppingCart, PaymentInfo
+    case Home,ShoppingCart
     
     static let option = [
         Home: "Home",
-        ShoppingCart: "Shopping Cart",
-        PaymentInfo: "Payment"
+        ShoppingCart: "Shopping Cart"
     ]
     
     func getCellInformation() -> String {
@@ -32,7 +31,7 @@ class SlideMenuDataSource: NSObject, UITableViewDataSource {
     var slideMenuController: SlideMenuViewController?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
