@@ -54,5 +54,24 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>4d3bb3351dd7dea22c7b176d0747a4073f8375d5</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict>
+                    <key>consumerKey</key>
+                    <string>6M96mO2MAX01Y3DToJSv7DiGP</string>
+                    <key>consumerSecret</key>
+                    <string>m9Hkxe66vMxvspLLgBnGkxHzhYU99TYDyEK1o9rfqPI1IoslkN</string>
+                </dict>
+                <key>KitName</key>
+                <string>Twitter</string>
+            </dict>
+        </array>
+    </dict>
 </dict>
 </plist>

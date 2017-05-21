@@ -10,6 +10,9 @@ target 'Shamp' do
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
     
+    pod 'Fabric'
+    pod 'TwitterKit'
+    
     pod 'Alamofire', '~> 4.4'
     
     pod 'IQKeyboardManagerSwift'

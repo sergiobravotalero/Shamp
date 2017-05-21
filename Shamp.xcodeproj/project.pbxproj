@@ -28,6 +28,7 @@
 		05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64A1E8466C9003F4AA4 /* AlertViewHandler.swift */; };
 		05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */; };
 		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
+		05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */; };
 		05C763791E89B875000C064A /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763781E89B875000C064A /* Stamp.swift */; };
 		05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637B1E89C06F000C064A /* SessionHandler.swift */; };
 		05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637F1E89C95F000C064A /* UIColorExtension.swift */; };
@@ -125,6 +126,7 @@
 		05B4A64A1E8466C9003F4AA4 /* AlertViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewHandler.swift; sourceTree = "<group>"; };
 		05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersHandler.swift; sourceTree = "<group>"; };
 		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
+		05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHandler.swift; sourceTree = "<group>"; };
 		05C763781E89B875000C064A /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		05C7637B1E89C06F000C064A /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
 		05C7637F1E89C95F000C064A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				05A0B31E1E89B57700FB8B9F /* Requester */,
 				05C7637A1E89C064000C064A /* SessionHandler */,
 				05C763CC1E8A11CB000C064A /* ShoppingCart */,
+				05C2B3D51ED22D4A0076C6E1 /* Twitter */,
 				05D60B7F1E93385A00EA6984 /* UserDefaults */,
 				05B4A64C1E8478BD003F4AA4 /* ViewControllers */,
 			);
@@ -445,6 +448,14 @@
 				05C2B3CF1ED1F2110076C6E1 /* Variability.swift */,
 			);
 			path = Variability;
+			sourceTree = "<group>";
+		};
+		05C2B3D51ED22D4A0076C6E1 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */,
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 		05C763751E89B834000C064A /* Objects */ = {
@@ -905,6 +916,7 @@
 				05B4A5EC1E843994003F4AA4 /* Resources */,
 				52D47C47B4E50D31ED543CB3 /* [CP] Embed Pods Frameworks */,
 				8F6AC77A6CBE611DE98E6BFD /* [CP] Copy Pods Resources */,
+				05C2B3D41ED22AE20076C6E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -969,7 +981,7 @@
 				TargetAttributes = {
 					05B4A5ED1E843994003F4AA4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = C562468P4Q;
+						DevelopmentTeam = SHCLPJTU4V;
 						ProvisioningStyle = Automatic;
 					};
 					05B4A6011E843994003F4AA4 = {
@@ -1048,6 +1060,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05C2B3D41ED22AE20076C6E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4d3bb3351dd7dea22c7b176d0747a4073f8375d5 a15e48e2fff1fc7f1cf93602142cf86bfd967c8770fa8f61837762f992d50874\n";
+		};
 		2DC1791A3547B2C5FFFDE06D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1200,6 +1225,7 @@
 				05C763BD1E8A03F8000C064A /* ShirtCellDelegate.swift in Sources */,
 				05D6DCA11E8AF35F0081EDB8 /* ShoppingCartViewController.swift in Sources */,
 				05D6DC9F1E8AF35F0081EDB8 /* CartTableViewDelegate.swift in Sources */,
+				05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */,
 				05D6DCB31E8AF8E60081EDB8 /* PlaceOrderViewController.swift in Sources */,
 				05C763BC1E8A03F8000C064A /* ShirtsDataSource.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
@@ -1370,10 +1396,10 @@
 			baseConfigurationReference = 02EF6F06D058F8888D7F1D2B /* Pods-Shamp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C562468P4Q;
+				DEVELOPMENT_TEAM = SHCLPJTU4V;
 				INFOPLIST_FILE = Shamp/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.Shamp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.ShampShirt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1384,10 +1410,10 @@
 			baseConfigurationReference = F963F70EB9AF0D0156582A8B /* Pods-Shamp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C562468P4Q;
+				DEVELOPMENT_TEAM = SHCLPJTU4V;
 				INFOPLIST_FILE = Shamp/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.Shamp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koombea.ShampShirt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

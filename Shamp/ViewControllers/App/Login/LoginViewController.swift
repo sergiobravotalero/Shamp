@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         })
         
         let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { (action) in
-            print("Twitter tapped")
+            Twitterhandler.shared.attemtpToLogin(viewController: self)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
