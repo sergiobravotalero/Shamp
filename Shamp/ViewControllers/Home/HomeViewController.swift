@@ -12,6 +12,9 @@ import SVProgressHUD
 class HomeViewController: UIViewController {
 
     var pickerShouldShowCategories = true
+    var pickerShouldShowPrices = false
+    var  pickerShouldShowArtists = false
+    
     var selectedStamp: Stamp?
     let dataSource = HomeDataSource()
     
@@ -25,6 +28,7 @@ class HomeViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideFilterPicker()
         setupController()
     }
     
@@ -55,10 +59,17 @@ class HomeViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 17)!, NSForegroundColorAttributeName: UIColor.signatureGray()]
+        let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 17)!, NSForegroundColorAttributeName: UIColor.black]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.signatureYellow()
+        navigationController?.navigationBar.tintColor = UIColor.signatureYellow()
+        
+        if let advanceSearch = SessionHandler.shared.listOfFeatures?.advanceSearch, advanceSearch {
+            print("Advance search enabled")
+        } else {
+            searchButton.isEnabled = false
+            searchButton.tintColor = UIColor.clear
+        }
     }
     
     private func updateStamps() {
@@ -102,22 +113,39 @@ class HomeViewController: UIViewController {
         
         let filterAction = UIAlertAction(title: "Filter by Category", style: .default, handler: { (action) in
             self.pickerShouldShowCategories = true
+            self.pickerShouldShowArtists = false
+            self.pickerShouldShowPrices = false
+            
             self.pickerView.reloadAllComponents()
             self.showFilterPicker()
         })
+        actionSheet.addAction(filterAction)
         
         let priceAction = UIAlertAction(title: "Filter by Price", style: .default, handler: { (action) in
+            self.pickerShouldShowPrices = true
+            self.pickerShouldShowArtists = false
             self.pickerShouldShowCategories = false
+            
             self.pickerView.reloadAllComponents()
             self.showFilterPicker()
         })
-        
-        
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        actionSheet.addAction(filterAction)
         actionSheet.addAction(priceAction)
+        
+        let artistAction = UIAlertAction(title: "Filter by Artist", style: .default, handler: { (action) in
+            self.pickerShouldShowPrices = false
+            self.pickerShouldShowArtists = true
+            self.pickerShouldShowCategories = false
+            
+            self.pickerView.reloadAllComponents()
+            self.showFilterPicker()
+        })
+        actionSheet.addAction(artistAction)
+        
+        let nameAction = UIAlertAction(title: "Filter by Name", style: .default, handler: { (action) in
+        })
+        actionSheet.addAction(nameAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         actionSheet.addAction(cancelAction)
         
         present(actionSheet, animated: true, completion: nil)

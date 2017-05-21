@@ -10,28 +10,28 @@ import Foundation
 
 class Stamp {
     let id: Int
-    let name: String
-    let categoryName: String
-    let stampImage: URL?
-    let stampLongDescription: String
-    let stampShortDescription: String
-    let stampName: String
-    let stampPrice: String
-    let artistName: String
+    let artistID: Int
     let artistEmail: String
+    let categoryID: Int
+    let categoryName: String
+    let status: Bool
+    let name: String
+    let shortDescription: String
+    let price: Int
+    let imagePath: URL
     
     // MARK: - Initializer
-    init?(id: Int, name: String, categoryName: String, stampImage: URL?, stampLongDescription: String, stampShortDescription: String, stampName: String, stampPrice: String, artistName: String, artistEmail: String) {
+    init?(id: Int, artistID: Int, artistEmail: String, categoryID: Int, categoryName: String, status: Bool, name: String, shortDescription: String, price: Int, imagePath: URL) {
         self.id = id
-        self.name = name
-        self.categoryName = categoryName
-        self.stampImage = stampImage
-        self.stampLongDescription = stampLongDescription
-        self.stampShortDescription = stampShortDescription
-        self.stampName = stampName
-        self.stampPrice = stampPrice
-        self.artistName = artistName
+        self.artistID = artistID
         self.artistEmail = artistEmail
+        self.categoryID = categoryID
+        self.categoryName = categoryName
+        self.status = status
+        self.name = name
+        self.shortDescription = shortDescription
+        self.price = price
+        self.imagePath = imagePath
     }
     
 }

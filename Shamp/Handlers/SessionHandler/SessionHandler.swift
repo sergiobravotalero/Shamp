@@ -17,6 +17,7 @@ class SessionHandler {
     var stampsCollection = [Stamp]()
     var shirtsCollection = [Shirt]()
     var categoriesCollection = [Category]()
+    var artistsCollection = [String]()
     
     func removeAll() {
         listOfFeatures = nil
@@ -24,5 +25,6 @@ class SessionHandler {
         stampsCollection.removeAll()
         shirtsCollection.removeAll()
         categoriesCollection.removeAll()
+        artistsCollection.removeAll()
     }
 }

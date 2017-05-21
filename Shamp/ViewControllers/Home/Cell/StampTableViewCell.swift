@@ -18,6 +18,7 @@ class StampTableViewCell: UITableViewCell {
     var stamp: Stamp!
     var delegate: StampCellDelegate?
     
+    @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var artistNameLabel: UILabel!
     
     @IBOutlet weak var stampImage: UIImageView!
@@ -40,14 +41,15 @@ class StampTableViewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = UIColor.clear
         
-        artistNameLabel.text = stamp.artistName
-        stampNameLabel.text = stamp.stampName
-        stampDescriptionLabel.text = stamp.stampLongDescription
-        stampPriceLabel.text = "$" + stamp.stampPrice
+        borderView.layer.borderWidth = 0.7
+        borderView.layer.borderColor = UIColor.black.cgColor
         
-        if let url = stamp.stampImage {
-            stampImage.kf.setImage(with: url)
-        }
+        artistNameLabel.text = stamp.artistEmail
+        stampNameLabel.text = stamp.name
+        stampDescriptionLabel.text = stamp.shortDescription
+        stampPriceLabel.text = "$\(stamp.price)"
+        
+        stampImage.kf.setImage(with: stamp.imagePath)
     }
     
     // MARK: - IBActions

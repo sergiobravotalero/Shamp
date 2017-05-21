@@ -52,45 +52,45 @@ class ParserHandler {
     
     
     // MARK: - Stamp
-    func getCollectionOfStampsWithCompletion(dictionary: NSDictionary, completion: () -> ()) {
-        guard let data = dictionary.object(forKey: "data") as? NSArray else {
-            completion()
-            return
-        }
-        
+    func getCollectionOfStampsWithCompletion(dictionary: NSArray, completion: () -> ()) {
+    
         var stamps = [Stamp]()
-        for element in data {
+        for element in dictionary {
             guard let elementDictionary = element as? NSDictionary else { continue }
-            getCategory(dictionary: elementDictionary.object(forKey: "category") as? NSDictionary)
             
-            guard let status = elementDictionary.object(forKey: "active") as? Bool else { continue }
-            if !status { continue }
             
-            guard let id = elementDictionary.object(forKey: "id") as? Int else { continue }
-            guard let name = elementDictionary.object(forKey: "name") as? String else { continue }
-            guard let categoryName = elementDictionary.value(forKeyPath: "category.name") as? String else { continue }
-            guard let stampImageString = elementDictionary.object(forKey: "stampLargeImagePath") as? String else { continue }
-            guard let stampLongDescription = elementDictionary.object(forKey: "stampLongDescription") as? String else { continue }
-            guard let stampShortDescription = elementDictionary.object(forKey: "stampShortDescription") as? String else { continue }
-            guard let stampName = elementDictionary.object(forKey: "stampName") as? String else { continue }
-            guard let stampPrice = elementDictionary.object(forKey: "stampPrice") as? String else { continue }
-            guard let artistName = elementDictionary.value(forKeyPath: "user.name") as? String else { continue }
-            guard let artistEmail = elementDictionary.value(forKeyPath: "user.email") as? String else { continue }
+            guard let status = elementDictionary.object(forKey: "stamp_status") as? Bool else { continue }
             
-            let stampImage = URL(string: stampImageString)
+            if !status {
+                continue
+            } else {
+                getCategory(dictionary: elementDictionary)
+            }
+            
+            guard let id = elementDictionary.object(forKey: "stamp_id") as? Int else { continue }
+            guard let artistID = elementDictionary.object(forKey: "user_id") as? Int else { continue }
+            guard let artistEmail = elementDictionary.object(forKey: "user_email") as? String else { continue }
+            guard let categoryID = elementDictionary.object(forKey: "category_id") as? Int else { continue }
+            guard let categoryName = elementDictionary.object(forKey: "category_name") as? String else { continue }
+            guard let stampStatus = elementDictionary.object(forKey: "stamp_status") as? Bool else { continue }
+            guard let stampName = elementDictionary.object(forKey: "stamp_name") as? String else { continue }
+            guard let stampShortDescription = elementDictionary.object(forKey: "stamp_short_description") as? String else { continue }
+            guard let stampPrice = elementDictionary.object(forKey: "stamp_price") as? Int else { continue }
+            guard let stampImagePath = elementDictionary.object(forKey: "stamp_image_path") as? String else { continue }
+            
+            guard let stampImage = URL(string: stampImagePath.replacingOccurrences(of: " ", with: "")) else { continue }
             
             guard let stamp = Stamp(
                 id: id,
-                name: name,
+                artistID: artistID,
+                artistEmail: artistEmail,
+                categoryID: categoryID,
                 categoryName: categoryName,
-                stampImage: stampImage,
-                stampLongDescription: stampLongDescription,
-                stampShortDescription: stampShortDescription,
-                stampName: stampName,
-                stampPrice: stampPrice,
-                artistName: artistName,
-                artistEmail: artistEmail
-                ) else { continue }
+                status: stampStatus,
+                name: stampName,
+                shortDescription: stampShortDescription,
+                price: stampPrice,
+                imagePath: stampImage) else { continue }
             stamps.append(stamp)
         }
         
@@ -98,41 +98,42 @@ class ParserHandler {
         completion()
     }
     
-    // MARK: - Category
+    // MARK: - Category and Artist
     func getCategory(dictionary: NSDictionary?) {
-        guard let name = dictionary?.object(forKey: "name") as? String else { return }
-        guard let status = dictionary?.object(forKey: "active") as? Bool else { return }
+        guard let name = dictionary?.object(forKey: "category_name") as? String else { return }
+        guard let category = Category(name: name, status: true) else { return }
         
-        guard let category = Category(name: name, status: status) else { return }
         if !SessionHandler.shared.categoriesCollection.contains(where: { $0.name == category.name}) {
             SessionHandler.shared.categoriesCollection.append(category)
         }
+        
+        guard let artistEmail = dictionary?.object(forKey: "user_email") as? String else { return }
+        if !SessionHandler.shared.artistsCollection.contains(where: { $0 == artistEmail }) {
+            SessionHandler.shared.artistsCollection.append(artistEmail)
+        }
     }
     
+    
     // MARK: - Shirt
-    func getCollectionOfShirtsWithCompletion(dictionary: NSDictionary, completion: () -> ()) {
-        guard let data = dictionary.object(forKey: "data") as? NSArray else {
-            completion()
-            return
-        }
-        
+    func getCollectionOfShirtsWithCompletion(dictionary: NSArray, completion: () -> ()) {
         var shirts = [Shirt]()
-        for element in data {
+        for element in dictionary {
             guard let elementDictionary = element as? NSDictionary else { continue }
             
-            guard let status = elementDictionary.object(forKey: "active") as? Bool else { continue }
-            if !status { continue }
-            
-            guard let id = elementDictionary.object(forKey: "id") as? Int else { continue }
+            guard let id = elementDictionary.object(forKey: "shirt_id") as? Int else { continue }
             guard let name = elementDictionary.object(forKey: "name") as? String else { continue }
-            guard let color = elementDictionary.object(forKey: "shirtColor") as? String else { continue }
-            guard let gender = elementDictionary.object(forKey: "shirtSex") as? String else { continue }
-            guard let imageUrlString = elementDictionary.object(forKey: "shirtSmallImagePath") as? String else { continue }
-            guard let price = elementDictionary.object(forKey: "shirtPrice") as? String else { continue }
+            guard let color = elementDictionary.object(forKey: "shirt_color") as? String else { continue }
+            guard let gender = elementDictionary.object(forKey: "shirt_sex") as? String else { continue }
+            guard let price = elementDictionary.object(forKey: "shirt_price") as? Int else { continue }
             
-            let url = URL(string: imageUrlString)
+            guard let smallImage = elementDictionary.object(forKey: "shirt_small_image_path") as? String else { continue }
+            guard let largeImage = elementDictionary.object(forKey: "shirt_large_image_path") as? String else { continue }
             
-            guard let shirt = Shirt(id: id, status: status, name: name, color: color, gender: gender, imageUrl: url, price: price) else { continue }
+            guard let smallImageUrl = URL(string: smallImage.replacingOccurrences(of: " ", with: "")) else { return }
+            guard let largeImageUrl = URL(string: largeImage.replacingOccurrences(of: " ", with: "")) else { return }
+            
+            
+            guard let shirt = Shirt(id: id, name: name, color: color, sex: gender, price: price, smallImagePath: smallImageUrl, largeImagePath: largeImageUrl) else { continue }
             shirts.append(shirt)
         }
         

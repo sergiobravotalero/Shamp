@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,19 +16,22 @@
             <rect key="frame" x="0.0" y="0.0" width="483" height="175"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="483" height="174"/>
+                <rect key="frame" x="0.0" y="0.0" width="483" height="175"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AB-G3-n2C">
                         <rect key="frame" x="20" y="10" width="443" height="155"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6N-c8-Lq5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cH0-MJ-gnT">
+                                <rect key="frame" x="0.0" y="0.0" width="443" height="66"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.79607843140000001" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6N-c8-Lq5">
                                 <rect key="frame" x="20" y="8" width="403" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NKe-3O-Hgz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" red="0.4431372549" green="0.4941176471" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sergio Bravo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weT-0z-aHm">
@@ -94,6 +97,7 @@
                             <constraint firstItem="hpv-uY-vTt" firstAttribute="top" secondItem="QD7-MW-zR3" secondAttribute="top" id="2gE-9I-CrY"/>
                             <constraint firstItem="QD7-MW-zR3" firstAttribute="leading" secondItem="g6N-c8-Lq5" secondAttribute="leading" id="42b-vn-iV4"/>
                             <constraint firstItem="aOc-mt-7lZ" firstAttribute="top" secondItem="QNz-c7-0Vi" secondAttribute="bottom" constant="5" id="5bj-9J-XuM"/>
+                            <constraint firstItem="cH0-MJ-gnT" firstAttribute="top" secondItem="4AB-G3-n2C" secondAttribute="top" id="Adf-9h-kFv"/>
                             <constraint firstItem="xG8-Cn-pRb" firstAttribute="leading" secondItem="g6N-c8-Lq5" secondAttribute="leading" id="ELh-Uj-jHp"/>
                             <constraint firstItem="g6N-c8-Lq5" firstAttribute="top" secondItem="4AB-G3-n2C" secondAttribute="top" constant="8" id="Lw7-Zg-cqO"/>
                             <constraint firstItem="Z0J-WY-xC6" firstAttribute="leading" secondItem="hpv-uY-vTt" secondAttribute="leading" id="NP7-Fc-Lf2"/>
@@ -101,10 +105,12 @@
                             <constraint firstItem="weT-0z-aHm" firstAttribute="trailing" secondItem="g6N-c8-Lq5" secondAttribute="trailing" id="Sl8-gQ-AbS"/>
                             <constraint firstItem="weT-0z-aHm" firstAttribute="leading" secondItem="g6N-c8-Lq5" secondAttribute="leading" id="ZTS-8l-8NP"/>
                             <constraint firstItem="xG8-Cn-pRb" firstAttribute="top" secondItem="weT-0z-aHm" secondAttribute="bottom" constant="8" id="bEN-ja-g5q"/>
+                            <constraint firstItem="xG8-Cn-pRb" firstAttribute="top" secondItem="cH0-MJ-gnT" secondAttribute="bottom" id="caZ-Z2-vqn"/>
                             <constraint firstAttribute="trailing" secondItem="g6N-c8-Lq5" secondAttribute="trailing" constant="20" id="d4o-K2-xPw"/>
                             <constraint firstItem="g6N-c8-Lq5" firstAttribute="leading" secondItem="4AB-G3-n2C" secondAttribute="leading" constant="20" id="dgV-bE-JND"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="fRB-hK-sRu"/>
                             <constraint firstItem="hpv-uY-vTt" firstAttribute="leading" secondItem="QD7-MW-zR3" secondAttribute="trailing" constant="8" id="iHe-ji-yl9"/>
+                            <constraint firstAttribute="trailing" secondItem="cH0-MJ-gnT" secondAttribute="trailing" id="jXb-x2-bMc"/>
                             <constraint firstItem="weT-0z-aHm" firstAttribute="top" secondItem="g6N-c8-Lq5" secondAttribute="bottom" constant="8" id="lQU-xw-VQo"/>
                             <constraint firstItem="QNz-c7-0Vi" firstAttribute="top" secondItem="hpv-uY-vTt" secondAttribute="bottom" constant="5" id="mpS-Eh-a6q"/>
                             <constraint firstItem="QD7-MW-zR3" firstAttribute="top" secondItem="xG8-Cn-pRb" secondAttribute="bottom" constant="8" id="q1t-bl-vqX"/>
@@ -112,11 +118,18 @@
                             <constraint firstAttribute="bottom" secondItem="Z0J-WY-xC6" secondAttribute="bottom" constant="8" id="stb-e4-yQY"/>
                             <constraint firstItem="aOc-mt-7lZ" firstAttribute="trailing" secondItem="hpv-uY-vTt" secondAttribute="trailing" id="tTf-ap-6ay"/>
                             <constraint firstItem="Z0J-WY-xC6" firstAttribute="top" secondItem="QNz-c7-0Vi" secondAttribute="bottom" constant="5" id="u5s-yo-6mz"/>
+                            <constraint firstItem="cH0-MJ-gnT" firstAttribute="leading" secondItem="4AB-G3-n2C" secondAttribute="leading" id="xZP-dX-Z18"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -130,6 +143,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistNameLabel" destination="weT-0z-aHm" id="xB8-J0-vyE"/>
+                <outlet property="borderView" destination="4AB-G3-n2C" id="f9e-ce-UhC"/>
                 <outlet property="stampDescriptionLabel" destination="QNz-c7-0Vi" id="nKO-Lc-bpb"/>
                 <outlet property="stampImage" destination="QD7-MW-zR3" id="fPI-Rt-jH7"/>
                 <outlet property="stampNameLabel" destination="hpv-uY-vTt" id="eZx-xb-N1A"/>

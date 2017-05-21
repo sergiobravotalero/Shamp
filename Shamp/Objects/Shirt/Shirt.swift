@@ -10,20 +10,20 @@ import Foundation
 
 class Shirt {
     let id: Int
-    let status: Bool
     let name: String
     let color: String
-    let gender: String
-    let imageUrl: URL?
-    let price: String
+    let sex: String
+    let price: Int
+    let smallImagePath: URL
+    let largeImagePath: URL
     
-    init?(id: Int, status: Bool, name: String, color: String, gender: String, imageUrl: URL?, price: String) {
+    init?(id: Int, name: String, color: String, sex: String, price: Int, smallImagePath: URL, largeImagePath: URL) {
         self.id = id
-        self.status = status
         self.name = name
         self.color = color
-        self.gender = gender
-        self.imageUrl = imageUrl
+        self.sex = sex
         self.price = price
+        self.smallImagePath = smallImagePath
+        self.largeImagePath = largeImagePath
     }
 }

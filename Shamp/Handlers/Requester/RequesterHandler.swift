@@ -42,11 +42,7 @@ class RequesterHandler {
     }
     
     func getListOfStampsWithCompletion(completion: @escaping (_ succeded: Bool) -> ()) {
-        
-    }
-    
-    func getListOfShirtsWithCompletion(completion: @escaping(_ succeeded: Bool) -> ()) {
-        guard let requestUrl = URL(string: baseUrl + "shirt") else {
+        guard let requestUrl = URL(string: baseUrl + "Stamps") else {
             completion(false)
             return
         }
@@ -57,7 +53,48 @@ class RequesterHandler {
                 return
             }
             
-            ParserHandler().getCollectionOfShirtsWithCompletion(dictionary: dictionary, completion: { () in
+            if let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, !isSuccessful {
+                completion(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSArray else {
+                completion(false)
+                return
+            }
+            
+            ParserHandler().getCollectionOfStampsWithCompletion(dictionary: body, completion: {
+                completion(true)
+            })
+            
+        })
+
+    }
+    
+    func getListOfShirtsWithCompletion(completion: @escaping(_ succeeded: Bool) -> ()) {
+        guard let requestUrl = URL(string: baseUrl + "Shirts") else {
+            completion(false)
+            return
+        }
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            if let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, !isSuccessful {
+                completion(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSArray else {
+                completion(false)
+                return
+            }
+
+            
+            ParserHandler().getCollectionOfShirtsWithCompletion(dictionary: body, completion: {
                 completion(true)
             })
         })

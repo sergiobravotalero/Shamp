@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7wr-4d-hnP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7wr-4d-hnP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +42,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ji3-CY-D8f" firstAttribute="top" secondItem="Lwa-5m-DAG" secondAttribute="bottom" id="3rg-nV-XRI"/>
                             <constraint firstItem="ji3-CY-D8f" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="7aq-on-7dg"/>
@@ -58,13 +58,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Stamps" id="qVk-eA-toP">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="g8Y-UH-lv8">
-                            <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="showSideMenu:" destination="SsP-07-sy5" id="LbD-fG-rF4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Search" id="dPa-AC-R6Q">
-                            <color key="tintColor" red="0.44313725490196076" green="0.49411764705882355" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="searchButtonTapped:" destination="SsP-07-sy5" id="1b1-e9-S3W"/>
                             </connections>
@@ -72,6 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pickerView" destination="ji3-CY-D8f" id="sd6-9I-VTB"/>
+                        <outlet property="searchButton" destination="dPa-AC-R6Q" id="JGK-qH-iHd"/>
                         <outlet property="tableView" destination="fpG-rJ-qgx" id="wju-GX-TEH"/>
                         <outlet property="toolBar" destination="Lwa-5m-DAG" id="0f1-CS-Em0"/>
                         <segue destination="les-9k-Bhu" kind="show" identifier="showShirts" id="Ffa-Df-PYY"/>

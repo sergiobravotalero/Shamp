@@ -42,12 +42,9 @@ class ShirtsTableViewCell: UITableViewCell {
         
         shirtNameLabel.text = shirt.name
         shirtColorLabel.text = shirt.color
-        shirtGenderLabel.text = shirt.gender
+        shirtGenderLabel.text = shirt.sex
         
-        
-        if let url = shirt.imageUrl {
-            shirtImage.kf.setImage(with: url)
-        }
+        shirtImage.kf.setImage(with: shirt.largeImagePath)
     }
     // MARK: - IBAction
     @IBAction func selectThisShirtTapped(_ sender: Any) {
