@@ -63,8 +63,13 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        if crediCardInfo[2]?.characters.count != 4 {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "Expiration Date are four numbers MMYY")
+        if crediCardInfo[2]?.characters.count != 5 {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "Expiration Date are four numbers MM/YY")
+            return
+        }
+        
+        if !crediCardInfo[2]!.contains("/") {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "Expiration Date format is MM/YY")
             return
         }
         
@@ -72,6 +77,10 @@ class SignUpViewController: UIViewController {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "CVV must be three numbers")
             return
         }
+        
+        let date = crediCardInfo[2]!
+        let dateComponents = date.components(separatedBy: "/")
+        let expirationDate = "01/\(dateComponents[0])/\(dateComponents[1])"
         
         let parameters = [
             "password": personalInfo[1]!,
@@ -85,7 +94,7 @@ class SignUpViewController: UIViewController {
             
             "name_card": crediCardInfo[0]!,
             "user_credit_card": crediCardInfo[1]!,
-            "expiration_date": crediCardInfo[2]!,
+            "expiration_date": expirationDate,
             "cvv": crediCardInfo[3]!
         ]
         

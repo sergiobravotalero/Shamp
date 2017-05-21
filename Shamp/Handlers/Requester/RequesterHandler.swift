@@ -10,12 +10,11 @@ import Foundation
 import Alamofire
 
 class RequesterHandler {
-    private let baseUrl = "http://35.162.96.142:28080/shamp-web/rest/"
+    private let baseUrl = "https://shamp.herokuapp.com/"
 
     // MARK: - GET
-    func getListOfStampsWithCompletion(completion: @escaping (_ succeded: Bool) -> ()) {
-        
-        guard let requestUrl = URL(string: baseUrl + "stamp") else {
+    func getListOfFeatures(completion: @escaping(_ success: Bool) -> ()) {
+        guard let requestUrl = URL(string: baseUrl + "Features") else {
             completion(false)
             return
         }
@@ -26,10 +25,24 @@ class RequesterHandler {
                 return
             }
             
-            ParserHandler().getCollectionOfStampsWithCompletion(dictionary: dictionary, completion: { () in
-                completion(true)
+            if let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, !isSuccessful {
+                completion(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            ParserHandler().getListOfFeatures(body: body, completion: { (success) in
+                completion(success)
             })
         })
+    }
+    
+    func getListOfStampsWithCompletion(completion: @escaping (_ succeded: Bool) -> ()) {
+        
     }
     
     func getListOfShirtsWithCompletion(completion: @escaping(_ succeeded: Bool) -> ()) {
@@ -51,14 +64,14 @@ class RequesterHandler {
     }
     
     // MARK: - POST
-    func attemptToLoginWith(username: String, password: String, completion: @escaping (_ succeeded: Bool) -> ()) {
-        guard let requestUrl = URL(string: baseUrl + "login") else {
+    func attemptToLoginWith(email: String, password: String, completion: @escaping (_ succeeded: Bool) -> ()) {
+        guard let requestUrl = URL(string: baseUrl + "User/Token") else {
             completion(false)
             return
         }
         
         let parameters = [
-            "username": username,
+            "email": email,
             "password": password
         ]
         
@@ -68,15 +81,28 @@ class RequesterHandler {
                 return
             }
             
-            guard let token = dictionary.object(forKey: "token") as? String, let user = dictionary.object(forKey: "user") as? NSDictionary, let userBilling = dictionary.object(forKey: "userBilling") as? NSDictionary else {
+            guard let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool else {
+                completion(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            guard let token = body.object(forKey: "token") as? String, let user = body.object(forKey: "user") as? NSDictionary, let userBilling = body.object(forKey: "userBilling") as? NSDictionary else {
                 completion(false)
                 return
             }
             
             ParserHandler().getUserFrom(dictionary: user, billing: userBilling, completion: { (succeeded) in
                 if succeeded {
+                    let email = parameters["email"]!
+                    let password = parameters["password"]!
+                    
                     UserDefaultsHandler.shared.token = token
-                    UserDefaultsHandler.shared.userCredentials = (username: username, password: password)
+                    UserDefaultsHandler.shared.userCredentials = (email: email, password: password)
                     completion(true)
                 } else {
                     completion(false)
@@ -86,7 +112,7 @@ class RequesterHandler {
     }
     
     func registerUserInDbWith(parameters: [String: String], callback: @escaping(_ succeeded: Bool) -> ()){
-        guard let requestUrl = URL(string: baseUrl + "register") else {
+        guard let requestUrl = URL(string: baseUrl + "User") else {
             callback(false)
             return
         }
@@ -97,18 +123,28 @@ class RequesterHandler {
                 return
             }
             
-            guard let token = dictionary.object(forKey: "token") as? String, let user = dictionary.object(forKey: "user") as? NSDictionary, let userBilling = dictionary.object(forKey: "userBilling") as? NSDictionary else {
+            guard let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool else {
+                callback(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSDictionary else {
+                callback(false)
+                return
+            }
+            
+            guard let token = body.object(forKey: "token") as? String, let user = body.object(forKey: "user") as? NSDictionary, let userBilling = body.object(forKey: "userBilling") as? NSDictionary else {
                 callback(false)
                 return
             }
             
             ParserHandler().getUserFrom(dictionary: user, billing: userBilling, completion: { (succeeded) in
                 if succeeded {
-                    let username = parameters["username"]!
+                    let email = parameters["email"]!
                     let password = parameters["password"]!
                     
                     UserDefaultsHandler.shared.token = token
-                    UserDefaultsHandler.shared.userCredentials = (username: username, password: password)
+                    UserDefaultsHandler.shared.userCredentials = (email: email, password: password)
                     callback(true)
                 } else {
                     callback(false)

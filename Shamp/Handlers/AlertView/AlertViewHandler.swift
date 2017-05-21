@@ -16,9 +16,9 @@ class AlertViewHandler {
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         alertController.addAction(okAction)
-        alertController.view.tintColor = UIColor.red
+        alertController.view.tintColor = UIColor.signatureYellow()
         fromViewController.present(alertController, animated: true, completion: {
-            alertController.view.tintColor = UIColor.red
+            alertController.view.tintColor = UIColor.signatureYellow()
         })
     }
 }

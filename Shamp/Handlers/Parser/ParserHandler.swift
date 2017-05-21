@@ -9,6 +9,47 @@
 import Foundation
 
 class ParserHandler {
+    //MARK: - Features
+    func getListOfFeatures(body: NSDictionary, completion: (_ success: Bool) ->()) {
+        guard let advanceSearch = body.object(forKey: "advanceSearch") as? Bool,
+            let productRating = body.object(forKey: "productRating") as? Bool,
+            let shirtText = body.object(forKey: "shirtText") as? Bool,
+            let messages = body.object(forKey: "messages") as? Bool,
+            let filters = body.object(forKey: "filters") as? Bool,
+            let privateStamp = body.object(forKey: "privateStamp") as? Bool,
+            let loginSocialNetwork = body.object(forKey: "loginSocialNetwork") as? Bool,
+            let shareSocialNetwork = body.object(forKey: "shareSocialNetwork") as? Bool,
+            let changePassword = body.object(forKey: "changePassword") as? Bool,
+            let changeAddress = body.object(forKey: "changeAddress") as? Bool,
+            let ratingsReports = body.object(forKey: "ratingsReports") as? Bool,
+            let sellReports = body.object(forKey: "sellReports") as? Bool else {
+                print("Parse of features failed")
+                completion(false)
+                return
+        }
+        
+        guard let variability = Variability(
+            advanceSearch: advanceSearch,
+            productRating: productRating,
+            shirtText: shirtText,
+            messages: messages,
+            filters: filters,
+            privateStamp: privateStamp,
+            loginSocialNetwork: loginSocialNetwork,
+            shareSocialNetwork: shareSocialNetwork,
+            changePassword: changePassword,
+            changeAddress: changeAddress,
+            ratingsReports: ratingsReports,
+            sellReports: sellReports) else {
+                print("Init of variability failed")
+                completion(false)
+                return
+        }
+        
+        SessionHandler.shared.listOfFeatures = variability
+        completion(true)
+    }
+    
     
     // MARK: - Stamp
     func getCollectionOfStampsWithCompletion(dictionary: NSDictionary, completion: () -> ()) {
@@ -102,15 +143,15 @@ class ParserHandler {
     // MARK: - User
     
     func getUserFrom(dictionary: NSDictionary, billing: NSDictionary, completion: @escaping (_ succeeded: Bool) -> ()) {
-        guard let id = billing.object(forKey: "id") as? Int,
-            let city = billing.object(forKey: "userCity") as? String,
-            let country = billing.object(forKey: "userCountry") as? String,
+        guard let id = billing.value(forKeyPath: "user_id.user_id") as? Int,
+            let city = billing.object(forKey: "user_city") as? String,
+            let country = billing.object(forKey: "user_country") as? String,
             let cvv = billing.object(forKey: "cvv") as? String,
-            let expirationDate = billing.object(forKey: "expirationDate") as? String,
-            let phoneNumber = billing.object(forKey: "phoneNumber") as? String,
-            let userAddress = billing.object(forKey: "userAddress") as? String,
-            let userCreditCard = billing.object(forKey: "userCreditCard") as? String,
-            let nameCard = billing.object(forKey: "nameCard") as? String else {
+            let expirationDate = billing.object(forKey: "expiration_date") as? Int,
+            let phoneNumber = billing.object(forKey: "phone_number") as? String,
+            let userAddress = billing.object(forKey: "user_address") as? String,
+            let userCreditCard = billing.object(forKey: "user_credit_card") as? String,
+            let nameCard = billing.object(forKey: "name_card") as? String else {
                 completion(false)
                 return
         }

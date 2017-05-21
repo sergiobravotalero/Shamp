@@ -14,7 +14,7 @@ class User {
     let country: String
     let cvv: String
     let email: String
-    let expDate: String
+    let expDate: Int
     let phoneNumber: String
     let nameCard: String
     let surname: String
@@ -22,7 +22,7 @@ class User {
     let userCreditCard: String
     let username: String
     
-    init?(id: Int, city: String, country: String, cvv: String, email: String, expDate: String, phoneNumber: String, surname: String, userAddress: String, userCreditCard: String, username: String, nameCard: String) {
+    init?(id: Int, city: String, country: String, cvv: String, email: String, expDate: Int, phoneNumber: String, surname: String, userAddress: String, userCreditCard: String, username: String, nameCard: String) {
         self.id = id
         self.city = city
         self.country = country

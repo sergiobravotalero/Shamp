@@ -28,9 +28,9 @@ PODS:
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (4.0.8)
   - Kingfisher (3.6.1)
+  - Pulsator (0.3.0)
   - SlideMenuControllerSwift (3.0.1)
   - SVProgressHUD (2.1.2)
-  - SwiftyJSON (3.1.4)
   - Toucan (0.6.0)
 
 DEPENDENCIES:
@@ -41,9 +41,9 @@ DEPENDENCIES:
   - FacebookShare
   - IQKeyboardManagerSwift
   - Kingfisher (~> 3.0)
+  - Pulsator
   - SlideMenuControllerSwift
   - SVProgressHUD
-  - SwiftyJSON
   - Toucan
 
 SPEC CHECKSUMS:
@@ -58,11 +58,11 @@ SPEC CHECKSUMS:
   FBSDKShareKit: ca9b22264ea49a896dafb2467c1a4f72aa41996f
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   Kingfisher: 2f31cb75f3e98d3d4c406cbdcd9b263e956cfa67
+  Pulsator: 0191f14f7ab82d6dbde6fdbde42036f07a4450e3
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
 
-PODFILE CHECKSUM: 8c6862f31f3bb754a4f36df752d37855eb51100b
+PODFILE CHECKSUM: 19e025bfddf17813ef14da83beb3862fe226ca47
 
 COCOAPODS: 1.2.0.beta.1

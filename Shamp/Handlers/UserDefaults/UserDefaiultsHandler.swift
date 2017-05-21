@@ -27,22 +27,23 @@ class UserDefaultsHandler {
         }
     }
     
-    var userCredentials: (username: String, password: String)? {
+    var userCredentials: (email: String, password: String)? {
         get {
-            if let username = defaults.object(forKey: "username") as? String, let password = defaults.object(forKey: "password") as? String {
-                return (username: username, password: password)
+            if let email = defaults.object(forKey: "email") as? String, let password = defaults.object(forKey: "password") as? String {
+                return (email: email, password: password)
             } else {
                 return nil
             }
         } set (newVal) {
-            defaults.set(newVal!.username, forKey: "username")
+            defaults.set(newVal!.email, forKey: "email")
             defaults.set(newVal!.password, forKey: "password")
         }
     }
     
     func removeAll() {
         defaults.removeObject(forKey: "token")
-        defaults.removeObject(forKey: "username")
+        defaults.removeObject(forKey: "email")
         defaults.removeObject(forKey: "password")
     }
+    
 }

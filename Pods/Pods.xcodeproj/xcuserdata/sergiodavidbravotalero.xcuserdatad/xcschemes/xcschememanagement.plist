@@ -74,17 +74,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pulsator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -97,11 +97,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2D6009DAD9EC75B579A2DF3C7BF680A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>332F91393FB1DE033D370B4CEDDD5FCF</key>
 		<dict>
 			<key>primary</key>
@@ -137,7 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>613E847A786C02D4A55F54B41AECE4B4</key>
+		<key>5B66C5C79C5D72FC2D7F96F20D17DDE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,12 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DA161B08DA2CD829E0447450119A1DD</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>91ADC6BA06864E1D43BAD61241C85303</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,17 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B558B606027AC268FF70B80B9071D6F9</key>
+		<key>BD27B465FF6DA3FC3A35E6A3A38D5C77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CFCDE3E0E962771365E8EC2D84150FF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -183,6 +173,16 @@
 			<true/>
 		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBB6BD9EFB0F42056535E47A488D6348</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC0AEB76C7D5CD87002582EC75747683</key>
 		<dict>
 			<key>primary</key>
 			<true/>

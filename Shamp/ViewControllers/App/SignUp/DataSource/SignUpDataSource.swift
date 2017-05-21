@@ -133,8 +133,12 @@ class SignUpDataSource: NSObject, UITableViewDataSource {
                 cell.textField.text = signupController?.personalInfo[indexPath.row]
                 cell.textField.tag = 10 + indexPath.row
                 
-                if indexPath.row <= 4 {
-                    cell.textField.isUserInteractionEnabled = false
+                if signupController!.isAttemptingFacebook {
+                    if indexPath.row <= 4 && indexPath.row > 0 {
+                        cell.textField.isUserInteractionEnabled = false
+                    } else {
+                        cell.textField.isUserInteractionEnabled = true
+                    }
                 } else {
                     cell.textField.isUserInteractionEnabled = true
                 }

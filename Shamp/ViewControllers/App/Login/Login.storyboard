@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3X9-Sc-bUO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3X9-Sc-bUO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,14 +43,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-Pw-J6u">
-                                <rect key="frame" x="36" y="180" width="303" height="60"/>
+                                <rect key="frame" x="36" y="180" width="303" height="33"/>
                                 <color key="backgroundColor" red="0.153880774974823" green="0.27581068873405457" blue="0.52910709381103516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ReX-Hi-L8n"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Login with Facebook">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Login with Social Networks">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -59,11 +59,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="facebookButtonTapped:" destination="3X9-Sc-bUO" eventType="touchUpInside" id="Koz-0H-ZW3"/>
+                                    <action selector="loginWithSocialNetworkTapped:" destination="3X9-Sc-bUO" eventType="touchUpInside" id="LZy-T1-gii"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-QN-7As">
-                                <rect key="frame" x="167" y="290" width="42" height="21"/>
+                                <rect key="frame" x="167" y="263" width="42" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MZa-KJ-x2U"/>
                                     <constraint firstAttribute="width" constant="42" id="jlB-ng-2hK"/>
@@ -73,45 +73,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-Ex-bpb">
-                                <rect key="frame" x="36" y="300" width="126" height="1"/>
+                                <rect key="frame" x="36" y="179" width="126" height="1"/>
                                 <color key="backgroundColor" red="0.66659259800000004" green="0.66670930390000005" blue="0.66658520700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="nf7-Lr-Uiw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RK-k9-Kq3">
-                                <rect key="frame" x="214" y="300" width="125" height="1"/>
+                                <rect key="frame" x="214" y="273" width="125" height="1"/>
                                 <color key="backgroundColor" red="0.66659259800000004" green="0.66670930390000005" blue="0.66658520700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Hg7-lc-u8M"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-R6-vOh">
-                                <rect key="frame" x="36" y="372" width="303" height="30"/>
+                                <rect key="frame" x="36" y="251" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-bw-IBb">
-                                <rect key="frame" x="36" y="453" width="303" height="30"/>
+                                <rect key="frame" x="36" y="332" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vp-fj-XhT">
-                                <rect key="frame" x="36" y="351" width="303" height="16"/>
+                                <rect key="frame" x="36" y="230" width="303" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0M-37-2xL">
-                                <rect key="frame" x="36" y="432" width="303" height="16"/>
+                                <rect key="frame" x="36" y="311" width="303" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBD-HI-pEy">
-                                <rect key="frame" x="117.5" y="553" width="141" height="21"/>
+                                <rect key="frame" x="117.5" y="432" width="141" height="21"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-Nl-I4j">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
@@ -146,7 +146,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5fb-Pw-J6u" firstAttribute="leading" secondItem="0Vt-8c-YL2" secondAttribute="leadingMargin" constant="20" id="0oa-UA-Otd"/>
                             <constraint firstItem="k0M-37-2xL" firstAttribute="trailing" secondItem="5fb-Pw-J6u" secondAttribute="trailing" id="0rJ-XR-KaG"/>
@@ -159,6 +159,7 @@
                             <constraint firstItem="7Ei-R6-vOh" firstAttribute="top" secondItem="2Vp-fj-XhT" secondAttribute="bottom" constant="5" id="D0q-JI-bcO"/>
                             <constraint firstItem="iD5-Ex-bpb" firstAttribute="leading" secondItem="5fb-Pw-J6u" secondAttribute="leading" id="Dkq-RC-pmE"/>
                             <constraint firstItem="0RK-k9-Kq3" firstAttribute="leading" secondItem="XPn-QN-7As" secondAttribute="trailing" constant="5" id="EPY-wt-gAt"/>
+                            <constraint firstItem="2Vp-fj-XhT" firstAttribute="top" secondItem="raN-it-Pz5" secondAttribute="bottom" constant="100" id="MgL-1F-JfK"/>
                             <constraint firstItem="5fb-Pw-J6u" firstAttribute="top" secondItem="raN-it-Pz5" secondAttribute="bottom" constant="50" id="O87-xX-f8F"/>
                             <constraint firstItem="k0M-37-2xL" firstAttribute="leading" secondItem="5fb-Pw-J6u" secondAttribute="leading" id="QJQ-qe-Ir9"/>
                             <constraint firstItem="2Vp-fj-XhT" firstAttribute="trailing" secondItem="5fb-Pw-J6u" secondAttribute="trailing" id="QQX-sc-tYG"/>
@@ -181,9 +182,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="facebookLoginButton" destination="5fb-Pw-J6u" id="PTo-Fr-SIp"/>
+                        <outlet property="loginButton" destination="7pW-Nl-I4j" id="QCr-8h-YTf"/>
+                        <outlet property="loginWithSocialNetworksButton" destination="5fb-Pw-J6u" id="IaF-hN-pPq"/>
                         <outlet property="passwordTextfield" destination="aNl-bw-IBb" id="225-5G-2DF"/>
+                        <outlet property="signUpButton" destination="E0H-R5-sYF" id="ybZ-gJ-XsY"/>
                         <outlet property="usernameTextfield" destination="7Ei-R6-vOh" id="x9z-Qc-zM8"/>
+                        <outlet property="usernameTopConstraint" destination="CEf-yC-0C4" id="ACm-pW-fFT"/>
+                        <outlet property="usernameTopContraintWithoutSN" destination="MgL-1F-JfK" id="7Ck-nJ-Tef"/>
+                        <outletCollection property="socialNetworkViews" destination="0RK-k9-Kq3" collectionClass="NSMutableArray" id="FUT-cV-1Lh"/>
+                        <outletCollection property="socialNetworkViews" destination="iD5-Ex-bpb" collectionClass="NSMutableArray" id="7xw-hc-RXM"/>
+                        <outletCollection property="socialNetworkViews" destination="XPn-QN-7As" collectionClass="NSMutableArray" id="ak4-fd-o3r"/>
+                        <outletCollection property="socialNetworkViews" destination="5fb-Pw-J6u" collectionClass="NSMutableArray" id="xuK-Tj-cVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWf-4A-ZOT" userLabel="First Responder" sceneMemberID="firstResponder"/>

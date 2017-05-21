@@ -30,8 +30,10 @@ class LabelWithTitleTableViewCell: UITableViewCell {
         titleLabel.text = title
         textField.placeholder = placeholder
         
-        if title == "Contact Phone" || title == "Phone Number" || title == "Expiration Date" || title == "Card Number" || title == "CVV"{
+        if title == "Contact Phone" || title == "Phone Number" || title == "Card Number" || title == "CVV"{
             textField.keyboardType = .numberPad
+        } else if title == "Expiration Date" {
+            textField.keyboardType = .numbersAndPunctuation
         } else if title == "Email"{
             textField.keyboardType = .emailAddress
         } else {

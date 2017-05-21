@@ -9,14 +9,16 @@ target 'Shamp' do
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
-    pod 'SwiftyJSON'
+    
     pod 'Alamofire', '~> 4.4'
+    
     pod 'IQKeyboardManagerSwift'
     pod 'SVProgressHUD'
     pod 'Kingfisher', '~> 3.0'
     pod 'Toucan'
     pod 'DZNEmptyDataSet'
     pod 'SlideMenuControllerSwift'
+    pod "Pulsator"
     
   target 'ShampTests' do
     inherit! :search_paths

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yfD-dS-HiU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yfD-dS-HiU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-8X-NU6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-8X-NU6">
                                 <rect key="frame" x="27" y="223" width="320" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="hTg-8S-9at"/>
@@ -35,6 +35,9 @@
                             <constraint firstItem="tgJ-8X-NU6" firstAttribute="centerY" secondItem="qHw-g4-sUv" secondAttribute="centerY" id="ra3-PE-8IZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoImage" destination="tgJ-8X-NU6" id="NJu-e3-XPb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIN-Qy-JuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="320" height="220"/>
+        <image name="Logo" width="800" height="240"/>
     </resources>
 </document>

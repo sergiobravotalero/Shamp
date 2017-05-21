@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupKeyboardManager() {
         IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().toolbarTintColor = UIColor.red
+        IQKeyboardManager.sharedManager().toolbarTintColor = UIColor.signatureYellow()
     }
     
     private func setupSVProgressHUD() {

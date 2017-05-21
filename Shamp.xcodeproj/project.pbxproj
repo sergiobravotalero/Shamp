@@ -27,6 +27,7 @@
 		05B4A6481E8464D0003F4AA4 /* FacebookHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A6471E8464D0003F4AA4 /* FacebookHandler.swift */; };
 		05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64A1E8466C9003F4AA4 /* AlertViewHandler.swift */; };
 		05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */; };
+		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
 		05C763791E89B875000C064A /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763781E89B875000C064A /* Stamp.swift */; };
 		05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637B1E89C06F000C064A /* SessionHandler.swift */; };
 		05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637F1E89C95F000C064A /* UIColorExtension.swift */; };
@@ -123,6 +124,7 @@
 		05B4A6471E8464D0003F4AA4 /* FacebookHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookHandler.swift; sourceTree = "<group>"; };
 		05B4A64A1E8466C9003F4AA4 /* AlertViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewHandler.swift; sourceTree = "<group>"; };
 		05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersHandler.swift; sourceTree = "<group>"; };
+		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
 		05C763781E89B875000C064A /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		05C7637B1E89C06F000C064A /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
 		05C7637F1E89C95F000C064A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -437,6 +439,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		05C2B3CE1ED1F2060076C6E1 /* Variability */ = {
+			isa = PBXGroup;
+			children = (
+				05C2B3CF1ED1F2110076C6E1 /* Variability.swift */,
+			);
+			path = Variability;
+			sourceTree = "<group>";
+		};
 		05C763751E89B834000C064A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +455,7 @@
 				05C763A01E89F38A000C064A /* Shirt */,
 				05C763771E89B853000C064A /* Stamps */,
 				05D60B821E933B3F00EA6984 /* User */,
+				05C2B3CE1ED1F2060076C6E1 /* Variability */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -1226,6 +1237,7 @@
 				05D60B761E92FAFD00EA6984 /* CellWithArrowTableViewCell.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 				05D60B6F1E92F9AF00EA6984 /* SlideMenuDataSource.swift in Sources */,
+				05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */,
 				05D60B841E933B4A00EA6984 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
