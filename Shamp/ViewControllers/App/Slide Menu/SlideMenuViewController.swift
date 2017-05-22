@@ -13,6 +13,7 @@ class SlideMenuViewController: UIViewController, SlideMenuControllerDelegate {
 
     let dataSource = SlideMenuDataSource()
     var mainViewController: UIViewController?
+    var currentIndex = 0
     
     @IBOutlet weak var tableView: UITableView!
     // MARK: - Life Cycle

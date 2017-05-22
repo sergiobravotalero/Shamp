@@ -70,6 +70,8 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
 
     private func setupNavigationBar() {
         title = "Configure The Shirt"
+        
+        navigationController?.navigationBar.tintColor = UIColor.black
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Arrow"), style: .plain, target: self, action: #selector(backButtonTapped(sender:)))
         backButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = backButton
@@ -117,22 +119,84 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
                 return
             }
             
-            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: customizedText, textColor: selectedColor, textSize: selectedFontSize, textLocation: fontLocation) else {
+            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: customizedText, textColor: selectedColor, textSize: selectedFontSize, textLocation: fontLocation, imageUrl: stamp.imagePath) else {
                 AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
                 return
             }
             
-            ShoppingCart.shared.addProductToShoppingCart(product: product)
-            navigationController?.popToRootViewController(animated: true)
+            checkIfWantsToApplyFilter(product: product)
         } else {
-            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: nil, textColor: nil, textSize: nil, textLocation: nil) else {
+            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: nil, textColor: nil, textSize: nil, textLocation: nil, imageUrl: stamp.imagePath) else {
                 AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
                 return
             }
             
-            ShoppingCart.shared.addProductToShoppingCart(product: product)
-            navigationController?.popToRootViewController(animated: true)
+            checkIfWantsToApplyFilter(product: product)
         }
+    }
+    
+    func checkIfWantsToApplyFilter(product: Product) {
+        guard let filters = SessionHandler.shared.listOfFeatures?.filters, filters else {
+            addOrderToShoppingCart(product: product)
+            return
+        }
+        
+        guard let blackAndWhite = stamp.blackAndWhite, let negative = stamp.negative else {
+            addOrderToShoppingCart(product: product)
+            return
+        }
+        
+        guard let blackAndWhiteUrl = URL(string: blackAndWhite), let negativeUrl = URL(string: negative) else {
+            addOrderToShoppingCart(product: product)
+            return
+        }
+        
+        // Present Alert Controller
+        let alertController = UIAlertController(title: "Hey!", message: "Do you want to add a filter to the selected stamp?", preferredStyle: .alert)
+        
+        let noFilterAction = UIAlertAction(title: "No filter", style: .default, handler: { (action) in
+            self.addOrderToShoppingCart(product: product)
+        })
+        alertController.addAction(noFilterAction)
+        
+        let blackAndWhiteFilter = UIAlertAction(title: "Black and White", style: .default, handler: { (action) in
+            product.imageUrl = blackAndWhiteUrl
+            self.addOrderToShoppingCart(product: product)
+        })
+        alertController.addAction(blackAndWhiteFilter)
+        
+        let negativeFilter = UIAlertAction(title: "Negative", style: .default, handler: { (action) in
+            product.imageUrl = negativeUrl
+            self.addOrderToShoppingCart(product: product)
+        })
+        alertController.addAction(negativeFilter)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        
+        alertController.view.tintColor = UIColor.signatureYellow()
+        present(alertController, animated: true, completion: {
+            alertController.view.tintColor = UIColor.signatureYellow()
+        })
+    }
+    
+    func addOrderToShoppingCart(product: Product) {
+        
+        
+        let alertController = UIAlertController(title: nil, message: "Your product was added to your shopping cart.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: nil, message: "Your product was added to your shopping cart.")
+            ShoppingCart.shared.addProductToShoppingCart(product: product)
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        alertController.addAction(okAction)
+        
+        alertController.view.tintColor = UIColor.signatureYellow()
+        present(alertController, animated: true, completion: {
+            alertController.view.tintColor = UIColor.signatureYellow()
+        })
     }
 
     // MARK: - IBAction

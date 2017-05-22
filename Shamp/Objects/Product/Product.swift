@@ -19,8 +19,9 @@ class Product {
     let textColor: UIColor?
     let textSize: String?
     let textLocation: String?
+    var imageUrl: URL
     
-    init?(stampID: Int, shirtID: Int, quantity: Int, size: String, location: String, text: String?, textColor: UIColor?, textSize: String?, textLocation: String?) {
+    init?(stampID: Int, shirtID: Int, quantity: Int, size: String, location: String, text: String?, textColor: UIColor?, textSize: String?, textLocation: String?, imageUrl: URL) {
         self.stampID = stampID
         self.shirtID = shirtID
         self.quantity = quantity
@@ -30,6 +31,7 @@ class Product {
         self.textColor = textColor
         self.textSize = textSize
         self.textLocation = textLocation
+        self.imageUrl = imageUrl
     }
     
     // MARK: - Methods

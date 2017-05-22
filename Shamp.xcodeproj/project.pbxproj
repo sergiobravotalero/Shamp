@@ -444,6 +444,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		05BA63351ED352DF00002942 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
 		05C2B3CE1ED1F2060076C6E1 /* Variability */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +560,7 @@
 			children = (
 				05C763AB1E8A03F8000C064A /* Configure */,
 				05C763AC1E8A03F8000C064A /* List */,
+				05BA63351ED352DF00002942 /* Preview */,
 			);
 			path = Shirts;
 			sourceTree = "<group>";

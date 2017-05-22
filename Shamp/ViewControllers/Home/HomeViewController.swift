@@ -49,7 +49,6 @@ class HomeViewController: UIViewController {
     private func setupController (){
         setupTable()
         setupNavigationBar()
-        
         loadItems()
     }
     
@@ -106,6 +105,12 @@ class HomeViewController: UIViewController {
     }
     
     private func loadItems() {
+        if !SessionHandler.shared.stampsCollection.isEmpty {
+            self.dataSource.stamps = SessionHandler.shared.stampsCollection
+            self.tableView.reloadData()
+            return
+        }
+        
         SVProgressHUD.show()
         
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in

@@ -15,12 +15,19 @@ extension SlideMenuViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if currentIndex == indexPath.row {
+            slideMenuController()?.closeLeft()
+            return
+        }
+        
         if indexPath.row == 0 {
             if let controller = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
+                currentIndex = indexPath.row
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if indexPath.row == 1 {
             if let controller = UIStoryboard(name: "ShoppingCart", bundle: nil).instantiateInitialViewController() {
+                currentIndex = indexPath.row
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if indexPath.row == 2 {
