@@ -13,6 +13,10 @@ class Twitterhandler {
     static let shared = Twitterhandler()
     private init() {}
     
+    func isUserLoggedWithTwitter() {
+        
+    }
+    
     func attemtpToLogin(viewController: UIViewController) {
         Twitter.sharedInstance().logIn(with: viewController, methods: [.webBased], completion: { (session, error) in
             if session != nil {

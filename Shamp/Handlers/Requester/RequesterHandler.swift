@@ -241,4 +241,47 @@ class RequesterHandler {
             completion(true)
         })
     }
+    
+    func createNewMessage(stamp: Stamp, message: String, parentMessage: Int, completion: @escaping(_ success: Bool)-> ()) {
+        guard let requestUrl = URL(string: baseUrl + "Message") else {
+            completion(false)
+            return
+        }
+        
+        let parameters = [
+            "message_to": stamp.artistEmail,
+            "message_subject": "Message to \(stamp.artistEmail)",
+            "message_content": message,
+            "parent_message": parentMessage
+            ] as [String : Any]
+        
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            completion(false)
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            guard let _ = dictionary.object(forKey: "isSuccessfull") as? Bool else {
+                completion(false)
+                return
+            }
+            
+            guard let _ = dictionary.object(forKey: "body") as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        })
+
+    }
 }
