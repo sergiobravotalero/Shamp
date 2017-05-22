@@ -23,6 +23,8 @@ target 'Shamp' do
     pod 'SlideMenuControllerSwift'
     pod "Pulsator"
     
+    pod 'FCAlertView'
+    
   target 'ShampTests' do
     inherit! :search_paths
     # Pods for testing

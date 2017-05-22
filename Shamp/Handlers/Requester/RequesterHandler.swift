@@ -190,6 +190,41 @@ class RequesterHandler {
         })
     }
     
+    func rateStamp(stamp: Stamp, rating: Int) {
+        guard let requestUrl = URL(string: baseUrl + "Rating") else {
+            return
+        }
+        
+        let parameters = [
+            "stamp_id": stamp.id,
+            "stamp_rating": rating,
+            "stamp_comments": "No comments"
+        ] as [String : Any]
+        
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                return
+            }
+            
+            guard let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool else {
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSDictionary else {
+                return
+            }
+            
+        })
+    }
+    
     func addOrderToServerWithCompletion(order: [String : Any], completion: @escaping(_ succeeded: Bool) -> ()) {
         guard let requestUrl = URL(string: baseUrl + "order/register") else {
             completion(false)

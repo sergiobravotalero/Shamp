@@ -158,7 +158,7 @@ class HomeViewController: UIViewController {
         })
         actionSheet.addAction(nameAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(cancelAction)
         
         present(actionSheet, animated: true, completion: nil)
