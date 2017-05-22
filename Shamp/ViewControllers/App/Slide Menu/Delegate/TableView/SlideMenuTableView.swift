@@ -19,19 +19,46 @@ extension SlideMenuViewController: UITableViewDelegate {
             slideMenuController()?.closeLeft()
             return
         }
+        if let messages = SessionHandler.shared.listOfFeatures?.messages, messages {
+            changeRootControllerOfMenuWithMessages(row: indexPath.row)
+        } else {
+            changeRootController(row: indexPath.row)
+        }
         
-        if indexPath.row == 0 {
+    }
+    
+    private func changeRootController(row: Int) {
+        if row == 0 {
             if let controller = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
-                currentIndex = indexPath.row
+                currentIndex = row
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
-        } else if indexPath.row == 1 {
+        } else if row == 1 {
             if let controller = UIStoryboard(name: "ShoppingCart", bundle: nil).instantiateInitialViewController() {
-                currentIndex = indexPath.row
+                currentIndex = row
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
-        } else if indexPath.row == 2 {
+        } else if row == 2 {
             userTappedSignOut()
         }
     }
+    
+    private func changeRootControllerOfMenuWithMessages(row: Int) {
+        if row == 0 {
+            if let controller = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() {
+                currentIndex = row
+                slideMenuController()?.changeMainViewController(controller, close: true)
+            }
+        } else if row == 1 {
+            if let controller = UIStoryboard(name: "ShoppingCart", bundle: nil).instantiateInitialViewController() {
+                currentIndex = row
+                slideMenuController()?.changeMainViewController(controller, close: true)
+            }
+        } else if row == 2 {
+            print("Messages tapped")
+        } else if row == 3 {
+            userTappedSignOut()
+        }
+    }
+    
 }
