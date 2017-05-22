@@ -96,11 +96,13 @@ class HomeViewController: UIViewController {
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
             if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
                 RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                    self.setupPickerView()
                     self.dataSource.stamps = SessionHandler.shared.stampsCollection
                     self.tableView.reloadData()
                     refreshControl.endRefreshing()
                 })
             } else {
+                self.setupPickerView()
                 self.dataSource.stamps = SessionHandler.shared.stampsCollection
                 self.tableView.reloadData()
                 refreshControl.endRefreshing()
@@ -110,6 +112,7 @@ class HomeViewController: UIViewController {
     
     private func loadItems() {
         if !SessionHandler.shared.stampsCollection.isEmpty {
+            self.setupPickerView()
             self.dataSource.stamps = SessionHandler.shared.stampsCollection
             self.tableView.reloadData()
             return
@@ -118,18 +121,17 @@ class HomeViewController: UIViewController {
         SVProgressHUD.show()
         
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
-            
-            self.setupPickerView()
-            
             RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
                 
                 if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
                     RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                        self.setupPickerView()
                         self.dataSource.stamps = SessionHandler.shared.stampsCollection
                         self.tableView.reloadData()
                         SVProgressHUD.dismiss()
                     })
                 } else {
+                    self.setupPickerView()
                     self.dataSource.stamps = SessionHandler.shared.stampsCollection
                     self.tableView.reloadData()
                     SVProgressHUD.dismiss()
