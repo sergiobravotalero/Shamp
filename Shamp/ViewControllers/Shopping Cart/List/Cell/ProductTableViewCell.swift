@@ -26,6 +26,16 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var borderLayer: UIView!
+    
+    // TEXT Constraints
+    @IBOutlet var textConstraints: [NSLayoutConstraint]!
+    
+    @IBOutlet weak var customizedTextLabel: UILabel!
+    @IBOutlet weak var fontSizeLabel: UILabel!
+    @IBOutlet weak var fontColorLabel: UILabel!
+    @IBOutlet weak var textLocationLabel: UILabel!
+    
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,29 +50,58 @@ class ProductTableViewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = UIColor.clear
         
+        borderLayer.layer.borderWidth = 0.7
+        borderLayer.layer.borderColor = UIColor.black.cgColor
+        
+        stampImage.layer.borderWidth = 1
+        stampImage.layer.borderColor = UIColor.black.cgColor
+        
+        shirtImage.layer.borderWidth = 1
+        shirtImage.layer.borderColor = UIColor.black.cgColor
+        
         currentProduct = product
         
         quantityLabel.text = "\(product.quantity)"
         locationLabel.text = product.location
         priceLabel.text = "$\(product.getProductPrice())"
         
-        setupImages(stampID: product.stampID, shirtID: product.shirtID)
+        setupImages(stampUrl: product.imageUrl, shirtID: product.shirtID)
+        
+        
+        if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText{
+            guard let customizedText = product.text, let size = product.textSize, let color = product.textColor, let textLocation = product.textLocation else {
+                
+                for constraint in textConstraints {
+                    constraint.constant = 0
+                }
+                
+                return
+            }
+            
+            customizedTextLabel.text = customizedText
+            fontSizeLabel.text = size
+            fontColorLabel.backgroundColor = color
+            textLocationLabel.text = textLocation
+            
+        } else {
+            for constraint in textConstraints {
+                constraint.constant = 0
+            }
+        }
     }
     
-    private func setupImages(stampID: Int, shirtID: Int) {
-        if let stamp = SessionHandler.shared.stampsCollection.first(where: { $0.id == stampID }) {
-            KingfisherManager.shared.retrieveImage(with: stamp.imagePath, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageUrl) in
-                if let image = image {
-                    let editedImage = Toucan(image: image).maskWithEllipse(borderWidth: 10.0, borderColor: UIColor.black).image
-                    self.stampImage.image = editedImage
-                }
-            })
-        }
+    private func setupImages(stampUrl: URL, shirtID: Int) {
+        
+        KingfisherManager.shared.retrieveImage(with: stampUrl, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageUrl) in
+            if let image = image {
+                self.stampImage.image = image
+            }
+        })
         
         if let shirt = SessionHandler.shared.shirtsCollection.first(where: { $0.id == shirtID }) {
             KingfisherManager.shared.retrieveImage(with: shirt.largeImagePath, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageUrl) in
                 if let image = image {
-                    self.shirtImage.image = Toucan(image: image).maskWithEllipse(borderWidth: 10.0, borderColor: UIColor.black).image
+                    self.shirtImage.image = image
                 }
             })
         }

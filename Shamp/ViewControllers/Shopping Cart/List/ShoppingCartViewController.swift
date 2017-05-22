@@ -37,17 +37,17 @@ class ShoppingCartViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 17)!, NSForegroundColorAttributeName: UIColor.signatureGray()]
+        let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 17)!, NSForegroundColorAttributeName: UIColor.black]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.signatureYellow()
+        navigationController?.navigationBar.tintColor = UIColor.signatureYellow()
     }
     
     private func setupTable() {
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
-        tableView.estimatedRowHeight = 238.5
+        tableView.estimatedRowHeight = 258
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self

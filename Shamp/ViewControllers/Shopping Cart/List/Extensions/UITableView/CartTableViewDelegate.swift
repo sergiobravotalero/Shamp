@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension ShoppingCartViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 258
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 258
+//    }
 }
