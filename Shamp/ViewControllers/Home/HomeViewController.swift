@@ -10,6 +10,13 @@ import UIKit
 import SVProgressHUD
 
 class HomeViewController: UIViewController {
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(updateStamps(refreshControl:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
 
     var pickerShouldShowCategories = true
     var pickerShouldShowPrices = false
@@ -67,6 +74,8 @@ class HomeViewController: UIViewController {
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        
+        tableView.addSubview(self.refreshControl)
     }
     
     private func setupNavigationBar() {
@@ -83,23 +92,18 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func updateStamps() {
-        SVProgressHUD.show()
-        
+    @objc private func updateStamps(refreshControl: UIRefreshControl) {
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
-            
-            self.setupPickerView()
-            
             if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
                 RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
                     self.dataSource.stamps = SessionHandler.shared.stampsCollection
                     self.tableView.reloadData()
-                    SVProgressHUD.dismiss()
+                    refreshControl.endRefreshing()
                 })
             } else {
                 self.dataSource.stamps = SessionHandler.shared.stampsCollection
                 self.tableView.reloadData()
-                SVProgressHUD.dismiss()
+                refreshControl.endRefreshing()
             }
         })
     }
