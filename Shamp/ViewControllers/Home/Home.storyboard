@@ -42,7 +42,7 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ygm-Yy-nSb"/>
                                     <barButtonItem title="Done" style="done" id="Z1o-4F-iIW">
-                                        <color key="tintColor" red="0.96356993909999999" green="0.1707394421" blue="0.19375279549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.97647058819999999" green="0.79607843140000001" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="doneToolBarButtonTapped:" destination="SsP-07-sy5" id="HQb-52-bz0"/>
                                         </connections>
