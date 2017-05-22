@@ -91,11 +91,17 @@ class HomeViewController: UIViewController {
             
             self.setupPickerView()
             
-            RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+            if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
+                RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                    self.dataSource.stamps = SessionHandler.shared.stampsCollection
+                    self.tableView.reloadData()
+                    SVProgressHUD.dismiss()
+                })
+            } else {
                 self.dataSource.stamps = SessionHandler.shared.stampsCollection
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss()
-            })
+            }
         })
     }
     
@@ -107,13 +113,19 @@ class HomeViewController: UIViewController {
             self.setupPickerView()
             
             RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
-                print("Shirts obtained")
                 
-                RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
+                    RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                        self.dataSource.stamps = SessionHandler.shared.stampsCollection
+                        self.tableView.reloadData()
+                        SVProgressHUD.dismiss()
+                    })
+                } else {
                     self.dataSource.stamps = SessionHandler.shared.stampsCollection
                     self.tableView.reloadData()
                     SVProgressHUD.dismiss()
-                })
+                }
+                
             })
         })
     }
