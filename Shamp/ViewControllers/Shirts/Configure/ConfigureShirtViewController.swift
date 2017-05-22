@@ -102,7 +102,7 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
         }
         
         if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText {
-            guard let customizedText = cutomizedTextField.text, let selectedFontSize = selectedFontSize, let selectedColor = selectedColorLabel.backgroundColor, let fontLocation = fontLocation else {
+            guard let customizedText = cutomizedTextField.text, let selectedFontSize = selectedFontSize, let selectedColor = selectedColorLabel.backgroundColor, let fontLocation = fontLocation.text else {
                 AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
                 return
             }
@@ -116,40 +116,23 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
                 AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "Please select a different color")
                 return
             }
+            
+            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: customizedText, textColor: selectedColor, textSize: selectedFontSize, textLocation: fontLocation) else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
+                return
+            }
+            
+            ShoppingCart.shared.addProductToShoppingCart(product: product)
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation, text: nil, textColor: nil, textSize: nil, textLocation: nil) else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
+                return
+            }
+            
+            ShoppingCart.shared.addProductToShoppingCart(product: product)
+            navigationController?.popToRootViewController(animated: true)
         }
-        
-        guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation) else {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
-            return
-        }
-        
-        ShoppingCart.shared.addProductToShoppingCart(product: product)
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func setupOrderWithoutText() {
-        guard let selectedShirtSize = selectedShirtSize, let selectedLocation = selectedLocation, let quantity = quantityTextField.text else {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
-            return
-        }
-        
-        guard let quantityNumber = Int(quantity) else {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
-            return
-        }
-        
-        if quantityNumber <= 0 {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "The quantity of shirts has to be greater than zero")
-            return
-        }
-        
-        guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation) else {
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
-            return
-        }
-        
-        ShoppingCart.shared.addProductToShoppingCart(product: product)
-        navigationController?.popToRootViewController(animated: true)
     }
 
     // MARK: - IBAction

@@ -20,7 +20,7 @@ class Product {
     let textSize: String?
     let textLocation: String?
     
-    init?(stampID: Int, shirtID: Int, quantity: Int, size: String, location: String, text: String?, textColor: String?, textSize: String?, textLocation: String?) {
+    init?(stampID: Int, shirtID: Int, quantity: Int, size: String, location: String, text: String?, textColor: UIColor?, textSize: String?, textLocation: String?) {
         self.stampID = stampID
         self.shirtID = shirtID
         self.quantity = quantity

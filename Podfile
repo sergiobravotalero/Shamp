@@ -12,7 +12,7 @@ target 'Shamp' do
     
     pod 'Fabric'
     pod 'TwitterKit'
-    
+
     pod 'Alamofire', '~> 4.4'
     
     pod 'IQKeyboardManagerSwift'
@@ -23,9 +23,14 @@ target 'Shamp' do
     pod 'SlideMenuControllerSwift'
     pod "Pulsator"
     
-    pod 'FCAlertView'
+    #customized alert views
+    pod 'FCAlertView'pod 'Presentr'
     
+    # color picker
     pod 'ChromaColorPicker'
+    
+    #present pop view
+    pod 'Presentr'
     
   target 'ShampTests' do
     inherit! :search_paths
