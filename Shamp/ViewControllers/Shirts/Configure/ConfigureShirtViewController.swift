@@ -25,6 +25,8 @@ class ConfigureShirtViewController: UIViewController {
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
+    @IBOutlet var viewsOfShirtText: [UIView]!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +43,34 @@ class ConfigureShirtViewController: UIViewController {
         
         sizeTextField.delegate = self
         locationTextField.delegate = self
+        
+        if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText {
+            print("Shirt Text enabled")
+        } else {
+            for view in viewsOfShirtText {
+                view.removeFromSuperview()
+            }
+        }
     }
 
     private func setupNavigationBar() {
         title = "Configure The Shirt"
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Arrow"), style: .plain, target: self, action: #selector(backButtonTapped(sender:)))
-        backButton.tintColor = UIColor.signatureGray()
+        backButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = backButton
+        
+        let addButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addButtonTapped(sender:)))
+        addButton.tintColor = UIColor.black
+        navigationItem.rightBarButtonItem = addButton
+        
+        navigationController?.navigationBar.layoutIfNeeded()
     }
     
     func backButtonTapped(sender:UIBarButtonItem) {
         let _ = self.navigationController?.popViewController(animated: true)
     }
-
-    // MARK: - IBAction
     
-    
-    @IBAction func placeOrderTapped(_ sender: Any) {
+    func addButtonTapped(sender: UIBarButtonItem){
         guard let selectedShirtSize = selectedShirtSize, let selectedLocation = selectedLocation, let quantity = quantityTextField.text else {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
             return
@@ -80,5 +93,9 @@ class ConfigureShirtViewController: UIViewController {
         
         ShoppingCart.shared.addProductToShoppingCart(product: product)
         navigationController?.popToRootViewController(animated: true)
+    }
+
+    // MARK: - IBAction
+    @IBAction func chooseColorTapped(_ sender: Any) {
     }
 }
