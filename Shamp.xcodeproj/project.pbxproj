@@ -29,6 +29,7 @@
 		05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */; };
 		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
 		05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */; };
+		05C2B3DA1ED25F870076C6E1 /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */; };
 		05C763791E89B875000C064A /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C763781E89B875000C064A /* Stamp.swift */; };
 		05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637B1E89C06F000C064A /* SessionHandler.swift */; };
 		05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7637F1E89C95F000C064A /* UIColorExtension.swift */; };
@@ -127,6 +128,7 @@
 		05B4A64D1E8478C8003F4AA4 /* ViewControllersHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersHandler.swift; sourceTree = "<group>"; };
 		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
 		05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHandler.swift; sourceTree = "<group>"; };
+		05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
 		05C763781E89B875000C064A /* Stamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		05C7637B1E89C06F000C064A /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
 		05C7637F1E89C95F000C064A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -458,6 +460,14 @@
 			path = Twitter;
 			sourceTree = "<group>";
 		};
+		05C2B3D81ED25F660076C6E1 /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
 		05C763751E89B834000C064A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +519,7 @@
 				05D60B7B1E93317500EA6984 /* DZNEmptyState */,
 				05C763891E89D544000C064A /* StampCellDelegate */,
 				05C7638F1E89D911000C064A /* UIPickerView */,
+				05C2B3D81ED25F660076C6E1 /* UISearchBar */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1258,6 +1269,7 @@
 				05C763871E89D110000C064A /* HomeDataSource.swift in Sources */,
 				05323ADA1E935CA0009D20D6 /* SignUpTableViewDelegate.swift in Sources */,
 				05C763CE1E8A11DD000C064A /* ShoppingCart.swift in Sources */,
+				05C2B3DA1ED25F870076C6E1 /* HomeSearchBar.swift in Sources */,
 				05C763BE1E8A03F8000C064A /* ShirtListTableViewDelegate.swift in Sources */,
 				054F18A61E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift in Sources */,
 				05D60B761E92FAFD00EA6984 /* CellWithArrowTableViewCell.swift in Sources */,

@@ -21,8 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojs-Tk-3k9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wQn-EE-sfE"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-rJ-qgx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ji3-CY-D8f">
@@ -44,16 +52,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ojs-Tk-3k9" secondAttribute="trailing" id="2Xd-rF-fsK"/>
                             <constraint firstItem="ji3-CY-D8f" firstAttribute="top" secondItem="Lwa-5m-DAG" secondAttribute="bottom" id="3rg-nV-XRI"/>
                             <constraint firstItem="ji3-CY-D8f" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="7aq-on-7dg"/>
+                            <constraint firstItem="ojs-Tk-3k9" firstAttribute="top" secondItem="O3h-se-YNa" secondAttribute="bottom" id="94s-DH-sJg"/>
                             <constraint firstItem="y1o-B3-gkr" firstAttribute="top" secondItem="fpG-rJ-qgx" secondAttribute="bottom" id="E43-XV-vww"/>
                             <constraint firstItem="y1o-B3-gkr" firstAttribute="top" secondItem="ji3-CY-D8f" secondAttribute="bottom" id="JC0-2a-bab"/>
                             <constraint firstAttribute="trailing" secondItem="ji3-CY-D8f" secondAttribute="trailing" id="L6D-j3-BMx"/>
                             <constraint firstAttribute="trailing" secondItem="fpG-rJ-qgx" secondAttribute="trailing" id="QKJ-Fy-9W7"/>
+                            <constraint firstItem="ojs-Tk-3k9" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="RRm-bc-nqc"/>
                             <constraint firstItem="fpG-rJ-qgx" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="Sh1-Lz-8ng"/>
                             <constraint firstItem="Lwa-5m-DAG" firstAttribute="leading" secondItem="Plk-J1-Src" secondAttribute="leading" id="bal-IV-9jI"/>
                             <constraint firstAttribute="trailing" secondItem="Lwa-5m-DAG" secondAttribute="trailing" id="hQh-ca-xA4"/>
-                            <constraint firstItem="fpG-rJ-qgx" firstAttribute="top" secondItem="O3h-se-YNa" secondAttribute="bottom" id="i6t-Vg-HOO"/>
+                            <constraint firstItem="fpG-rJ-qgx" firstAttribute="top" secondItem="ojs-Tk-3k9" secondAttribute="bottom" id="yZX-LQ-9Rh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Stamps" id="qVk-eA-toP">
@@ -72,6 +83,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pickerView" destination="ji3-CY-D8f" id="sd6-9I-VTB"/>
+                        <outlet property="searchBar" destination="ojs-Tk-3k9" id="jlg-Cd-3CJ"/>
+                        <outlet property="searchBarHeightConstraint" destination="wQn-EE-sfE" id="sPW-Fc-YbW"/>
                         <outlet property="searchButton" destination="dPa-AC-R6Q" id="JGK-qH-iHd"/>
                         <outlet property="tableView" destination="fpG-rJ-qgx" id="wju-GX-TEH"/>
                         <outlet property="toolBar" destination="Lwa-5m-DAG" id="0f1-CS-Em0"/>

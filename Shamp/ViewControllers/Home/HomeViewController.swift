@@ -13,7 +13,9 @@ class HomeViewController: UIViewController {
 
     var pickerShouldShowCategories = true
     var pickerShouldShowPrices = false
-    var  pickerShouldShowArtists = false
+    var pickerShouldShowArtists = false
+    
+    var isSearchBarActive = false
     
     var selectedStamp: Stamp?
     let dataSource = HomeDataSource()
@@ -24,6 +26,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIBarButtonItem!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -51,6 +56,13 @@ class HomeViewController: UIViewController {
     private func setupTable() {
         dataSource.homeController = self
         tableView.dataSource = dataSource
+        
+        searchBar.delegate = self
+        searchBarHeightConstraint.constant = 0
+        
+        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.signatureYellow()]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as! [String : Any], for: .normal)
+        
         tableView.register(UINib(nibName: "StampTableViewCell", bundle: nil), forCellReuseIdentifier: "StampTableViewCell")
         tableView.estimatedRowHeight = 155.0
         
@@ -142,6 +154,7 @@ class HomeViewController: UIViewController {
         actionSheet.addAction(artistAction)
         
         let nameAction = UIAlertAction(title: "Filter by Name", style: .default, handler: { (action) in
+            self.searchBarHeightConstraint.constant = 44
         })
         actionSheet.addAction(nameAction)
         
