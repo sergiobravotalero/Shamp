@@ -11,6 +11,7 @@ import UIKit
 class CellWithArrowTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var rightArrowImage: UIImageView!
     
     // MARK: - Life Cycle
     override func awakeFromNib() {
@@ -25,5 +26,7 @@ class CellWithArrowTableViewCell: UITableViewCell {
     func configureCell(name: String) {
         selectionStyle = .none
         nameLabel.text = name
+        
+//        rightArrowImage.image = #imageLiteral(resourceName: "Right Arrow").tintPhoto(UIColor.signatureYellow())
     }
 }
