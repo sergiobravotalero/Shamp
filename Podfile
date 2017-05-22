@@ -25,6 +25,8 @@ target 'Shamp' do
     
     pod 'FCAlertView'
     
+    pod 'ChromaColorPicker'
+    
   target 'ShampTests' do
     inherit! :search_paths
     # Pods for testing

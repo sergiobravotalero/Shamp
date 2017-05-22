@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ChromaColorPicker
 
-class ConfigureShirtViewController: UIViewController {
+class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate {
 
     var shirt: Shirt!
     var stamp: Stamp!
@@ -21,12 +22,14 @@ class ConfigureShirtViewController: UIViewController {
     
     let pickerView = UIPickerView()
     
+    @IBOutlet weak var selectedColorLabel: UILabel!
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
     @IBOutlet var viewsOfShirtText: [UIView]!
     
+    @IBOutlet weak var colorPickerView: UIView!
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,5 +100,19 @@ class ConfigureShirtViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction func chooseColorTapped(_ sender: Any) {
+        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        neatColorPicker.delegate = self //ChromaColorPickerDelegate
+        neatColorPicker.padding = 5
+        neatColorPicker.stroke = 3
+        neatColorPicker.hexLabel.textColor = UIColor.white
+        neatColorPicker.center = colorPickerView.center
+        colorPickerView.addSubview(neatColorPicker)
+        colorPickerView.isHidden = false
+    }
+    
+    // MARK:  Delegate
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        selectedColorLabel.backgroundColor = color
+        colorPickerView.isHidden = true
     }
 }

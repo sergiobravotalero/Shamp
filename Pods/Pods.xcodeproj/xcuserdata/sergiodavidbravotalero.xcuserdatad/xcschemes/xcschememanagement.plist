@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChromaColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,7 +112,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0741F614A277126440A896370A9977E0</key>
+		<key>0EBD0EAB0C966960EF26B20DD110DEC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0F95B2E989BD517F4CD9D23CC3F6752C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,6 +137,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>421514E2889E894B64F8EEB787639CC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
@@ -142,17 +157,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52B9974C0DCE909EF553C9C8726BE191</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5B5AC3C06B783F8674FDB4C0F900B56A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D5B67B3AA00C5080957A07A50856C9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6415002DD363BB584285223BEEC1983C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +187,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DA75179C47B0724BBFE6BC0CBEB7108</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A7FEAA14E89971698ACA148F7F7202F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B611A78EEBD66F64D0C47FB6EF76BE4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,12 +207,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF4DE5D9A6E30AA6EE458ADB89EDEF00</key>
+		<key>EF1ABE20DAA23760FBF0359740C1F0B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF1ABE20DAA23760FBF0359740C1F0B9</key>
+		<key>FBBAE5CE7583CE7DC4B5E68263B7206F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

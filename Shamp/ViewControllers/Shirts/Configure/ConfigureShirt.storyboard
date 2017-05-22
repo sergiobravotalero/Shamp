@@ -197,20 +197,26 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-qh-HjJ">
-                                        <rect key="frame" x="8" y="31" width="108" height="33"/>
+                                        <rect key="frame" x="8" y="31" width="61" height="33"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Choose Color">
-                                            <color key="titleColor" red="0.97647058819999999" green="0.79607843140000001" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Choose">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="chooseColorTapped:" destination="dLW-P2-V1u" eventType="touchUpInside" id="gEg-JK-rsm"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVd-V5-XKu">
-                                        <rect key="frame" x="124" y="37" width="171" height="21"/>
+                                        <rect key="frame" x="77" y="37" width="218" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,6 +271,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-9x-qUA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -272,10 +282,13 @@
                             <constraint firstItem="Ja8-d3-4cM" firstAttribute="leading" secondItem="KLC-QN-XGU" secondAttribute="leading" id="49A-Rd-22e"/>
                             <constraint firstItem="rmO-Pc-3DI" firstAttribute="leading" secondItem="Ja8-d3-4cM" secondAttribute="leading" id="59O-ea-xl9"/>
                             <constraint firstItem="rmO-Pc-3DI" firstAttribute="trailing" secondItem="Ja8-d3-4cM" secondAttribute="trailing" id="5JL-Zq-l2Y"/>
+                            <constraint firstAttribute="trailing" secondItem="8u0-9x-qUA" secondAttribute="trailing" id="A3O-R6-4s1"/>
                             <constraint firstItem="x1A-d4-9AL" firstAttribute="top" secondItem="PUn-mK-50q" secondAttribute="bottom" constant="20" id="BCO-Z4-huC"/>
+                            <constraint firstItem="8u0-9x-qUA" firstAttribute="top" secondItem="i5a-eL-P9g" secondAttribute="top" id="EPk-e0-lyn"/>
                             <constraint firstItem="Ja8-d3-4cM" firstAttribute="trailing" secondItem="KLC-QN-XGU" secondAttribute="trailing" id="FP0-FY-f49"/>
                             <constraint firstItem="PUn-mK-50q" firstAttribute="top" secondItem="TEY-M6-ezI" secondAttribute="bottom" constant="20" id="Jks-Z3-HGr"/>
                             <constraint firstItem="KLC-QN-XGU" firstAttribute="leading" secondItem="i5a-eL-P9g" secondAttribute="leadingMargin" constant="20" id="RLc-es-CyK"/>
+                            <constraint firstAttribute="bottom" secondItem="8u0-9x-qUA" secondAttribute="bottom" id="VOt-ID-bxc"/>
                             <constraint firstItem="vcD-Kf-Skk" firstAttribute="top" secondItem="rmO-Pc-3DI" secondAttribute="bottom" constant="20" id="ZJu-VX-Jim"/>
                             <constraint firstItem="Ja8-d3-4cM" firstAttribute="top" secondItem="KLC-QN-XGU" secondAttribute="bottom" constant="20" id="Zbi-nk-MiE"/>
                             <constraint firstItem="PUn-mK-50q" firstAttribute="leading" secondItem="TEY-M6-ezI" secondAttribute="leading" id="c5V-Uh-OtT"/>
@@ -286,14 +299,17 @@
                             <constraint firstItem="vcD-Kf-Skk" firstAttribute="leading" secondItem="rmO-Pc-3DI" secondAttribute="leading" id="poi-PE-jYV"/>
                             <constraint firstItem="x1A-d4-9AL" firstAttribute="leading" secondItem="PUn-mK-50q" secondAttribute="leading" id="qWP-CV-fBp"/>
                             <constraint firstItem="KLC-QN-XGU" firstAttribute="top" secondItem="Pfn-nd-iQs" secondAttribute="bottom" constant="30" id="uWQ-Es-GZr"/>
+                            <constraint firstItem="8u0-9x-qUA" firstAttribute="leading" secondItem="i5a-eL-P9g" secondAttribute="leading" id="wEQ-KU-Zzp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KLC-QN-XGU" secondAttribute="trailing" constant="20" id="xPa-TT-rwP"/>
                             <constraint firstItem="TEY-M6-ezI" firstAttribute="trailing" secondItem="vcD-Kf-Skk" secondAttribute="trailing" id="y2w-uU-GGu"/>
                             <constraint firstItem="vcD-Kf-Skk" firstAttribute="trailing" secondItem="rmO-Pc-3DI" secondAttribute="trailing" id="yE3-PE-Opd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorPickerView" destination="8u0-9x-qUA" id="57z-VW-e4r"/>
                         <outlet property="locationTextField" destination="zbp-8Z-Gxx" id="uSm-1w-h48"/>
                         <outlet property="quantityTextField" destination="FYp-Ff-5DC" id="4Hn-uO-AKG"/>
+                        <outlet property="selectedColorLabel" destination="YVd-V5-XKu" id="3T9-hO-Kns"/>
                         <outlet property="sizeTextField" destination="eZe-ck-CMQ" id="Po3-Uf-a6L"/>
                         <outletCollection property="viewsOfShirtText" destination="vcD-Kf-Skk" collectionClass="NSMutableArray" id="giR-6I-exw"/>
                         <outletCollection property="viewsOfShirtText" destination="TEY-M6-ezI" collectionClass="NSMutableArray" id="2uR-XH-4tH"/>
