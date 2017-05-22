@@ -31,7 +31,7 @@ class ShirtsViewController: UIViewController {
     private func setupNavigationBar() {
         title = "Select Shirt"
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Arrow"), style: .plain, target: self, action: #selector(backButtonTapped(sender:)))
-        backButton.tintColor = UIColor.signatureGray()
+        backButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = backButton
     }
     

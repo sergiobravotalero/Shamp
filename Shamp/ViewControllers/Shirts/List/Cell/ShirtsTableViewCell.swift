@@ -18,6 +18,7 @@ class ShirtsTableViewCell: UITableViewCell {
     var currentShirt: Shirt!
     var delegate: ShirtCellDelegate?
 
+    @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var shirtImage: UIImageView!
    
     @IBOutlet weak var shirtNameLabel: UILabel!
@@ -37,6 +38,9 @@ class ShirtsTableViewCell: UITableViewCell {
     func configureCell(shirt: Shirt) {
         selectionStyle = .none
         backgroundColor = UIColor.clear
+        
+        borderView.layer.borderWidth = 0.7
+        borderView.layer.borderColor = UIColor.black.cgColor
         
         currentShirt = shirt
         
