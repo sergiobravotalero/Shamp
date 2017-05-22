@@ -62,26 +62,38 @@ extension HomeViewController: StampCellDelegate {
     
     // MARK: - Share stamp
     func shareStamp(stamp: Stamp) {
-        
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
-            if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
-                socialController.setInitialText("I love this stamp named \(stamp.name)")
-                socialController.add(stamp.imagePath)
-                present(socialController, animated: true, completion: nil)
-            }
-        }
-        
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-            if let socialController = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
-                socialController.setInitialText("I love this stamp named \(stamp.name)")
-                socialController.add(stamp.imagePath)
-                present(socialController, animated: true, completion: nil)
-            }
-        }
-        
         if !SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) && !SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Sorry", message: "We can't share to any of your social networks right now.")
         }
+        
+        let actionController = UIAlertController(title: "Where do you want to post?", message: nil, preferredStyle: .actionSheet)
+        
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            let facebookAction = UIAlertAction(title: "Facebook", style: .default, handler: { (action) in
+                if let socialController = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+                    socialController.setInitialText("I love this stamp named \(stamp.name)")
+                    socialController.add(stamp.imagePath)
+                    self.present(socialController, animated: true, completion: nil)
+                }
+            })
+            actionController.addAction(facebookAction)
+        }
+        
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: { action in
+                if let socialController = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+                    socialController.setInitialText("I love this stamp named \(stamp.name)")
+                    socialController.add(stamp.imagePath)
+                    self.present(socialController, animated: true, completion: nil)
+                }
+            })
+            actionController.addAction(twitterAction)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionController.addAction(cancelAction)
+        
+        present(actionController, animated: true, completion: nil)
     }
     
     // MARK: - Messages
