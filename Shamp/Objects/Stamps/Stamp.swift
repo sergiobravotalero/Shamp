@@ -19,9 +19,13 @@ class Stamp {
     let shortDescription: String
     let price: Int
     let imagePath: URL
+    let isPrivate: Bool
+    let rating: Int?
+    let blackAndWhite: String?
+    let negative: String?
     
     // MARK: - Initializer
-    init?(id: Int, artistID: Int, artistEmail: String, categoryID: Int, categoryName: String, status: Bool, name: String, shortDescription: String, price: Int, imagePath: URL) {
+    init?(id: Int, artistID: Int, artistEmail: String, categoryID: Int, categoryName: String, status: Bool, name: String, shortDescription: String, price: Int, imagePath: URL, isPrivate: Bool, rating: Int?, blackAndWhite: String?, negative: String?) {
         self.id = id
         self.artistID = artistID
         self.artistEmail = artistEmail
@@ -32,6 +36,10 @@ class Stamp {
         self.shortDescription = shortDescription
         self.price = price
         self.imagePath = imagePath
+        self.isPrivate = isPrivate
+        self.rating = rating
+        self.blackAndWhite = blackAndWhite
+        self.negative = negative
     }
     
 }

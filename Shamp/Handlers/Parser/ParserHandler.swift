@@ -52,7 +52,7 @@ class ParserHandler {
     
     
     // MARK: - Stamp
-    func getCollectionOfStampsWithCompletion(dictionary: NSArray, completion: () -> ()) {
+    func getCollectionOfStampsWithCompletion(dictionary: NSArray, privateStamps: Bool, completion: () -> ()) {
     
         var stamps = [Stamp]()
         for element in dictionary {
@@ -90,11 +90,23 @@ class ParserHandler {
                 name: stampName,
                 shortDescription: stampShortDescription,
                 price: stampPrice,
-                imagePath: stampImage) else { continue }
+                imagePath: stampImage,
+                isPrivate: privateStamps,
+                rating: elementDictionary.object(forKey: "stamp_rating") as? Int,
+                blackAndWhite: elementDictionary.object(forKey: "stamp_blackwhite") as? String,
+                negative: elementDictionary.object(forKey: "stamp_negative") as? String
+                ) else { continue }
             stamps.append(stamp)
+            
+            if !SessionHandler.shared.stampsCollection.contains(where: { $0.id == stamp.id }) {
+                SessionHandler.shared.stampsCollection.append(stamp)
+            } else if let index = SessionHandler.shared.stampsCollection.index(where: { $0.id == stamp.id }) {
+                SessionHandler.shared.stampsCollection[index] = stamp
+            }
+            
         }
         
-        SessionHandler.shared.stampsCollection = stamps
+        SessionHandler.shared.stampsCollection.sort(by: { $0.isPrivate && !$1.isPrivate })
         completion()
     }
     

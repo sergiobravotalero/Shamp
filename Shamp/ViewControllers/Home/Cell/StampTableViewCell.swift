@@ -26,6 +26,9 @@ class StampTableViewCell: UITableViewCell {
     @IBOutlet weak var stampDescriptionLabel: UILabel!
     @IBOutlet weak var stampPriceLabel: UILabel!
     
+    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var rateLabel: UILabel!
+    
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,6 +53,16 @@ class StampTableViewCell: UITableViewCell {
         stampPriceLabel.text = "$\(stamp.price)"
         
         stampImage.kf.setImage(with: stamp.imagePath)
+        
+        if let rating = stamp.rating {
+            starImage.isHidden = false
+            rateLabel.isHidden = false
+            
+            rateLabel.text = "\(rating)"
+        } else {
+            starImage.isHidden = true
+            rateLabel.isHidden = true
+        }
     }
     
     // MARK: - IBActions

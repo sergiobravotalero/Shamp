@@ -55,6 +55,7 @@ extension HomeViewController: StampCellDelegate {
         
         alert.makeAlertTypeRateStars({ (rating) in
             RequesterHandler().rateStamp(stamp: stamp, rating: rating)
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Thanks", message: "We appreciate your feddback.")
         })
         
         alert.showAlert(withTitle: "Rate \(stamp.name)", withSubtitle: "Tell us how much you like this stamp.", withCustomImage: nil, withDoneButtonTitle: nil, andButtons: nil)

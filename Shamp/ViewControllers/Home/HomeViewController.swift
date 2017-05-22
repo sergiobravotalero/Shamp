@@ -86,23 +86,34 @@ class HomeViewController: UIViewController {
     
     private func updateStamps() {
         SVProgressHUD.show()
+        
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
-            self.dataSource.stamps = SessionHandler.shared.stampsCollection
-            self.tableView.reloadData()
+            
             self.setupPickerView()
-            SVProgressHUD.dismiss()
+            
+            RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                self.dataSource.stamps = SessionHandler.shared.stampsCollection
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
+            })
         })
     }
     
     private func loadItems() {
         SVProgressHUD.show()
+        
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
-            self.dataSource.stamps = SessionHandler.shared.stampsCollection
-            self.tableView.reloadData()
+            
             self.setupPickerView()
             
             RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
-                SVProgressHUD.dismiss()
+                print("Shirts obtained")
+                
+                RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                    self.dataSource.stamps = SessionHandler.shared.stampsCollection
+                    self.tableView.reloadData()
+                    SVProgressHUD.dismiss()
+                })
             })
         })
     }
