@@ -15,4 +15,8 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
         let attributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 19)!, NSForegroundColorAttributeName: UIColor.signatureGray()]
         return NSAttributedString(string: "No Products Added", attributes: attributes)
     }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
 }

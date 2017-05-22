@@ -55,7 +55,10 @@ extension SlideMenuViewController: UITableViewDelegate {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if row == 2 {
-            print("Messages tapped")
+            if let controller = UIStoryboard(name: "Messages", bundle: nil).instantiateInitialViewController() {
+                currentIndex = row
+                slideMenuController()?.changeMainViewController(controller, close: true)
+            }
         } else if row == 3 {
             userTappedSignOut()
         }

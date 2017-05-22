@@ -360,4 +360,47 @@ class RequesterHandler {
         })
 
     }
+    
+    func replyMessage(message: Message, content: String, completion: @escaping(_ success: Bool)-> ()) {
+        guard let requestUrl = URL(string: baseUrl + "Message") else {
+            completion(false)
+            return
+        }
+        
+        let parameters = [
+            "message_to": message.from,
+            "message_subject": "Reply to \(message.from)",
+            "message_content": content,
+            "parent_message": message.id ?? -1
+            ] as [String : Any]
+        
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            completion(false)
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            guard let _ = dictionary.object(forKey: "isSuccessfull") as? Bool else {
+                completion(false)
+                return
+            }
+            
+            guard let _ = dictionary.object(forKey: "body") as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        })
+        
+    }
 }
