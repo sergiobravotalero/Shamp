@@ -185,4 +185,35 @@ class ParserHandler {
         completion(true)
         
     }
+    
+    // MARK: - Message
+    func getCollectionOfMessages(array: NSArray, completion: () -> ()) {
+        
+        for element in array {
+            guard let elementDictionary = element as? NSDictionary else { continue }
+            
+            guard let id = elementDictionary.object(forKey: "message_id") as? Int else { continue }
+            guard let from = elementDictionary.object(forKey: "message_from") as? String else { continue }
+            guard let to = elementDictionary.object(forKey: "message_to") as? String else { continue }
+            guard let subject = elementDictionary.object(forKey: "message_subject") as? String else { continue }
+            guard let content = elementDictionary.object(forKey: "message_content") as? String else { continue }
+            
+            guard let message = Message(
+                id: id,
+                from: from,
+                to: to,
+                subject: subject,
+                content: content,
+                parentMessage: elementDictionary.object(forKey: "parent_message") as? Int
+                ) else { return }
+            
+            if let index = SessionHandler.shared.messagesCollection.index(where: { $0.compare(toMessage: message) }) {
+                SessionHandler.shared.messagesCollection[index] = message
+            } else {
+                SessionHandler.shared.messagesCollection.append(message)
+            }
+        }
+    
+        completion()
+    }
 }

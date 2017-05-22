@@ -122,23 +122,35 @@ class HomeViewController: UIViewController {
         
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
             RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
-                
-                if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
-                    RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
-                        self.setupPickerView()
-                        self.dataSource.stamps = SessionHandler.shared.stampsCollection
-                        self.tableView.reloadData()
-                        SVProgressHUD.dismiss()
-                    })
+                if let messages = SessionHandler.shared.listOfFeatures?.messages, messages {
+                    self.getMessages()
                 } else {
-                    self.setupPickerView()
-                    self.dataSource.stamps = SessionHandler.shared.stampsCollection
-                    self.tableView.reloadData()
-                    SVProgressHUD.dismiss()
+                    self.getPrivateStamps()
                 }
-                
             })
         })
+    }
+    
+    private func getMessages() {
+        RequesterHandler().getListOfMessagesWithCompletion(completion: { (completion) in
+            self.getPrivateStamps()
+        })
+    }
+    
+    private func getPrivateStamps() {
+        if let privateStamp = SessionHandler.shared.listOfFeatures?.privateStamp, privateStamp {
+            RequesterHandler().getListOfPrivateStampsWithCompletion(completion: { (success) in
+                self.setupPickerView()
+                self.dataSource.stamps = SessionHandler.shared.stampsCollection
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
+            })
+        } else {
+            self.setupPickerView()
+            self.dataSource.stamps = SessionHandler.shared.stampsCollection
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+        }
     }
     
     private func showFilterPicker() {
