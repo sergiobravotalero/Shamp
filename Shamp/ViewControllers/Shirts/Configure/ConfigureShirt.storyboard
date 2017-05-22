@@ -307,6 +307,9 @@
                     </view>
                     <connections>
                         <outlet property="colorPickerView" destination="8u0-9x-qUA" id="57z-VW-e4r"/>
+                        <outlet property="cutomizedTextField" destination="XwP-3O-QFy" id="key-eI-BUQ"/>
+                        <outlet property="fontLocation" destination="wAY-dW-a8A" id="0UR-sK-Yce"/>
+                        <outlet property="fontSizeTextField" destination="3Or-Gt-yTt" id="3ah-nm-tlb"/>
                         <outlet property="locationTextField" destination="zbp-8Z-Gxx" id="uSm-1w-h48"/>
                         <outlet property="quantityTextField" destination="FYp-Ff-5DC" id="4Hn-uO-AKG"/>
                         <outlet property="selectedColorLabel" destination="YVd-V5-XKu" id="3T9-hO-Kns"/>

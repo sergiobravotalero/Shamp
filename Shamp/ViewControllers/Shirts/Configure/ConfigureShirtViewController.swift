@@ -16,20 +16,28 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
     
     var selectedShirtSize: String?
     var selectedLocation: String?
+    var selectedFontSize: String?
+    var selectedFontLocation: String?
     
     var shirtSizes = ["X-Small", "Small", "Medium", "Large", "X-Large"]
     var location = ["Chest", "Back", "Left Shoulder", "Right Shoulder"]
+    var fontSizes = ["Small", "Medium", "Big"]
     
     let pickerView = UIPickerView()
     
     @IBOutlet weak var selectedColorLabel: UILabel!
+    
+    @IBOutlet weak var cutomizedTextField: UITextField!
     @IBOutlet weak var sizeTextField: UITextField!
+    @IBOutlet weak var fontSizeTextField: UITextField!
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var fontLocation: UITextField!
     
     @IBOutlet var viewsOfShirtText: [UIView]!
     
     @IBOutlet weak var colorPickerView: UIView!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +50,14 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
         setupPickerView()
         
         sizeTextField.tag = 0
-        locationTextField.tag = 1
+        locationTextField.tag = 2
+        fontSizeTextField.tag = 4
+        fontLocation.tag = 6
         
         sizeTextField.delegate = self
         locationTextField.delegate = self
+        fontSizeTextField.delegate = self
+        fontLocation.delegate = self
         
         if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText {
             print("Shirt Text enabled")
@@ -74,6 +86,48 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
     }
     
     func addButtonTapped(sender: UIBarButtonItem){
+        guard let selectedShirtSize = selectedShirtSize, let selectedLocation = selectedLocation, let quantity = quantityTextField.text else {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
+            return
+        }
+        
+        guard let quantityNumber = Int(quantity) else {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
+            return
+        }
+        
+        if quantityNumber <= 0 {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "The quantity of shirts has to be greater than zero")
+            return
+        }
+        
+        if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText {
+            guard let customizedText = cutomizedTextField.text, let selectedFontSize = selectedFontSize, let selectedColor = selectedColorLabel.backgroundColor, let fontLocation = fontLocation else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
+                return
+            }
+            
+            if customizedText.replacingOccurrences(of: " ", with: "") == "" {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
+                return
+            }
+            
+            if selectedColor == UIColor.clear || selectedColor == UIColor.white {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "Please select a different color")
+                return
+            }
+        }
+        
+        guard let product = Product(stampID: stamp.id, shirtID: shirt.id, quantity: quantityNumber, size: selectedShirtSize, location: selectedLocation) else {
+            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Ooops", message: "Something went wrong. Please try again.")
+            return
+        }
+        
+        ShoppingCart.shared.addProductToShoppingCart(product: product)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func setupOrderWithoutText() {
         guard let selectedShirtSize = selectedShirtSize, let selectedLocation = selectedLocation, let quantity = quantityTextField.text else {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields in order to add to cart")
             return
