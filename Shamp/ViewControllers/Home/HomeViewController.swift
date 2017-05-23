@@ -122,12 +122,18 @@ class HomeViewController: UIViewController {
         
         RequesterHandler().getListOfStampsWithCompletion(completion: { (suceeded) in
             RequesterHandler().getListOfShirtsWithCompletion(completion: { (succeeded) in
-                if let messages = SessionHandler.shared.listOfFeatures?.messages, messages {
-                    self.getMessages()
-                } else {
-                    self.getPrivateStamps()
-                }
+                self.getOrders()
             })
+        })
+    }
+    
+    private func getOrders() {
+        RequesterHandler().getListOfOrders(completion: { (success) in
+            if let messages = SessionHandler.shared.listOfFeatures?.messages, messages {
+                self.getMessages()
+            } else {
+                self.getPrivateStamps()
+            }
         })
     }
     

@@ -36,6 +36,13 @@
 		05BA634A1ED3821600002942 /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63491ED3821600002942 /* MessagesDataSource.swift */; };
 		05BA634D1ED384E900002942 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA634C1ED384E900002942 /* MessageCell.swift */; };
 		05BA634F1ED3880200002942 /* MessagesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA634E1ED3880200002942 /* MessagesTableView.swift */; };
+		05BA63521ED3C7EB00002942 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63511ED3C7EB00002942 /* Order.swift */; };
+		05BA63581ED3D82000002942 /* MyOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BA63571ED3D82000002942 /* MyOrders.storyboard */; };
+		05BA635A1ED3D83400002942 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63591ED3D83400002942 /* MyOrdersViewController.swift */; };
+		05BA635D1ED3D9A700002942 /* MyOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */; };
+		05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */; };
+		05BA63601ED3DB1400002942 /* MyOrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */; };
+		05BA63631ED3F09C00002942 /* MyOrdersEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */; };
 		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
 		05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */; };
 		05C2B3DA1ED25F870076C6E1 /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */; };
@@ -144,6 +151,13 @@
 		05BA63491ED3821600002942 /* MessagesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
 		05BA634C1ED384E900002942 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		05BA634E1ED3880200002942 /* MessagesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableView.swift; sourceTree = "<group>"; };
+		05BA63511ED3C7EB00002942 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		05BA63571ED3D82000002942 /* MyOrders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyOrders.storyboard; sourceTree = "<group>"; };
+		05BA63591ED3D83400002942 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
+		05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersTableViewCell.xib; sourceTree = "<group>"; };
+		05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersDataSource.swift; sourceTree = "<group>"; };
+		05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersEmptyState.swift; sourceTree = "<group>"; };
 		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
 		05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHandler.swift; sourceTree = "<group>"; };
 		05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
@@ -358,6 +372,7 @@
 				05B4A6271E843A39003F4AA4 /* App */,
 				05B4A63B1E845AD3003F4AA4 /* Home */,
 				05BA633C1ED37CAD00002942 /* Messages */,
+				05BA63531ED3D7AC00002942 /* MyOrders */,
 				05C763921E89E2A0000C064A /* Shirts */,
 				05C763D71E8A1B08000C064A /* Shopping Cart */,
 			);
@@ -533,6 +548,59 @@
 			path = MessageCell;
 			sourceTree = "<group>";
 		};
+		05BA63501ED3C7E300002942 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				05BA63511ED3C7EB00002942 /* Order.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		05BA63531ED3D7AC00002942 /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				05BA63541ED3D7AC00002942 /* Cell */,
+				05BA63551ED3D7AC00002942 /* DataSource */,
+				05BA63561ED3D7AC00002942 /* Extension */,
+				05BA63571ED3D82000002942 /* MyOrders.storyboard */,
+				05BA63591ED3D83400002942 /* MyOrdersViewController.swift */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		05BA63541ED3D7AC00002942 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */,
+				05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		05BA63551ED3D7AC00002942 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		05BA63561ED3D7AC00002942 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05BA63611ED3F05A00002942 /* DZNEmptyState */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		05BA63611ED3F05A00002942 /* DZNEmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */,
+			);
+			path = DZNEmptyState;
+			sourceTree = "<group>";
+		};
 		05C2B3CE1ED1F2060076C6E1 /* Variability */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +630,7 @@
 			children = (
 				05C7638C1E89D60C000C064A /* Category */,
 				05BA63391ED3779E00002942 /* Message */,
+				05BA63501ED3C7E300002942 /* Order */,
 				05C763CF1E8A1448000C064A /* Product */,
 				05C763A01E89F38A000C064A /* Shirt */,
 				05C763771E89B853000C064A /* Stamps */,
@@ -1129,6 +1198,7 @@
 				05323AE01E93DD04009D20D6 /* SplashScreen.storyboard in Resources */,
 				05B4A62E1E843A39003F4AA4 /* Assets.xcassets in Resources */,
 				05D6DCA01E8AF35F0081EDB8 /* ShoppingCart.storyboard in Resources */,
+				05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */,
 				05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */,
 				05BA63481ED37E8500002942 /* MessageTableViewCell.xib in Resources */,
 				05D60B771E92FAFD00EA6984 /* CellWithArrowTableViewCell.xib in Resources */,
@@ -1140,6 +1210,7 @@
 				05C763BF1E8A03F8000C064A /* Shirts.storyboard in Resources */,
 				05BA633E1ED37CBD00002942 /* Messages.storyboard in Resources */,
 				05D6DC9D1E8AF35F0081EDB8 /* ProductTableViewCell.xib in Resources */,
+				05BA63581ED3D82000002942 /* MyOrders.storyboard in Resources */,
 				05D60B6B1E92EED100EA6984 /* SlideMenu.storyboard in Resources */,
 				05B4A63A1E843B02003F4AA4 /* LaunchScreen.storyboard in Resources */,
 				05D60B891E93541D00EA6984 /* SignUp.storyboard in Resources */,
@@ -1323,6 +1394,7 @@
 				05D60B6D1E92EEF100EA6984 /* SlideMenuViewController.swift in Sources */,
 				05D6DC9E1E8AF35F0081EDB8 /* ShoppingCartDataSource.swift in Sources */,
 				05C763C01E8A03F8000C064A /* ShirtsViewController.swift in Sources */,
+				05BA635D1ED3D9A700002942 /* MyOrdersTableViewCell.swift in Sources */,
 				05D60B7A1E93009500EA6984 /* SlideMenuTableView.swift in Sources */,
 				05C763911E89D91E000C064A /* HomePickerView.swift in Sources */,
 				05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */,
@@ -1331,6 +1403,7 @@
 				05D6DC9F1E8AF35F0081EDB8 /* CartTableViewDelegate.swift in Sources */,
 				05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */,
 				05D6DCB31E8AF8E60081EDB8 /* PlaceOrderViewController.swift in Sources */,
+				05BA63631ED3F09C00002942 /* MyOrdersEmptyState.swift in Sources */,
 				05BA63401ED37CCC00002942 /* MessagesViewController.swift in Sources */,
 				05C763BC1E8A03F8000C064A /* ShirtsDataSource.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
@@ -1338,6 +1411,7 @@
 				05A0B3201E89B58200FB8B9F /* ParserHandler.swift in Sources */,
 				05D6DC9C1E8AF35F0081EDB8 /* ProductTableViewCell.swift in Sources */,
 				05323AE41E93E378009D20D6 /* FBRequestHandler.swift in Sources */,
+				05BA63521ED3C7EB00002942 /* Order.swift in Sources */,
 				05B4A64E1E8478C8003F4AA4 /* ViewControllersHandler.swift in Sources */,
 				05C7638B1E89D560000C064A /* StampCellDelegate.swift in Sources */,
 				05C763BA1E8A03F8000C064A /* ShirtsTableViewCell.swift in Sources */,
@@ -1373,6 +1447,8 @@
 				05BA63471ED37E8500002942 /* MessageTableViewCell.swift in Sources */,
 				054F18A61E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift in Sources */,
 				05D60B761E92FAFD00EA6984 /* CellWithArrowTableViewCell.swift in Sources */,
+				05BA635A1ED3D83400002942 /* MyOrdersViewController.swift in Sources */,
+				05BA63601ED3DB1400002942 /* MyOrdersDataSource.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 				05D60B6F1E92F9AF00EA6984 /* SlideMenuDataSource.swift in Sources */,
 				05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */,

@@ -176,6 +176,44 @@ class RequesterHandler {
         })
     }
     
+    func getListOfOrders(completion: @escaping(_ success: Bool) -> ()) {
+        guard let requestUrl = URL(string: baseUrl + "Order/User") else {
+            completion(false)
+            return
+        }
+        
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            completion(false)
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            if let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, !isSuccessful {
+                completion(false)
+                return
+            }
+            
+            guard let body = dictionary.object(forKey: "body") as? NSArray else {
+                completion(false)
+                return
+            }
+            
+            ParserHandler().getCollectionOfOrders(body: body, completion: {
+                completion(true)
+            })
+        })
+
+    }
+    
     // MARK: - POST
     func attemptToLoginWith(email: String, password: String, completion: @escaping (_ succeeded: Bool) -> ()) {
         guard let requestUrl = URL(string: baseUrl + "User/Token") else {

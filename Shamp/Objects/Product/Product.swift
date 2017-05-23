@@ -41,4 +41,8 @@ class Product {
         let stampPrice = stamp.price
         return (stampPrice * self.quantity) + (shirtPrice * self.quantity)
     }
+    
+    func equals(toProduct: Product) -> Bool {
+        return self.stampID == toProduct.stampID && self.shirtID == toProduct.shirtID && self.quantity == toProduct.quantity && self.size == toProduct.size && self.location == toProduct.location && self.text == toProduct.text && self.textColor == toProduct.textColor && self.textSize == toProduct.textSize && self.textLocation == toProduct.textLocation && self.imageUrl == toProduct.imageUrl
+    }
 }

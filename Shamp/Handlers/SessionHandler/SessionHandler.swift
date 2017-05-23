@@ -19,6 +19,7 @@ class SessionHandler {
     var categoriesCollection = [Category]()
     var artistsCollection = [String]()
     var messagesCollection = [Message]()
+    var orders = [Order]()
     
     func removeAll() {
         listOfFeatures = nil
@@ -28,5 +29,6 @@ class SessionHandler {
         categoriesCollection.removeAll()
         artistsCollection.removeAll()
         messagesCollection.removeAll()
+        orders.removeAll()
     }
 }

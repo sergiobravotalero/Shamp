@@ -39,6 +39,11 @@ extension SlideMenuViewController: UITableViewDelegate {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if row == 2 {
+            if let controller = UIStoryboard(name: "MyOrders", bundle: nil).instantiateInitialViewController() {
+                currentIndex = row
+                slideMenuController()?.changeMainViewController(controller, close: true)
+            }
+        } else if row == 3 {
             userTappedSignOut()
         }
     }
@@ -60,6 +65,11 @@ extension SlideMenuViewController: UITableViewDelegate {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if row == 3 {
+            if let controller = UIStoryboard(name: "MyOrders", bundle: nil).instantiateInitialViewController() {
+                currentIndex = row
+                slideMenuController()?.changeMainViewController(controller, close: true)
+            }
+        } else if row == 4 {
             userTappedSignOut()
         }
     }

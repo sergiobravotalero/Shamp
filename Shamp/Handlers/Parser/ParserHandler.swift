@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ParserHandler {
     //MARK: - Features
@@ -29,18 +30,18 @@ class ParserHandler {
         }
         
         guard let variability = Variability(
-            advanceSearch: !advanceSearch,
-            productRating: !productRating,
-            shirtText: !shirtText,
-            messages: !messages,
-            filters: !filters,
-            privateStamp: !privateStamp,
-            loginSocialNetwork: !loginSocialNetwork,
-            shareSocialNetwork: !shareSocialNetwork,
-            changePassword: !changePassword,
-            changeAddress: !changeAddress,
-            ratingsReports: !ratingsReports,
-            sellReports: !sellReports) else {
+            advanceSearch:          advanceSearch,
+            productRating:          productRating,
+            shirtText:              shirtText,
+            messages:               messages,
+            filters:                filters,
+            privateStamp:           privateStamp,
+            loginSocialNetwork:     loginSocialNetwork,
+            shareSocialNetwork:     shareSocialNetwork,
+            changePassword:         changePassword,
+            changeAddress:          changeAddress,
+            ratingsReports:         ratingsReports,
+            sellReports:            sellReports) else {
                 print("Init of variability failed")
                 completion(false)
                 return
@@ -220,5 +221,81 @@ class ParserHandler {
         
             completion()
         }
+    }
+    
+    // MARK: - Orders
+    func getCollectionOfOrders(body: NSArray, completion: ()->()) {
+        for element in body {
+            guard let dictionary = element as? NSDictionary else { continue }
+            guard let orderDictionary = dictionary.object(forKey: "order") as? NSDictionary else { continue }
+            guard let productsArray = dictionary.object(forKey: "products") as? NSArray else { continue }
+            
+            guard let order = getOrder(order: orderDictionary) else { continue }
+            let products = getAllProducts(productsArray: productsArray)
+            
+            if products.isEmpty {
+                continue
+            }
+            order.products = products
+            
+            if let index = SessionHandler.shared.orders.index(where: { $0.compare(toOrder: order) }) {
+                SessionHandler.shared.orders[index] = order
+            } else {
+                SessionHandler.shared.orders.append(order)
+            }
+        }
+        
+        completion()
+    }
+    
+    private func getOrder(order: NSDictionary) -> Order? {
+        guard let deliveryAddress = order.object(forKey: "delivery_address") as? String,
+            let contactPhone = order.object(forKey: "contact_phone") as? String,
+            let city = order.object(forKey: "city") as? String,
+            let country = order.object(forKey: "country") as? String else { return nil }
+        let products = [Product]()
+        guard let order = Order(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country, products: products) else {
+            return nil
+        }
+        
+        return order
+    }
+    
+    private func getAllProducts(productsArray: NSArray) -> [Product] {
+        var products = [Product]()
+        for element in productsArray {
+            guard let dictionary = element as? NSDictionary else { continue }
+            
+            guard let stampID = dictionary.object(forKey: "stamp_id") as? Int,
+                let shirtID = dictionary.object(forKey: "shirt_id") as? Int,
+                let quantity = dictionary.object(forKey: "quantity") as? Int,
+                let shirtSize = dictionary.object(forKey: "shirt_size") as? String,
+                let stampLocation = dictionary.object(forKey: "shirt_location") as? String,
+                let stampImage = dictionary.object(forKey: "stamp_url") as? String else { continue }
+            
+            guard let imageURL = URL(string: stampImage.replacingOccurrences(of: " ", with: "")) else { continue }
+            
+            
+            guard let product = Product(
+                stampID: stampID,
+                shirtID: shirtID,
+                quantity: quantity,
+                size: shirtSize,
+                location: stampLocation,
+                text: dictionary.object(forKey: "text") as? String,
+                textColor: getColor(valueString: dictionary.object(forKey: "text_color") as? String),
+                textSize: dictionary.object(forKey: "text_size") as? String,
+                textLocation: stampLocation,
+                imageUrl: imageURL) else { continue }
+            
+            products.append(product)
+        }
+        return products
+    }
+    
+    private func getColor(valueString: String?) -> UIColor? {
+        guard let valueString = valueString else { return nil }
+        guard let intValue = Int(valueString) else { return nil }
+        return UIColor(netHex: intValue)
     }
 }
