@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0530B7581ED4D6730055BFED /* MyOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B74E1ED4D6730055BFED /* MyOrdersTableViewCell.swift */; };
+		0530B7591ED4D6730055BFED /* MyOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0530B74F1ED4D6730055BFED /* MyOrdersTableViewCell.xib */; };
+		0530B75A1ED4D6730055BFED /* MyOrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B7511ED4D6730055BFED /* MyOrdersDataSource.swift */; };
+		0530B75B1ED4D6730055BFED /* MyOrdersEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B7541ED4D6730055BFED /* MyOrdersEmptyState.swift */; };
+		0530B75C1ED4D6730055BFED /* MyOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0530B7551ED4D6730055BFED /* MyOrders.storyboard */; };
+		0530B75D1ED4D6730055BFED /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B7561ED4D6730055BFED /* MyOrdersViewController.swift */; };
+		0530B7611ED4D6F20055BFED /* MyOrderProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0530B7601ED4D6F20055BFED /* MyOrderProducts.storyboard */; };
+		0530B7631ED4D7010055BFED /* MyOrderProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B7621ED4D7010055BFED /* MyOrderProductsViewController.swift */; };
+		0530B7651ED4D7150055BFED /* MyOrderProductsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530B7641ED4D7150055BFED /* MyOrderProductsDataSource.swift */; };
 		05323ADA1E935CA0009D20D6 /* SignUpTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05323AD91E935CA0009D20D6 /* SignUpTableViewDelegate.swift */; };
 		05323AE01E93DD04009D20D6 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05323ADF1E93DD04009D20D6 /* SplashScreen.storyboard */; };
 		05323AE21E93DD14009D20D6 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05323AE11E93DD14009D20D6 /* SplashScreenViewController.swift */; };
@@ -37,12 +46,6 @@
 		05BA634D1ED384E900002942 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA634C1ED384E900002942 /* MessageCell.swift */; };
 		05BA634F1ED3880200002942 /* MessagesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA634E1ED3880200002942 /* MessagesTableView.swift */; };
 		05BA63521ED3C7EB00002942 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63511ED3C7EB00002942 /* Order.swift */; };
-		05BA63581ED3D82000002942 /* MyOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BA63571ED3D82000002942 /* MyOrders.storyboard */; };
-		05BA635A1ED3D83400002942 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63591ED3D83400002942 /* MyOrdersViewController.swift */; };
-		05BA635D1ED3D9A700002942 /* MyOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */; };
-		05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */; };
-		05BA63601ED3DB1400002942 /* MyOrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */; };
-		05BA63631ED3F09C00002942 /* MyOrdersEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */; };
 		05BA63661ED4010E00002942 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BA63651ED4010E00002942 /* ChangePassword.storyboard */; };
 		05BA63681ED4012600002942 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63671ED4012600002942 /* ChangePasswordViewController.swift */; };
 		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
@@ -119,6 +122,15 @@
 
 /* Begin PBXFileReference section */
 		02EF6F06D058F8888D7F1D2B /* Pods-Shamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shamp/Pods-Shamp.debug.xcconfig"; sourceTree = "<group>"; };
+		0530B74E1ED4D6730055BFED /* MyOrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		0530B74F1ED4D6730055BFED /* MyOrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersTableViewCell.xib; sourceTree = "<group>"; };
+		0530B7511ED4D6730055BFED /* MyOrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersDataSource.swift; sourceTree = "<group>"; };
+		0530B7541ED4D6730055BFED /* MyOrdersEmptyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersEmptyState.swift; sourceTree = "<group>"; };
+		0530B7551ED4D6730055BFED /* MyOrders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyOrders.storyboard; sourceTree = "<group>"; };
+		0530B7561ED4D6730055BFED /* MyOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
+		0530B7601ED4D6F20055BFED /* MyOrderProducts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyOrderProducts.storyboard; sourceTree = "<group>"; };
+		0530B7621ED4D7010055BFED /* MyOrderProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderProductsViewController.swift; sourceTree = "<group>"; };
+		0530B7641ED4D7150055BFED /* MyOrderProductsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderProductsDataSource.swift; sourceTree = "<group>"; };
 		05323AD91E935CA0009D20D6 /* SignUpTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewDelegate.swift; sourceTree = "<group>"; };
 		05323ADF1E93DD04009D20D6 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		05323AE11E93DD14009D20D6 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -154,12 +166,6 @@
 		05BA634C1ED384E900002942 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		05BA634E1ED3880200002942 /* MessagesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableView.swift; sourceTree = "<group>"; };
 		05BA63511ED3C7EB00002942 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		05BA63571ED3D82000002942 /* MyOrders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyOrders.storyboard; sourceTree = "<group>"; };
-		05BA63591ED3D83400002942 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
-		05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewCell.swift; sourceTree = "<group>"; };
-		05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersTableViewCell.xib; sourceTree = "<group>"; };
-		05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersDataSource.swift; sourceTree = "<group>"; };
-		05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersEmptyState.swift; sourceTree = "<group>"; };
 		05BA63651ED4010E00002942 /* ChangePassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		05BA63671ED4012600002942 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
@@ -250,6 +256,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0530B74C1ED4D6730055BFED /* General */ = {
+			isa = PBXGroup;
+			children = (
+				0530B74D1ED4D6730055BFED /* Cell */,
+				0530B7501ED4D6730055BFED /* DataSource */,
+				0530B7521ED4D6730055BFED /* Extension */,
+				0530B7551ED4D6730055BFED /* MyOrders.storyboard */,
+				0530B7561ED4D6730055BFED /* MyOrdersViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		0530B74D1ED4D6730055BFED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0530B74E1ED4D6730055BFED /* MyOrdersTableViewCell.swift */,
+				0530B74F1ED4D6730055BFED /* MyOrdersTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0530B7501ED4D6730055BFED /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0530B7511ED4D6730055BFED /* MyOrdersDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		0530B7521ED4D6730055BFED /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0530B7531ED4D6730055BFED /* DZNEmptyState */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0530B7531ED4D6730055BFED /* DZNEmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				0530B7541ED4D6730055BFED /* MyOrdersEmptyState.swift */,
+			);
+			path = DZNEmptyState;
+			sourceTree = "<group>";
+		};
+		0530B7571ED4D6730055BFED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0530B75E1ED4D6E10055BFED /* DataSource */,
+				0530B75F1ED4D6E10055BFED /* Extensions */,
+				0530B7601ED4D6F20055BFED /* MyOrderProducts.storyboard */,
+				0530B7621ED4D7010055BFED /* MyOrderProductsViewController.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		0530B75E1ED4D6E10055BFED /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0530B7641ED4D7150055BFED /* MyOrderProductsDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		0530B75F1ED4D6E10055BFED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		05323ADE1E93DCF1009D20D6 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,46 +641,10 @@
 		05BA63531ED3D7AC00002942 /* MyOrders */ = {
 			isa = PBXGroup;
 			children = (
-				05BA63541ED3D7AC00002942 /* Cell */,
-				05BA63551ED3D7AC00002942 /* DataSource */,
-				05BA63561ED3D7AC00002942 /* Extension */,
-				05BA63571ED3D82000002942 /* MyOrders.storyboard */,
-				05BA63591ED3D83400002942 /* MyOrdersViewController.swift */,
+				0530B74C1ED4D6730055BFED /* General */,
+				0530B7571ED4D6730055BFED /* Products */,
 			);
 			path = MyOrders;
-			sourceTree = "<group>";
-		};
-		05BA63541ED3D7AC00002942 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				05BA635B1ED3D9A700002942 /* MyOrdersTableViewCell.swift */,
-				05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		05BA63551ED3D7AC00002942 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		05BA63561ED3D7AC00002942 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				05BA63611ED3F05A00002942 /* DZNEmptyState */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		05BA63611ED3F05A00002942 /* DZNEmptyState */ = {
-			isa = PBXGroup;
-			children = (
-				05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */,
-			);
-			path = DZNEmptyState;
 			sourceTree = "<group>";
 		};
 		05BA63641ED4010000002942 /* ChangePassword */ = {
@@ -1212,20 +1253,21 @@
 				05323AE01E93DD04009D20D6 /* SplashScreen.storyboard in Resources */,
 				05B4A62E1E843A39003F4AA4 /* Assets.xcassets in Resources */,
 				05BA63661ED4010E00002942 /* ChangePassword.storyboard in Resources */,
+				0530B7591ED4D6730055BFED /* MyOrdersTableViewCell.xib in Resources */,
 				05D6DCA01E8AF35F0081EDB8 /* ShoppingCart.storyboard in Resources */,
-				05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */,
 				05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */,
 				05BA63481ED37E8500002942 /* MessageTableViewCell.xib in Resources */,
 				05D60B771E92FAFD00EA6984 /* CellWithArrowTableViewCell.xib in Resources */,
 				05C763C21E8A040A000C064A /* ConfigureShirt.storyboard in Resources */,
 				05B4A6401E846143003F4AA4 /* Home.storyboard in Resources */,
 				05D6DCAB1E8AF69F0081EDB8 /* LabelWithTitleTableViewCell.xib in Resources */,
+				0530B7611ED4D6F20055BFED /* MyOrderProducts.storyboard in Resources */,
 				05B4A62D1E843A39003F4AA4 /* Info.plist in Resources */,
 				05C763BB1E8A03F8000C064A /* ShirtsTableViewCell.xib in Resources */,
 				05C763BF1E8A03F8000C064A /* Shirts.storyboard in Resources */,
 				05BA633E1ED37CBD00002942 /* Messages.storyboard in Resources */,
 				05D6DC9D1E8AF35F0081EDB8 /* ProductTableViewCell.xib in Resources */,
-				05BA63581ED3D82000002942 /* MyOrders.storyboard in Resources */,
+				0530B75C1ED4D6730055BFED /* MyOrders.storyboard in Resources */,
 				05D60B6B1E92EED100EA6984 /* SlideMenu.storyboard in Resources */,
 				05B4A63A1E843B02003F4AA4 /* LaunchScreen.storyboard in Resources */,
 				05D60B891E93541D00EA6984 /* SignUp.storyboard in Resources */,
@@ -1409,7 +1451,7 @@
 				05D60B6D1E92EEF100EA6984 /* SlideMenuViewController.swift in Sources */,
 				05D6DC9E1E8AF35F0081EDB8 /* ShoppingCartDataSource.swift in Sources */,
 				05C763C01E8A03F8000C064A /* ShirtsViewController.swift in Sources */,
-				05BA635D1ED3D9A700002942 /* MyOrdersTableViewCell.swift in Sources */,
+				0530B7581ED4D6730055BFED /* MyOrdersTableViewCell.swift in Sources */,
 				05D60B7A1E93009500EA6984 /* SlideMenuTableView.swift in Sources */,
 				05C763911E89D91E000C064A /* HomePickerView.swift in Sources */,
 				05B4A64B1E8466C9003F4AA4 /* AlertViewHandler.swift in Sources */,
@@ -1418,7 +1460,7 @@
 				05D6DC9F1E8AF35F0081EDB8 /* CartTableViewDelegate.swift in Sources */,
 				05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */,
 				05D6DCB31E8AF8E60081EDB8 /* PlaceOrderViewController.swift in Sources */,
-				05BA63631ED3F09C00002942 /* MyOrdersEmptyState.swift in Sources */,
+				0530B75B1ED4D6730055BFED /* MyOrdersEmptyState.swift in Sources */,
 				05BA63401ED37CCC00002942 /* MessagesViewController.swift in Sources */,
 				05C763BC1E8A03F8000C064A /* ShirtsDataSource.swift in Sources */,
 				05B4A6441E846178003F4AA4 /* LoginViewController.swift in Sources */,
@@ -1438,6 +1480,7 @@
 				05C763A21E89F392000C064A /* Shirt.swift in Sources */,
 				05C763C81E8A09DE000C064A /* ConfigureShirtPickerView.swift in Sources */,
 				05BA634D1ED384E900002942 /* MessageCell.swift in Sources */,
+				0530B7651ED4D7150055BFED /* MyOrderProductsDataSource.swift in Sources */,
 				05D60B8D1E93569900EA6984 /* SignUpDataSource.swift in Sources */,
 				05D6DCB71E8AFD430081EDB8 /* PlaceHolderUITableViewCellDelegate.swift in Sources */,
 				05B4A62C1E843A39003F4AA4 /* AppDelegate.swift in Sources */,
@@ -1448,6 +1491,7 @@
 				05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */,
 				05BA63681ED4012600002942 /* ChangePasswordViewController.swift in Sources */,
 				05323AE21E93DD14009D20D6 /* SplashScreenViewController.swift in Sources */,
+				0530B75D1ED4D6730055BFED /* MyOrdersViewController.swift in Sources */,
 				05BA634F1ED3880200002942 /* MessagesTableView.swift in Sources */,
 				05BA634A1ED3821600002942 /* MessagesDataSource.swift in Sources */,
 				05C763D11E8A1451000C064A /* Product.swift in Sources */,
@@ -1458,13 +1502,13 @@
 				05C763871E89D110000C064A /* HomeDataSource.swift in Sources */,
 				05323ADA1E935CA0009D20D6 /* SignUpTableViewDelegate.swift in Sources */,
 				05C763CE1E8A11DD000C064A /* ShoppingCart.swift in Sources */,
+				0530B7631ED4D7010055BFED /* MyOrderProductsViewController.swift in Sources */,
 				05C2B3DA1ED25F870076C6E1 /* HomeSearchBar.swift in Sources */,
 				05C763BE1E8A03F8000C064A /* ShirtListTableViewDelegate.swift in Sources */,
 				05BA63471ED37E8500002942 /* MessageTableViewCell.swift in Sources */,
 				054F18A61E8B24EA005CB8F6 /* ShoppingCartEmptyDataState.swift in Sources */,
 				05D60B761E92FAFD00EA6984 /* CellWithArrowTableViewCell.swift in Sources */,
-				05BA635A1ED3D83400002942 /* MyOrdersViewController.swift in Sources */,
-				05BA63601ED3DB1400002942 /* MyOrdersDataSource.swift in Sources */,
+				0530B75A1ED4D6730055BFED /* MyOrdersDataSource.swift in Sources */,
 				05C7637C1E89C06F000C064A /* SessionHandler.swift in Sources */,
 				05D60B6F1E92F9AF00EA6984 /* SlideMenuDataSource.swift in Sources */,
 				05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */,
