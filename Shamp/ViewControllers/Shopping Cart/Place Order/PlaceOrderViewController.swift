@@ -114,7 +114,7 @@ class PlaceOrderViewController: UIViewController {
         SVProgressHUD.show()
         ShoppingCart.shared.placeOrderWithCompletion(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country, completion: { (succeeded) in
             SVProgressHUD.dismiss()
-            self.navigationController?.popViewController(animated: true)
+            self.showPaymentConfirm()
         })
     }
     
@@ -183,5 +183,15 @@ class PlaceOrderViewController: UIViewController {
         proceedToPay(callback: { (succeeded) in
             self.placerOrder(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country)
         })
+    }
+    
+    func showPaymentConfirm() {
+        let alert = FCAlertView()
+        
+        alert.doneActionBlock({ (action) in
+            self.navigationController?.popViewController(animated: true)
+        })
+        alert.makeAlertTypeSuccess()
+        alert.showAlert(withTitle: "Payment Succesful", withSubtitle: "Your payment has been confirmed", withCustomImage: nil, withDoneButtonTitle: "Ok", andButtons: nil)
     }
 }

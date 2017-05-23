@@ -158,6 +158,7 @@ class ParserHandler {
     
     func getUserFrom(dictionary: NSDictionary, billing: NSDictionary, completion: @escaping (_ succeeded: Bool) -> ()) {
         guard let id = billing.value(forKeyPath: "user_id.user_id") as? Int,
+            let didUserLoggedWithDB = billing.value(forKeyPath: "user_id.base_datos") as? Bool,
             let city = billing.object(forKey: "user_city") as? String,
             let country = billing.object(forKey: "user_country") as? String,
             let cvv = billing.object(forKey: "cvv") as? String,
@@ -177,7 +178,7 @@ class ParserHandler {
                 return
         }
         
-        guard let user = User(id: id, city: city, country: country, cvv: cvv, email: email, expDate: expirationDate, phoneNumber: phoneNumber, surname: surname, userAddress: userAddress, userCreditCard: userCreditCard, username: username, nameCard: nameCard) else {
+        guard let user = User(id: id, city: city, country: country, cvv: cvv, email: email, expDate: expirationDate, phoneNumber: phoneNumber, surname: surname, userAddress: userAddress, userCreditCard: userCreditCard, username: username, nameCard: nameCard, didUserLoggedWithDB: didUserLoggedWithDB) else {
             completion(false)
             return
         }

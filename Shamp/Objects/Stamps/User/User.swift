@@ -21,8 +21,9 @@ class User {
     let userAddress: String
     let userCreditCard: String
     let username: String
+    let didUserLoggedWithDB: Bool
     
-    init?(id: Int, city: String, country: String, cvv: String, email: String, expDate: Int, phoneNumber: String, surname: String, userAddress: String, userCreditCard: String, username: String, nameCard: String) {
+    init?(id: Int, city: String, country: String, cvv: String, email: String, expDate: Int, phoneNumber: String, surname: String, userAddress: String, userCreditCard: String, username: String, nameCard: String, didUserLoggedWithDB: Bool) {
         self.id = id
         self.city = city
         self.country = country
@@ -35,5 +36,6 @@ class User {
         self.userCreditCard = userCreditCard
         self.username = username
         self.nameCard = nameCard
+        self.didUserLoggedWithDB = didUserLoggedWithDB
     }
 }

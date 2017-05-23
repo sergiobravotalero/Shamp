@@ -8,6 +8,8 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import FCAlertView
+
 
 class SlideMenuViewController: UIViewController, SlideMenuControllerDelegate {
 
@@ -52,5 +54,4 @@ class SlideMenuViewController: UIViewController, SlideMenuControllerDelegate {
         
         present(alertController, animated: true, completion: nil)
     }
-
 }

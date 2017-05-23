@@ -43,6 +43,8 @@
 		05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */; };
 		05BA63601ED3DB1400002942 /* MyOrdersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */; };
 		05BA63631ED3F09C00002942 /* MyOrdersEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */; };
+		05BA63661ED4010E00002942 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BA63651ED4010E00002942 /* ChangePassword.storyboard */; };
+		05BA63681ED4012600002942 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA63671ED4012600002942 /* ChangePasswordViewController.swift */; };
 		05C2B3D01ED1F2110076C6E1 /* Variability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3CF1ED1F2110076C6E1 /* Variability.swift */; };
 		05C2B3D71ED22D550076C6E1 /* TwitterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */; };
 		05C2B3DA1ED25F870076C6E1 /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */; };
@@ -158,6 +160,8 @@
 		05BA635C1ED3D9A700002942 /* MyOrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrdersTableViewCell.xib; sourceTree = "<group>"; };
 		05BA635F1ED3DB1400002942 /* MyOrdersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersDataSource.swift; sourceTree = "<group>"; };
 		05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersEmptyState.swift; sourceTree = "<group>"; };
+		05BA63651ED4010E00002942 /* ChangePassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
+		05BA63671ED4012600002942 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		05C2B3CF1ED1F2110076C6E1 /* Variability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variability.swift; sourceTree = "<group>"; };
 		05C2B3D61ED22D550076C6E1 /* TwitterHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterHandler.swift; sourceTree = "<group>"; };
 		05C2B3D91ED25F870076C6E1 /* HomeSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				05B4A6271E843A39003F4AA4 /* App */,
+				05BA63641ED4010000002942 /* ChangePassword */,
 				05B4A63B1E845AD3003F4AA4 /* Home */,
 				05BA633C1ED37CAD00002942 /* Messages */,
 				05BA63531ED3D7AC00002942 /* MyOrders */,
@@ -599,6 +604,15 @@
 				05BA63621ED3F09C00002942 /* MyOrdersEmptyState.swift */,
 			);
 			path = DZNEmptyState;
+			sourceTree = "<group>";
+		};
+		05BA63641ED4010000002942 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				05BA63651ED4010E00002942 /* ChangePassword.storyboard */,
+				05BA63671ED4012600002942 /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		05C2B3CE1ED1F2060076C6E1 /* Variability */ = {
@@ -1197,6 +1211,7 @@
 				05D6DCB11E8AF8D60081EDB8 /* PlaceOrder.storyboard in Resources */,
 				05323AE01E93DD04009D20D6 /* SplashScreen.storyboard in Resources */,
 				05B4A62E1E843A39003F4AA4 /* Assets.xcassets in Resources */,
+				05BA63661ED4010E00002942 /* ChangePassword.storyboard in Resources */,
 				05D6DCA01E8AF35F0081EDB8 /* ShoppingCart.storyboard in Resources */,
 				05BA635E1ED3D9A700002942 /* MyOrdersTableViewCell.xib in Resources */,
 				05C763841E89CBBD000C064A /* StampTableViewCell.xib in Resources */,
@@ -1431,6 +1446,7 @@
 				05A0B3221E89B58C00FB8B9F /* RequesterHandler.swift in Sources */,
 				05D6DCAA1E8AF69F0081EDB8 /* LabelWithTitleTableViewCell.swift in Sources */,
 				05C763801E89C95F000C064A /* UIColorExtension.swift in Sources */,
+				05BA63681ED4012600002942 /* ChangePasswordViewController.swift in Sources */,
 				05323AE21E93DD14009D20D6 /* SplashScreenViewController.swift in Sources */,
 				05BA634F1ED3880200002942 /* MessagesTableView.swift in Sources */,
 				05BA634A1ED3821600002942 /* MessagesDataSource.swift in Sources */,

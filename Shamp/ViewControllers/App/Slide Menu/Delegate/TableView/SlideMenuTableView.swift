@@ -44,6 +44,15 @@ extension SlideMenuViewController: UITableViewDelegate {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if row == 3 {
+            if let didUserLoggedWithDB = SessionHandler.shared.loggedUser?.didUserLoggedWithDB, didUserLoggedWithDB {
+                if let controller = UIStoryboard(name: "ChangePassword", bundle: nil).instantiateInitialViewController() {
+                    currentIndex = row
+                    slideMenuController()?.changeMainViewController(controller, close: true)
+                }
+            } else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Sorry", message: "Users who signed up with social networks are not allowed to change their passwords.")
+            }
+        } else if row == 4 {
             userTappedSignOut()
         }
     }
@@ -70,6 +79,15 @@ extension SlideMenuViewController: UITableViewDelegate {
                 slideMenuController()?.changeMainViewController(controller, close: true)
             }
         } else if row == 4 {
+            if let didUserLoggedWithDB = SessionHandler.shared.loggedUser?.didUserLoggedWithDB, didUserLoggedWithDB {
+                if let controller = UIStoryboard(name: "ChangePassword", bundle: nil).instantiateInitialViewController() {
+                    currentIndex = row
+                    slideMenuController()?.changeMainViewController(controller, close: true)
+                }
+            } else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Sorry", message: "Users who signed up with social networks are not allowed to change their passwords.")
+            }
+        } else {
             userTappedSignOut()
         }
     }

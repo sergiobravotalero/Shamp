@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
+        slideMenuController()?.leftViewController
         super.viewDidLoad()
         hideFilterPicker()
         setupController()

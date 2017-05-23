@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 private enum MenuOptions: Int {
-    case Home,ShoppingCart, MyOrders, SignOut
+    case Home,ShoppingCart, MyOrders, ChangePassword, SignOut
     
     static let option = [
         Home: "Home",
         ShoppingCart: "Shopping Cart",
         MyOrders: "My Orders",
+        ChangePassword: "Change password",
         SignOut: "Sign out"
     ]
     
@@ -29,13 +30,14 @@ private enum MenuOptions: Int {
 }
 
 private enum MenuOptionsWithMessages: Int {
-    case Home, ShoppingCart, Messages, MyOrders, SignOut
+    case Home, ShoppingCart, Messages, MyOrders, ChangePassword, SignOut
     
     static let option = [
         Home: "Home",
         ShoppingCart: "Shopping Cart",
         Messages: "Messages",
         MyOrders: "My Orders",
+        ChangePassword: "Change password",
         SignOut: "Sign out"
     ]
     
