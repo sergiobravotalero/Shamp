@@ -182,14 +182,11 @@ class ConfigureShirtViewController: UIViewController, ChromaColorPickerDelegate 
     }
     
     func addOrderToShoppingCart(product: Product) {
-        
-        
         let alertController = UIAlertController(title: nil, message: "Your product was added to your shopping cart.", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-            AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: nil, message: "Your product was added to your shopping cart.")
-            ShoppingCart.shared.addProductToShoppingCart(product: product)
             self.navigationController?.popToRootViewController(animated: true)
+            ShoppingCart.shared.addProductToShoppingCart(product: product)
         })
         alertController.addAction(okAction)
         
