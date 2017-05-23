@@ -226,6 +226,7 @@ class RequesterHandler {
             "password": password
         ]
         
+        
         Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
             guard let dictionary = response.result.value as? NSDictionary else {
                 completion(false)
@@ -453,5 +454,41 @@ class RequesterHandler {
             completion(true)
         })
         
+    }
+    
+    // MARK: - PATCH
+    func changePassword(oldPassword: String, newPassword: String, completion: @escaping(_ success: Bool)-> ()){
+        guard let requestUrl = URL(string: baseUrl + "User") else {
+            completion(false)
+            return
+        }
+        
+        let parameters = [
+            "oldPassword": oldPassword,
+            "newPassword": newPassword
+            ]
+        
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            completion(false)
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
+            guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            guard let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, isSuccessful else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        })
     }
 }

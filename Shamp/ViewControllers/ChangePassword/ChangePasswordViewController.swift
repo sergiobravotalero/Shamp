@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ChangePasswordViewController: UIViewController {
 
@@ -58,6 +59,15 @@ class ChangePasswordViewController: UIViewController {
             return
         }
         
-        print("Change password")
+        SVProgressHUD.show()
+        RequesterHandler().changePassword(oldPassword: oldPassword, newPassword: newPassword, completion: { (result) in
+            SVProgressHUD.dismiss()
+            if result {
+                UserDefaultsHandler.shared.userCredentials!.password = newPassword
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Password changed", message: "The passwords was succesfully changed")
+            } else {
+                AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Error", message: "Something went wrong. Please try again.")
+            }
+        })
     }
 }
