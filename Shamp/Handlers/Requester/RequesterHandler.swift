@@ -262,7 +262,7 @@ class RequesterHandler {
         })
     }
     
-    func registerUserInDbWith(parameters: [String: String], callback: @escaping(_ succeeded: Bool) -> ()){
+    func registerUserInDbWith(parameters: [String: Any], callback: @escaping(_ succeeded: Bool) -> ()){
         guard let requestUrl = URL(string: baseUrl + "User") else {
             callback(false)
             return
@@ -291,11 +291,11 @@ class RequesterHandler {
             
             ParserHandler().getUserFrom(dictionary: user, billing: userBilling, completion: { (succeeded) in
                 if succeeded {
-                    let email = parameters["email"]!
-                    let password = parameters["password"]!
+                    let email = parameters["email"] as! String
+                    let password = parameters["password"] as! String
                     
                     UserDefaultsHandler.shared.token = token
-                    UserDefaultsHandler.shared.userCredentials = (email: email, password: password)
+                    UserDefaultsHandler.shared.userCredentials = (email: email, password: password) 
                     callback(true)
                 } else {
                     callback(false)

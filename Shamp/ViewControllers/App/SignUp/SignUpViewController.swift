@@ -43,6 +43,7 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        
         if personalInfo.contains(where: { $0 == "" }) {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Attention", message: "You need to fill all fields")
             return
@@ -95,8 +96,9 @@ class SignUpViewController: UIViewController {
             "name_card": crediCardInfo[0]!,
             "user_credit_card": crediCardInfo[1]!,
             "expiration_date": expirationDate,
-            "cvv": crediCardInfo[3]!
-        ]
+            "cvv": crediCardInfo[3]!,
+            "base_datos": isAttemptingFacebook
+        ] as! [String : Any]
         
         SVProgressHUD.show()
         RequesterHandler().registerUserInDbWith(parameters: parameters, callback: { (succeeded) in
