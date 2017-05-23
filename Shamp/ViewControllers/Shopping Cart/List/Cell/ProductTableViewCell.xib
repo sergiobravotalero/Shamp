@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="461"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="415" height="460.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="461"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hG6-1x-Tvx">
@@ -179,16 +179,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkw-Bp-bbB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkw-Bp-bbB">
                                 <rect key="frame" x="20" y="258.5" width="335" height="25.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="78B-tD-hz8"/>
+                                    <constraint firstAttribute="height" constant="25.5" id="kAB-qB-Mec"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-5e-XsA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-5e-XsA">
                                 <rect key="frame" x="20" y="312.5" width="335" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="1Az-26-bg1"/>
@@ -206,7 +207,7 @@
                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyk-Ei-LUL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Location Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyk-Ei-LUL">
                                 <rect key="frame" x="20" y="410" width="335" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="3sF-od-iRD"/>
@@ -299,6 +300,8 @@
                 <outlet property="quantityLabel" destination="EDm-Un-T1O" id="zBC-9G-qFJ"/>
                 <outlet property="shirtImage" destination="35m-GF-bge" id="1da-rD-cxl"/>
                 <outlet property="stampImage" destination="paK-q5-naZ" id="LmW-Ba-JEv"/>
+                <outlet property="textLabelHeightConstraint" destination="kAB-qB-Mec" id="nUQ-g4-RaK"/>
+                <outlet property="textLabelHeightGreaterThanConstraint" destination="78B-tD-hz8" id="zxo-0y-gvq"/>
                 <outlet property="textLocationLabel" destination="Uyk-Ei-LUL" id="vpK-Fd-ij6"/>
                 <outletCollection property="textConstraints" destination="Mjj-00-HzD" collectionClass="NSMutableArray" id="8hi-kw-rPY"/>
                 <outletCollection property="textConstraints" destination="78B-tD-hz8" collectionClass="NSMutableArray" id="IIo-1D-YRC"/>

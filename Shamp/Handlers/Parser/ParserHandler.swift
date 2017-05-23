@@ -29,18 +29,18 @@ class ParserHandler {
         }
         
         guard let variability = Variability(
-            advanceSearch: advanceSearch,
-            productRating: productRating,
-            shirtText: shirtText,
-            messages: messages,
-            filters: filters,
-            privateStamp: privateStamp,
-            loginSocialNetwork: loginSocialNetwork,
-            shareSocialNetwork: shareSocialNetwork,
-            changePassword: changePassword,
-            changeAddress: changeAddress,
-            ratingsReports: ratingsReports,
-            sellReports: sellReports) else {
+            advanceSearch: !advanceSearch,
+            productRating: !productRating,
+            shirtText: !shirtText,
+            messages: !messages,
+            filters: !filters,
+            privateStamp: !privateStamp,
+            loginSocialNetwork: !loginSocialNetwork,
+            shareSocialNetwork: !shareSocialNetwork,
+            changePassword: !changePassword,
+            changeAddress: !changeAddress,
+            ratingsReports: !ratingsReports,
+            sellReports: !sellReports) else {
                 print("Init of variability failed")
                 completion(false)
                 return

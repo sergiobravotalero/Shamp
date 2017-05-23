@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import LocalAuthentication
+import FCAlertView
 
 class PlaceOrderViewController: UIViewController {
 
@@ -44,7 +45,7 @@ class PlaceOrderViewController: UIViewController {
     private func setupNavigationBar() {
         title = "Place Order"
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "Back Arrow"), style: .plain, target: self, action: #selector(backButtonTapped(sender:)))
-        backButton.tintColor = UIColor.signatureGray()
+        backButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = backButton
     }
     
@@ -151,6 +152,26 @@ class PlaceOrderViewController: UIViewController {
             AlertViewHandler().showAlerWithOkButton(fromViewController: self, title: "Oooops", message: "Something went wrong. Please try again.")
             return }
         
+        confirmPay(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country)
+    }
+    
+    func confirmPay(deliveryAddress: String, contactPhone: String, city: String, country: String) {
+        let alert = FCAlertView()
+//        alert.makeAlertTypeWarning()
+        
+        alert.addButton("Cancel", withActionBlock: nil)
+        
+        alert.doneActionBlock({ (action) in
+            self.payWithOption(deliveryAddress: deliveryAddress, contactPhone: contactPhone, city: city, country: country)
+        })
+        
+        alert.firstButtonTitleColor = UIColor.signatureYellow()
+        alert.secondButtonTitleColor = UIColor.signatureYellow()
+        
+        alert.showAlert(withTitle: "Confirm the order", withSubtitle: "Are you sure you want to submit the order?", withCustomImage: nil, withDoneButtonTitle: "Submit", andButtons: nil)
+    }
+    
+    func payWithOption(deliveryAddress: String, contactPhone: String, city: String, country: String) {
         var error:NSError?
         guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             payWithoutFingerprint(result: { (result) in

@@ -35,14 +35,30 @@ class ShoppingCart {
         
         var productsArray = [NSMutableDictionary]()
         for product in products {
-            let dictionary = [
-                "stamp_id": product.stampID,
-                "shirt_id": product.shirtID,
-                "quantity": product.quantity,
-                "size": product.size,
-                "location": product.location
-            ] as NSMutableDictionary
-            productsArray.append(dictionary)
+            if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText {
+                let dictionary = [
+                    "stamp_id": product.stampID,
+                    "shirt_id": product.shirtID,
+                    "quantity": product.quantity,
+                    "shirt_size": product.size,
+                    "shirt_location": product.location,
+                    "text_font": "Arial",
+                    "text_size": product.textSize ?? "",
+                    "text_color": product.textColor?.hexCode ?? "",
+                    "text": product.text ?? "",
+                    "stamp_url": product.imageUrl.absoluteString
+                    ] as NSMutableDictionary
+                productsArray.append(dictionary)
+            } else {
+                let dictionary = [
+                    "stamp_id": product.stampID,
+                    "shirt_id": product.shirtID,
+                    "quantity": product.quantity,
+                    "shirt_size": product.size,
+                    "shirt_location": product.location
+                    ] as NSMutableDictionary
+                productsArray.append(dictionary)
+            }
         }
         
         let order = [

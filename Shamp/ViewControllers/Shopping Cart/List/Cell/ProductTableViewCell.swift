@@ -30,6 +30,8 @@ class ProductTableViewCell: UITableViewCell {
     
     // TEXT Constraints
     @IBOutlet var textConstraints: [NSLayoutConstraint]!
+    @IBOutlet weak var textLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textLabelHeightGreaterThanConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var customizedTextLabel: UILabel!
     @IBOutlet weak var fontSizeLabel: UILabel!
@@ -71,6 +73,10 @@ class ProductTableViewCell: UITableViewCell {
         if let shirtText = SessionHandler.shared.listOfFeatures?.shirtText, shirtText{
             guard let customizedText = product.text, let size = product.textSize, let color = product.textColor, let textLocation = product.textLocation else {
                 
+                textLabelHeightGreaterThanConstraint.isActive = false
+                textLabelHeightConstraint.isActive = true
+                
+                textLabelHeightConstraint.constant = 0
                 for constraint in textConstraints {
                     constraint.constant = 0
                 }
@@ -78,12 +84,20 @@ class ProductTableViewCell: UITableViewCell {
                 return
             }
             
+            textLabelHeightGreaterThanConstraint.isActive = true
+            textLabelHeightConstraint.isActive = false
+            
             customizedTextLabel.text = customizedText
             fontSizeLabel.text = size
             fontColorLabel.backgroundColor = color
             textLocationLabel.text = textLocation
             
         } else {
+            textLabelHeightGreaterThanConstraint.isActive = false
+            textLabelHeightConstraint.isActive = true
+            
+            textLabelHeightConstraint.constant = 0
+            
             for constraint in textConstraints {
                 constraint.constant = 0
             }

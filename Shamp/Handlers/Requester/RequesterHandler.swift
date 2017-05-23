@@ -302,13 +302,26 @@ class RequesterHandler {
     }
     
     func addOrderToServerWithCompletion(order: [String : Any], completion: @escaping(_ succeeded: Bool) -> ()) {
-        guard let requestUrl = URL(string: baseUrl + "order/register") else {
+        guard let requestUrl = URL(string: baseUrl + "Order") else {
             completion(false)
             return
         }
         
-        Alamofire.request(requestUrl, method: .post, parameters: order, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+        guard let userID = SessionHandler.shared.loggedUser?.id else {
+            return
+        }
+        
+        let header: HTTPHeaders = [
+            "user_id": "\(userID)"
+        ]
+        
+        Alamofire.request(requestUrl, method: .post, parameters: order, encoding: JSONEncoding.default, headers: header).responseJSON(completionHandler: { (response) in
             guard let dictionary = response.result.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            
+            guard let isSuccessful = dictionary.object(forKey: "isSuccessfull") as? Bool, isSuccessful else {
                 completion(false)
                 return
             }
